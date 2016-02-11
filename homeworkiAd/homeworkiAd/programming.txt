@@ -1,0 +1,8 @@
+[
+    {"name":"C++","discription":"難しい"},
+    {"name":"javascript","discription":"簡単"},
+    {"name":"Perl","discription":"レア"},
+    {"name":"Python","discription":"ヘビ"},
+    {"name":"objective-c","discription":"古い"},
+    {"name":"PHP","discription":"PHPマスター"}
+]

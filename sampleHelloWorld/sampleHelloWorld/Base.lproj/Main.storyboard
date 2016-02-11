@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sampleHelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hv-ZP-Pcc">
+                                <rect key="frame" x="140" y="54" width="134" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="2zf-on-Qgb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nf1-Rs-vjW">
+                                <rect key="frame" x="132" y="601" width="151" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="押しちゃダメ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapSomeonesBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Irh-Zg-Nxk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I95-Pu-jpS">
+                                <rect key="frame" x="132" y="540" width="151" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="0Js-LF-4wV"/>
+                                    <constraint firstAttribute="width" constant="151" id="0Uw-sz-CPC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="押して">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3UY-qp-6Tz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nf1-Rs-vjW" firstAttribute="leading" secondItem="I95-Pu-jpS" secondAttribute="leading" id="65m-nm-Rqy"/>
+                            <constraint firstItem="6hv-ZP-Pcc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="MOt-kd-bYY"/>
+                            <constraint firstItem="6hv-ZP-Pcc" firstAttribute="centerX" secondItem="I95-Pu-jpS" secondAttribute="centerX" id="Tic-7j-2Cx"/>
+                            <constraint firstItem="I95-Pu-jpS" firstAttribute="trailing" secondItem="Nf1-Rs-vjW" secondAttribute="trailing" id="h2m-jU-0Z1"/>
+                            <constraint firstItem="Nf1-Rs-vjW" firstAttribute="top" secondItem="I95-Pu-jpS" secondAttribute="bottom" constant="28" id="p7Y-NY-9Gn"/>
+                            <constraint firstItem="Nf1-Rs-vjW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sVb-el-wlD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nf1-Rs-vjW" secondAttribute="bottom" constant="99" id="vib-Z0-FLT"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="myButton" destination="I95-Pu-jpS" id="9CW-wH-Of6"/>
+                        <outlet property="myLabel" destination="6hv-ZP-Pcc" id="ygN-VQ-pI9"/>
+                        <outlet property="someonesButton" destination="Nf1-Rs-vjW" id="7V0-DY-Cfz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189" y="260"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F540614C1C60958100B44939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F540614B1C60958100B44939 /* AppDelegate.swift */; };
+		F540614E1C60958100B44939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F540614D1C60958100B44939 /* ViewController.swift */; };
+		F54061511C60958100B44939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F540614F1C60958100B44939 /* Main.storyboard */; };
+		F54061531C60958100B44939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54061521C60958100B44939 /* Assets.xcassets */; };
+		F54061561C60958100B44939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54061541C60958100B44939 /* LaunchScreen.storyboard */; };
+		F54061611C60958100B44939 /* homeworkFakeSafari2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54061601C60958100B44939 /* homeworkFakeSafari2Tests.swift */; };
+		F540616C1C60958100B44939 /* homeworkFakeSafari2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F540616B1C60958100B44939 /* homeworkFakeSafari2UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F540615D1C60958100B44939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F54061401C60958100B44939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F54061471C60958100B44939;
+			remoteInfo = homeworkFakeSafari2;
+		};
+		F54061681C60958100B44939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F54061401C60958100B44939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F54061471C60958100B44939;
+			remoteInfo = homeworkFakeSafari2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F54061481C60958100B44939 /* homeworkFakeSafari2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeworkFakeSafari2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F540614B1C60958100B44939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F540614D1C60958100B44939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F54061501C60958100B44939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F54061521C60958100B44939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F54061551C60958100B44939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F54061571C60958100B44939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F540615C1C60958100B44939 /* homeworkFakeSafari2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = homeworkFakeSafari2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54061601C60958100B44939 /* homeworkFakeSafari2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeworkFakeSafari2Tests.swift; sourceTree = "<group>"; };
+		F54061621C60958100B44939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F54061671C60958100B44939 /* homeworkFakeSafari2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = homeworkFakeSafari2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F540616B1C60958100B44939 /* homeworkFakeSafari2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeworkFakeSafari2UITests.swift; sourceTree = "<group>"; };
+		F540616D1C60958100B44939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F54061451C60958100B44939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F54061591C60958100B44939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F54061641C60958100B44939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F540613F1C60958100B44939 = {
+			isa = PBXGroup;
+			children = (
+				F540614A1C60958100B44939 /* homeworkFakeSafari2 */,
+				F540615F1C60958100B44939 /* homeworkFakeSafari2Tests */,
+				F540616A1C60958100B44939 /* homeworkFakeSafari2UITests */,
+				F54061491C60958100B44939 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F54061491C60958100B44939 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F54061481C60958100B44939 /* homeworkFakeSafari2.app */,
+				F540615C1C60958100B44939 /* homeworkFakeSafari2Tests.xctest */,
+				F54061671C60958100B44939 /* homeworkFakeSafari2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F540614A1C60958100B44939 /* homeworkFakeSafari2 */ = {
+			isa = PBXGroup;
+			children = (
+				F540614B1C60958100B44939 /* AppDelegate.swift */,
+				F540614D1C60958100B44939 /* ViewController.swift */,
+				F540614F1C60958100B44939 /* Main.storyboard */,
+				F54061521C60958100B44939 /* Assets.xcassets */,
+				F54061541C60958100B44939 /* LaunchScreen.storyboard */,
+				F54061571C60958100B44939 /* Info.plist */,
+			);
+			path = homeworkFakeSafari2;
+			sourceTree = "<group>";
+		};
+		F540615F1C60958100B44939 /* homeworkFakeSafari2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F54061601C60958100B44939 /* homeworkFakeSafari2Tests.swift */,
+				F54061621C60958100B44939 /* Info.plist */,
+			);
+			path = homeworkFakeSafari2Tests;
+			sourceTree = "<group>";
+		};
+		F540616A1C60958100B44939 /* homeworkFakeSafari2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				F540616B1C60958100B44939 /* homeworkFakeSafari2UITests.swift */,
+				F540616D1C60958100B44939 /* Info.plist */,
+			);
+			path = homeworkFakeSafari2UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F54061471C60958100B44939 /* homeworkFakeSafari2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F54061701C60958100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafari2" */;
+			buildPhases = (
+				F54061441C60958100B44939 /* Sources */,
+				F54061451C60958100B44939 /* Frameworks */,
+				F54061461C60958100B44939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = homeworkFakeSafari2;
+			productName = homeworkFakeSafari2;
+			productReference = F54061481C60958100B44939 /* homeworkFakeSafari2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F540615B1C60958100B44939 /* homeworkFakeSafari2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F54061731C60958100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafari2Tests" */;
+			buildPhases = (
+				F54061581C60958100B44939 /* Sources */,
+				F54061591C60958100B44939 /* Frameworks */,
+				F540615A1C60958100B44939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F540615E1C60958100B44939 /* PBXTargetDependency */,
+			);
+			name = homeworkFakeSafari2Tests;
+			productName = homeworkFakeSafari2Tests;
+			productReference = F540615C1C60958100B44939 /* homeworkFakeSafari2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F54061661C60958100B44939 /* homeworkFakeSafari2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F54061761C60958100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafari2UITests" */;
+			buildPhases = (
+				F54061631C60958100B44939 /* Sources */,
+				F54061641C60958100B44939 /* Frameworks */,
+				F54061651C60958100B44939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F54061691C60958100B44939 /* PBXTargetDependency */,
+			);
+			name = homeworkFakeSafari2UITests;
+			productName = homeworkFakeSafari2UITests;
+			productReference = F54061671C60958100B44939 /* homeworkFakeSafari2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F54061401C60958100B44939 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Hiroki Shimada";
+				TargetAttributes = {
+					F54061471C60958100B44939 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F540615B1C60958100B44939 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = F54061471C60958100B44939;
+					};
+					F54061661C60958100B44939 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = F54061471C60958100B44939;
+					};
+				};
+			};
+			buildConfigurationList = F54061431C60958100B44939 /* Build configuration list for PBXProject "homeworkFakeSafari2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F540613F1C60958100B44939;
+			productRefGroup = F54061491C60958100B44939 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F54061471C60958100B44939 /* homeworkFakeSafari2 */,
+				F540615B1C60958100B44939 /* homeworkFakeSafari2Tests */,
+				F54061661C60958100B44939 /* homeworkFakeSafari2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F54061461C60958100B44939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54061561C60958100B44939 /* LaunchScreen.storyboard in Resources */,
+				F54061531C60958100B44939 /* Assets.xcassets in Resources */,
+				F54061511C60958100B44939 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F540615A1C60958100B44939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F54061651C60958100B44939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F54061441C60958100B44939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F540614E1C60958100B44939 /* ViewController.swift in Sources */,
+				F540614C1C60958100B44939 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F54061581C60958100B44939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54061611C60958100B44939 /* homeworkFakeSafari2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F54061631C60958100B44939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F540616C1C60958100B44939 /* homeworkFakeSafari2UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F540615E1C60958100B44939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F54061471C60958100B44939 /* homeworkFakeSafari2 */;
+			targetProxy = F540615D1C60958100B44939 /* PBXContainerItemProxy */;
+		};
+		F54061691C60958100B44939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F54061471C60958100B44939 /* homeworkFakeSafari2 */;
+			targetProxy = F54061681C60958100B44939 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F540614F1C60958100B44939 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F54061501C60958100B44939 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F54061541C60958100B44939 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F54061551C60958100B44939 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F540616E1C60958100B44939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F540616F1C60958100B44939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F54061711C60958100B44939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = homeworkFakeSafari2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafari2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F54061721C60958100B44939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = homeworkFakeSafari2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafari2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F54061741C60958100B44939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = homeworkFakeSafari2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafari2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/homeworkFakeSafari2.app/homeworkFakeSafari2";
+			};
+			name = Debug;
+		};
+		F54061751C60958100B44939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = homeworkFakeSafari2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafari2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/homeworkFakeSafari2.app/homeworkFakeSafari2";
+			};
+			name = Release;
+		};
+		F54061771C60958100B44939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = homeworkFakeSafari2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafari2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = homeworkFakeSafari2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F54061781C60958100B44939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = homeworkFakeSafari2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafari2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = homeworkFakeSafari2;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F54061431C60958100B44939 /* Build configuration list for PBXProject "homeworkFakeSafari2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F540616E1C60958100B44939 /* Debug */,
+				F540616F1C60958100B44939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F54061701C60958100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafari2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54061711C60958100B44939 /* Debug */,
+				F54061721C60958100B44939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F54061731C60958100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafari2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54061741C60958100B44939 /* Debug */,
+				F54061751C60958100B44939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F54061761C60958100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafari2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54061771C60958100B44939 /* Debug */,
+				F54061781C60958100B44939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F54061401C60958100B44939 /* Project object */;
+}

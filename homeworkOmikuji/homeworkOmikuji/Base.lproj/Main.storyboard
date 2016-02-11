@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="homeworkOmikuji" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WXU-qG-2Re">
+                                <rect key="frame" x="180" y="82" width="336" height="228"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="228" id="7Sb-Qf-MQI"/>
+                                    <constraint firstAttribute="width" constant="336" id="Kcj-HF-e7L"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-zd-haU">
+                                <rect key="frame" x="236" y="28" width="129" height="38"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="6Hh-wI-apy"/>
+                                    <constraint firstAttribute="height" constant="38" id="FnM-4J-kqo"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="占う">
+                                            <attributes>
+                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="15" name="HiraginoSans-W3"/>
+                                                <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="tapBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8Y-cl-Tyj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eo6-zd-haU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3uK-aq-SV7"/>
+                            <constraint firstItem="WXU-qG-2Re" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jy9-Cy-Oal"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WXU-qG-2Re" secondAttribute="bottom" constant="290" id="ZDe-Ed-CHN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WXU-qG-2Re" secondAttribute="trailing" constant="64" id="dOM-X2-fF1"/>
+                            <constraint firstItem="WXU-qG-2Re" firstAttribute="top" secondItem="Eo6-zd-haU" secondAttribute="bottom" constant="24" id="e2r-IR-7cK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myImage" destination="WXU-qG-2Re" id="W8h-eD-olp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="339"/>
+        </scene>
+    </scenes>
+</document>

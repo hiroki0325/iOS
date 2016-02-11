@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5826DCF590AD00FEB85A4309 /* libPods-homeworkFakeSafari.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F833F3D814417AC46D92B79 /* libPods-homeworkFakeSafari.a */; };
+		F5405FE41C5F413000B44939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5405FE31C5F413000B44939 /* AppDelegate.swift */; };
+		F5405FE61C5F413000B44939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5405FE51C5F413000B44939 /* ViewController.swift */; };
+		F5405FE91C5F413000B44939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5405FE71C5F413000B44939 /* Main.storyboard */; };
+		F5405FEB1C5F413000B44939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5405FEA1C5F413000B44939 /* Assets.xcassets */; };
+		F5405FEE1C5F413000B44939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5405FEC1C5F413000B44939 /* LaunchScreen.storyboard */; };
+		F5405FF91C5F413000B44939 /* homeworkFakeSafariTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5405FF81C5F413000B44939 /* homeworkFakeSafariTests.swift */; };
+		F54060041C5F413000B44939 /* homeworkFakeSafariUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54060031C5F413000B44939 /* homeworkFakeSafariUITests.swift */; };
+		F54060121C5F920F00B44939 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F54060111C5F920F00B44939 /* Default-568h@2x.png */; };
+		F54060141C5F927D00B44939 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F54060131C5F927D00B44939 /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5405FF51C5F413000B44939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5405FD81C5F413000B44939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5405FDF1C5F413000B44939;
+			remoteInfo = homeworkFakeSafari;
+		};
+		F54060001C5F413000B44939 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5405FD81C5F413000B44939 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5405FDF1C5F413000B44939;
+			remoteInfo = homeworkFakeSafari;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3F833F3D814417AC46D92B79 /* libPods-homeworkFakeSafari.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-homeworkFakeSafari.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0FF8E148538E7BCFBA02CA /* Pods-homeworkFakeSafari.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeworkFakeSafari.release.xcconfig"; path = "Pods/Target Support Files/Pods-homeworkFakeSafari/Pods-homeworkFakeSafari.release.xcconfig"; sourceTree = "<group>"; };
+		ED71EF7110FF858B4E5DDE8B /* Pods-homeworkFakeSafari.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeworkFakeSafari.debug.xcconfig"; path = "Pods/Target Support Files/Pods-homeworkFakeSafari/Pods-homeworkFakeSafari.debug.xcconfig"; sourceTree = "<group>"; };
+		F5405FE01C5F413000B44939 /* homeworkFakeSafari.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeworkFakeSafari.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5405FE31C5F413000B44939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5405FE51C5F413000B44939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5405FE81C5F413000B44939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5405FEA1C5F413000B44939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5405FED1C5F413000B44939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5405FF41C5F413000B44939 /* homeworkFakeSafariTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = homeworkFakeSafariTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5405FF81C5F413000B44939 /* homeworkFakeSafariTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeworkFakeSafariTests.swift; sourceTree = "<group>"; };
+		F5405FFA1C5F413000B44939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5405FFF1C5F413000B44939 /* homeworkFakeSafariUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = homeworkFakeSafariUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54060031C5F413000B44939 /* homeworkFakeSafariUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeworkFakeSafariUITests.swift; sourceTree = "<group>"; };
+		F54060051C5F413100B44939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F54060111C5F920F00B44939 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F54060131C5F927D00B44939 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F54060161C5FADF900B44939 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5405FDD1C5F413000B44939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5826DCF590AD00FEB85A4309 /* libPods-homeworkFakeSafari.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5405FF11C5F413000B44939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5405FFC1C5F413000B44939 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D2A4129E2629CB2FB70A9D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED71EF7110FF858B4E5DDE8B /* Pods-homeworkFakeSafari.debug.xcconfig */,
+				6A0FF8E148538E7BCFBA02CA /* Pods-homeworkFakeSafari.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CE1DECC061CF073A2BF4B8DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F833F3D814417AC46D92B79 /* libPods-homeworkFakeSafari.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5405FD71C5F413000B44939 = {
+			isa = PBXGroup;
+			children = (
+				F54060111C5F920F00B44939 /* Default-568h@2x.png */,
+				F54060161C5FADF900B44939 /* Header.h */,
+				F5405FE21C5F413000B44939 /* homeworkFakeSafari */,
+				F5405FF71C5F413000B44939 /* homeworkFakeSafariTests */,
+				F54060021C5F413000B44939 /* homeworkFakeSafariUITests */,
+				F5405FE11C5F413000B44939 /* Products */,
+				1D2A4129E2629CB2FB70A9D1 /* Pods */,
+				CE1DECC061CF073A2BF4B8DD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F5405FE11C5F413000B44939 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5405FE01C5F413000B44939 /* homeworkFakeSafari.app */,
+				F5405FF41C5F413000B44939 /* homeworkFakeSafariTests.xctest */,
+				F5405FFF1C5F413000B44939 /* homeworkFakeSafariUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5405FE21C5F413000B44939 /* homeworkFakeSafari */ = {
+			isa = PBXGroup;
+			children = (
+				F5405FE31C5F413000B44939 /* AppDelegate.swift */,
+				F5405FE51C5F413000B44939 /* ViewController.swift */,
+				F5405FE71C5F413000B44939 /* Main.storyboard */,
+				F5405FEA1C5F413000B44939 /* Assets.xcassets */,
+				F5405FEC1C5F413000B44939 /* LaunchScreen.storyboard */,
+				F54060131C5F927D00B44939 /* Info.plist */,
+			);
+			path = homeworkFakeSafari;
+			sourceTree = "<group>";
+		};
+		F5405FF71C5F413000B44939 /* homeworkFakeSafariTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5405FF81C5F413000B44939 /* homeworkFakeSafariTests.swift */,
+				F5405FFA1C5F413000B44939 /* Info.plist */,
+			);
+			path = homeworkFakeSafariTests;
+			sourceTree = "<group>";
+		};
+		F54060021C5F413000B44939 /* homeworkFakeSafariUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F54060031C5F413000B44939 /* homeworkFakeSafariUITests.swift */,
+				F54060051C5F413100B44939 /* Info.plist */,
+			);
+			path = homeworkFakeSafariUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5405FDF1C5F413000B44939 /* homeworkFakeSafari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F54060081C5F413100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafari" */;
+			buildPhases = (
+				5692D5D58A61A4B69462A258 /* Check Pods Manifest.lock */,
+				F5405FDC1C5F413000B44939 /* Sources */,
+				F5405FDD1C5F413000B44939 /* Frameworks */,
+				F5405FDE1C5F413000B44939 /* Resources */,
+				D36232131EE8E898FA7469AF /* Embed Pods Frameworks */,
+				8C76159C3320855282DE4EEE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = homeworkFakeSafari;
+			productName = homeworkFakeSafari;
+			productReference = F5405FE01C5F413000B44939 /* homeworkFakeSafari.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5405FF31C5F413000B44939 /* homeworkFakeSafariTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F540600B1C5F413100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafariTests" */;
+			buildPhases = (
+				F5405FF01C5F413000B44939 /* Sources */,
+				F5405FF11C5F413000B44939 /* Frameworks */,
+				F5405FF21C5F413000B44939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5405FF61C5F413000B44939 /* PBXTargetDependency */,
+			);
+			name = homeworkFakeSafariTests;
+			productName = homeworkFakeSafariTests;
+			productReference = F5405FF41C5F413000B44939 /* homeworkFakeSafariTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F5405FFE1C5F413000B44939 /* homeworkFakeSafariUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F540600E1C5F413100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafariUITests" */;
+			buildPhases = (
+				F5405FFB1C5F413000B44939 /* Sources */,
+				F5405FFC1C5F413000B44939 /* Frameworks */,
+				F5405FFD1C5F413000B44939 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F54060011C5F413000B44939 /* PBXTargetDependency */,
+			);
+			name = homeworkFakeSafariUITests;
+			productName = homeworkFakeSafariUITests;
+			productReference = F5405FFF1C5F413000B44939 /* homeworkFakeSafariUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5405FD81C5F413000B44939 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Hiroki Shimada";
+				TargetAttributes = {
+					F5405FDF1C5F413000B44939 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					F5405FF31C5F413000B44939 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = F5405FDF1C5F413000B44939;
+					};
+					F5405FFE1C5F413000B44939 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = F5405FDF1C5F413000B44939;
+					};
+				};
+			};
+			buildConfigurationList = F5405FDB1C5F413000B44939 /* Build configuration list for PBXProject "homeworkFakeSafari" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5405FD71C5F413000B44939;
+			productRefGroup = F5405FE11C5F413000B44939 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5405FDF1C5F413000B44939 /* homeworkFakeSafari */,
+				F5405FF31C5F413000B44939 /* homeworkFakeSafariTests */,
+				F5405FFE1C5F413000B44939 /* homeworkFakeSafariUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5405FDE1C5F413000B44939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5405FEE1C5F413000B44939 /* LaunchScreen.storyboard in Resources */,
+				F54060121C5F920F00B44939 /* Default-568h@2x.png in Resources */,
+				F5405FEB1C5F413000B44939 /* Assets.xcassets in Resources */,
+				F54060141C5F927D00B44939 /* Info.plist in Resources */,
+				F5405FE91C5F413000B44939 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5405FF21C5F413000B44939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5405FFD1C5F413000B44939 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5692D5D58A61A4B69462A258 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C76159C3320855282DE4EEE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-homeworkFakeSafari/Pods-homeworkFakeSafari-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D36232131EE8E898FA7469AF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-homeworkFakeSafari/Pods-homeworkFakeSafari-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5405FDC1C5F413000B44939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5405FE61C5F413000B44939 /* ViewController.swift in Sources */,
+				F5405FE41C5F413000B44939 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5405FF01C5F413000B44939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5405FF91C5F413000B44939 /* homeworkFakeSafariTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5405FFB1C5F413000B44939 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54060041C5F413000B44939 /* homeworkFakeSafariUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5405FF61C5F413000B44939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5405FDF1C5F413000B44939 /* homeworkFakeSafari */;
+			targetProxy = F5405FF51C5F413000B44939 /* PBXContainerItemProxy */;
+		};
+		F54060011C5F413000B44939 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5405FDF1C5F413000B44939 /* homeworkFakeSafari */;
+			targetProxy = F54060001C5F413000B44939 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5405FE71C5F413000B44939 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5405FE81C5F413000B44939 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5405FEC1C5F413000B44939 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5405FED1C5F413000B44939 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F54060061C5F413100B44939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F54060071C5F413100B44939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F54060091C5F413100B44939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED71EF7110FF858B4E5DDE8B /* Pods-homeworkFakeSafari.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = homeworkFakeSafari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
+			};
+			name = Debug;
+		};
+		F540600A1C5F413100B44939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A0FF8E148538E7BCFBA02CA /* Pods-homeworkFakeSafari.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = homeworkFakeSafari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafari;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
+			};
+			name = Release;
+		};
+		F540600C1C5F413100B44939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = homeworkFakeSafariTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/homeworkFakeSafari.app/homeworkFakeSafari";
+			};
+			name = Debug;
+		};
+		F540600D1C5F413100B44939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = homeworkFakeSafariTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafariTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/homeworkFakeSafari.app/homeworkFakeSafari";
+			};
+			name = Release;
+		};
+		F540600F1C5F413100B44939 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = homeworkFakeSafariUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafariUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = homeworkFakeSafari;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		F54060101C5F413100B44939 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = homeworkFakeSafariUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.homeworkFakeSafariUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = homeworkFakeSafari;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5405FDB1C5F413000B44939 /* Build configuration list for PBXProject "homeworkFakeSafari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54060061C5F413100B44939 /* Debug */,
+				F54060071C5F413100B44939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F54060081C5F413100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54060091C5F413100B44939 /* Debug */,
+				F540600A1C5F413100B44939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F540600B1C5F413100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafariTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F540600C1C5F413100B44939 /* Debug */,
+				F540600D1C5F413100B44939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F540600E1C5F413100B44939 /* Build configuration list for PBXNativeTarget "homeworkFakeSafariUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F540600F1C5F413100B44939 /* Debug */,
+				F54060101C5F413100B44939 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5405FD81C5F413000B44939 /* Project object */;
+}
