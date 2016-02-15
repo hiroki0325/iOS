@@ -11,6 +11,7 @@ import MapKit
 
 class SecondViewController: UIViewController {
     
+    @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var myTextView: UITextView!
     @IBOutlet weak var myMapView: MKMapView!
     @IBOutlet weak var myImageView: UIImageView!
@@ -26,18 +27,23 @@ class SecondViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
+        myLabel.text = self.scLocationList["\(scSelectedIndex)"]!["name"] as! String
+        
         myTextView.text = self.scLocationList["\(scSelectedIndex)"]!["description"] as! String
         var pictureName = scLocationList["\(scSelectedIndex)"]!["picture"] as! String
 
         myImageView.image = UIImage(named: "\(pictureName)")
         
-        var latitude = scLocationList["\(scSelectedIndex)"]!["map"]!!["latitude"] as! Double
-        var longitude = scLocationList["\(scSelectedIndex)"]!["map"]!!["longitude"] as! Double
+        var location = getLocation(scLocationList["\(scSelectedIndex)"]!["name"] as! String)
+        var locationArray = location["results"] as! NSArray
+        
+        var latitude = locationArray[0]["geometry"]!!["location"]!!["lat"] as! Double
+        var longitude = locationArray[0]["geometry"]!!["location"]!!["lng"] as! Double
         
         let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
         
         // 縮尺を設定
-        let span = MKCoordinateSpanMake(0.025, 0.025)
+        let span = MKCoordinateSpanMake(0.1, 0.1)
         
         // 範囲オブジェクトを作成
         let region = MKCoordinateRegionMake(coordinate, span)
@@ -51,7 +57,15 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func getLocation(locationName:String)->NSDictionary{
+        var url = "http://maps.google.com/maps/api/geocode/json?address=\(locationName)&sensor=false"
+        var URL = NSURL(string: url)
+        var request = NSURLRequest(URL: URL!)
+        var jsondata = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+        var jsonDictionary = try! NSJSONSerialization.JSONObjectWithData(jsondata, options: []) as! NSDictionary
+        
+        return jsonDictionary
+    }
 
 
 }

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="V1r-Gz-ufc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="V1r-Gz-ufc">
                                         <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V1r-Gz-ufc" id="bXu-HT-sei">
@@ -84,6 +84,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="myImageView" destination="eQV-Xb-f5v" id="e4y-Pg-RVA"/>
+                        <outlet property="myLabel" destination="OxG-Ta-txj" id="mHo-Vx-5iS"/>
                         <outlet property="myMapView" destination="xa9-af-KAg" id="6wY-br-xa6"/>
                         <outlet property="myTextView" destination="5hI-ai-RM3" id="8g1-p4-K5k"/>
                     </connections>
