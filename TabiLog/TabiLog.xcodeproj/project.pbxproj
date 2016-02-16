@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD491C72F55E00B57B24 /* AppDelegate.swift */; };
+		F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD4B1C72F55E00B57B24 /* ViewController.swift */; };
+		F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBD4D1C72F55E00B57B24 /* Main.storyboard */; };
+		F55FBD521C72F55E00B57B24 /* TabiLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD501C72F55E00B57B24 /* TabiLog.xcdatamodeld */; };
+		F55FBD541C72F55E00B57B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55FBD531C72F55E00B57B24 /* Assets.xcassets */; };
+		F55FBD571C72F55E00B57B24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBD551C72F55E00B57B24 /* LaunchScreen.storyboard */; };
+		F55FBD5F1C730C3F00B57B24 /* TravelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD5E1C730C3F00B57B24 /* TravelListViewController.swift */; };
+		F55FBD611C7319E200B57B24 /* NewTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD601C7319E200B57B24 /* NewTravelViewController.swift */; };
+		F55FBD631C731A6200B57B24 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD621C731A6200B57B24 /* SummaryViewController.swift */; };
+		F55FBD651C731B0400B57B24 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD641C731B0400B57B24 /* DetailViewController.swift */; };
+		F55FBD671C731B1B00B57B24 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F55FBD461C72F55E00B57B24 /* TabiLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabiLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55FBD491C72F55E00B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F55FBD4B1C72F55E00B57B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F55FBD4E1C72F55E00B57B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F55FBD511C72F55E00B57B24 /* TabiLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TabiLog.xcdatamodel; sourceTree = "<group>"; };
+		F55FBD531C72F55E00B57B24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F55FBD561C72F55E00B57B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F55FBD581C72F55E00B57B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55FBD5E1C730C3F00B57B24 /* TravelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListViewController.swift; sourceTree = "<group>"; };
+		F55FBD601C7319E200B57B24 /* NewTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTravelViewController.swift; sourceTree = "<group>"; };
+		F55FBD621C731A6200B57B24 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		F55FBD641C731B0400B57B24 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F55FBD431C72F55E00B57B24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F55FBD3D1C72F55E00B57B24 = {
+			isa = PBXGroup;
+			children = (
+				F55FBD481C72F55E00B57B24 /* TabiLog */,
+				F55FBD471C72F55E00B57B24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F55FBD471C72F55E00B57B24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F55FBD461C72F55E00B57B24 /* TabiLog.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F55FBD481C72F55E00B57B24 /* TabiLog */ = {
+			isa = PBXGroup;
+			children = (
+				F55FBD491C72F55E00B57B24 /* AppDelegate.swift */,
+				F55FBD4B1C72F55E00B57B24 /* ViewController.swift */,
+				F55FBD641C731B0400B57B24 /* DetailViewController.swift */,
+				F55FBD601C7319E200B57B24 /* NewTravelViewController.swift */,
+				F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */,
+				F55FBD5E1C730C3F00B57B24 /* TravelListViewController.swift */,
+				F55FBD4D1C72F55E00B57B24 /* Main.storyboard */,
+				F55FBD531C72F55E00B57B24 /* Assets.xcassets */,
+				F55FBD551C72F55E00B57B24 /* LaunchScreen.storyboard */,
+				F55FBD581C72F55E00B57B24 /* Info.plist */,
+				F55FBD621C731A6200B57B24 /* SummaryViewController.swift */,
+				F55FBD501C72F55E00B57B24 /* TabiLog.xcdatamodeld */,
+			);
+			path = TabiLog;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F55FBD451C72F55E00B57B24 /* TabiLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F55FBD5B1C72F55E00B57B24 /* Build configuration list for PBXNativeTarget "TabiLog" */;
+			buildPhases = (
+				F55FBD421C72F55E00B57B24 /* Sources */,
+				F55FBD431C72F55E00B57B24 /* Frameworks */,
+				F55FBD441C72F55E00B57B24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TabiLog;
+			productName = TabiLog;
+			productReference = F55FBD461C72F55E00B57B24 /* TabiLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F55FBD3E1C72F55E00B57B24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Hiroki Shimada";
+				TargetAttributes = {
+					F55FBD451C72F55E00B57B24 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = B6486WMC5Z;
+					};
+				};
+			};
+			buildConfigurationList = F55FBD411C72F55E00B57B24 /* Build configuration list for PBXProject "TabiLog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F55FBD3D1C72F55E00B57B24;
+			productRefGroup = F55FBD471C72F55E00B57B24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F55FBD451C72F55E00B57B24 /* TabiLog */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F55FBD441C72F55E00B57B24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55FBD571C72F55E00B57B24 /* LaunchScreen.storyboard in Resources */,
+				F55FBD541C72F55E00B57B24 /* Assets.xcassets in Resources */,
+				F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F55FBD421C72F55E00B57B24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */,
+				F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */,
+				F55FBD671C731B1B00B57B24 /* ConfigViewController.swift in Sources */,
+				F55FBD5F1C730C3F00B57B24 /* TravelListViewController.swift in Sources */,
+				F55FBD521C72F55E00B57B24 /* TabiLog.xcdatamodeld in Sources */,
+				F55FBD611C7319E200B57B24 /* NewTravelViewController.swift in Sources */,
+				F55FBD631C731A6200B57B24 /* SummaryViewController.swift in Sources */,
+				F55FBD651C731B0400B57B24 /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F55FBD4D1C72F55E00B57B24 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F55FBD4E1C72F55E00B57B24 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F55FBD551C72F55E00B57B24 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F55FBD561C72F55E00B57B24 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F55FBD591C72F55E00B57B24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F55FBD5A1C72F55E00B57B24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F55FBD5C1C72F55E00B57B24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TabiLog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.TabiLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F55FBD5D1C72F55E00B57B24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TabiLog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.TabiLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F55FBD411C72F55E00B57B24 /* Build configuration list for PBXProject "TabiLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55FBD591C72F55E00B57B24 /* Debug */,
+				F55FBD5A1C72F55E00B57B24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F55FBD5B1C72F55E00B57B24 /* Build configuration list for PBXNativeTarget "TabiLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F55FBD5C1C72F55E00B57B24 /* Debug */,
+				F55FBD5D1C72F55E00B57B24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F55FBD501C72F55E00B57B24 /* TabiLog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F55FBD511C72F55E00B57B24 /* TabiLog.xcdatamodel */,
+			);
+			currentVersion = F55FBD511C72F55E00B57B24 /* TabiLog.xcdatamodel */;
+			path = TabiLog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F55FBD3E1C72F55E00B57B24 /* Project object */;
+}
