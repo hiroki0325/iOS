@@ -17,22 +17,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // iTunesのAPIからmaroon5の情報を20件取得
         // 1. API = URLなので、string型でurlの文字列を生成
-        let urlString:String = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?term=marron5&limit=20"
+        let urlString:String = "http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/wa/wsSearch?term=maroon5&limit=20"
         // 2. string型からurl型に変換
         let url = NSURL(string: urlString)
-        // 3. urlを使ってリクエストを発行（データくれ）
+        // 3. urlを使ってリクエストを作成（データくれ）
         var request = NSURLRequest(URL: url!)
-        print(request)
-        // 4. 取得したデータをjsonに変換
+        // 4. リクエストを発行してデータを取得
         var jsondata = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
-        // 5. jsonからdictionary型に変換
+        // 5. バイナリ形式からjson形式、更にdictionary型に変換
         var jsonDict = try! NSJSONSerialization.JSONObjectWithData(jsondata, options: []) as! NSDictionary
         // 6. 繰り返し処理を使って欲しいデータを配列に代入
         for(key, data) in jsonDict {
             if key as! String == "results" {
                 var resultArray = data as! NSArray
                 
-                for(eachMusic) in resultArray {
+                for eachMusic in resultArray {
                     var newMusic:NSDictionary =
                     [
                         "name":eachMusic["trackName"] as! String,
@@ -43,9 +42,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 }
             }
         }
-        // 7. 配列の要素をcellに表示
-
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +53,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return 20
     }
     
+    // 7. 配列の要素をcellに表示
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell:CustomCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CustomCell
         
