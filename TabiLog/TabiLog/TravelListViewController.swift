@@ -7,30 +7,82 @@
 //
 
 import UIKit
+import CoreData
 
 class TravelListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var travelListTableView: UITableView!
+    
+    var travelNum = 0
+    var travelDetail:[NSDictionary] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = editButtonItem()
+        navigationItem.leftBarButtonItem = editButtonItem()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.Plain, target: self, action: "newTravel")
     }
     
+    override func viewWillAppear(animated: Bool) {
+        read()
+        self.travelListTableView.reloadData()
+    }
+    
+    
+    // すでに存在するデータの読み込み処理
+    func read() {
+        // データの初期化
+        self.travelDetail = []
+        // AppDeleteをコードで読み込む
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
+        let managedObjectContext = appDelegate.managedObjectContext
+            
+        // Entityを指定する設定
+        let entityDiscription = NSEntityDescription.entityForName("Travel", inManagedObjectContext: managedObjectContext)
+    
+        let fetchRequest = NSFetchRequest(entityName: "Travel")
+        fetchRequest.entity = entityDiscription
+        
+        // errorが発生した際にキャッチするための変数
+        var error: NSError? = nil
+        
+        // フェッチリクエスト (データの検索と取得処理) の実行
+        do {
+            let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+            self.travelNum = results.count
+            for managedObject in results {
+                let travel = managedObject as! Travel
+                var newTravel:NSDictionary =
+                [
+                    "destination":travel.destination,
+                    "from":travel.from,
+                    "to":travel.to,
+                    "budget":travel.budget 
+                ]
+                travelDetail.append(newTravel)
+            }
+        } catch let error1 as NSError {
+            error = error1
+        }
+    }
+    
+    func newTravel(){
+        performSegueWithIdentifier("createNewTravel",sender: nil)
+    }
+
+    
+    // tableView の設定 //
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.travelNum
     }
     
     // 表示するセルの中身
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(
             style: .Default,
-            reuseIdentifier: "myCell")
-        if indexPath.row < 3 {
-            cell.textLabel?.text = "hogehoge"
-        } else {
-            cell.textLabel?.text = "新規作成"
-        }
+            reuseIdentifier: "travelList")
+        cell.textLabel?.text = travelDetail[indexPath.row]["destination"] as! String
         
         // 文字色を茶色にする
         cell.textLabel?.textColor = UIColor.brownColor()
@@ -47,11 +99,7 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         // SecondViewController へ遷移するために Segue を呼び出す
-        if indexPath.row < 3 {
-            performSegueWithIdentifier("newTravel",sender: nil)
-        } else {
-            performSegueWithIdentifier("showTravelDetail",sender: nil)
-        }
+        performSegueWithIdentifier("showTravelDetail",sender: nil)
     }
     
     // Segueで画面遷移する時
@@ -62,6 +110,12 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func returnList(segue: UIStoryboardSegue){
+        // 移動画面からの戻り口
+        
+    }
+
     
 
 }

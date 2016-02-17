@@ -18,6 +18,7 @@
 		F55FBD631C731A6200B57B24 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD621C731A6200B57B24 /* SummaryViewController.swift */; };
 		F55FBD651C731B0400B57B24 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD641C731B0400B57B24 /* DetailViewController.swift */; };
 		F55FBD671C731B1B00B57B24 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */; };
+		F55FBD691C735FC200B57B24 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD681C735FC200B57B24 /* Travel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F55FBD621C731A6200B57B24 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		F55FBD641C731B0400B57B24 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		F55FBD681C735FC200B57B24 /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,17 +68,18 @@
 		F55FBD481C72F55E00B57B24 /* TabiLog */ = {
 			isa = PBXGroup;
 			children = (
+				F55FBD681C735FC200B57B24 /* Travel.swift */,
 				F55FBD491C72F55E00B57B24 /* AppDelegate.swift */,
 				F55FBD4B1C72F55E00B57B24 /* ViewController.swift */,
-				F55FBD641C731B0400B57B24 /* DetailViewController.swift */,
-				F55FBD601C7319E200B57B24 /* NewTravelViewController.swift */,
-				F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */,
 				F55FBD5E1C730C3F00B57B24 /* TravelListViewController.swift */,
+				F55FBD601C7319E200B57B24 /* NewTravelViewController.swift */,
+				F55FBD621C731A6200B57B24 /* SummaryViewController.swift */,
+				F55FBD641C731B0400B57B24 /* DetailViewController.swift */,
+				F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */,
 				F55FBD4D1C72F55E00B57B24 /* Main.storyboard */,
 				F55FBD531C72F55E00B57B24 /* Assets.xcassets */,
 				F55FBD551C72F55E00B57B24 /* LaunchScreen.storyboard */,
 				F55FBD581C72F55E00B57B24 /* Info.plist */,
-				F55FBD621C731A6200B57B24 /* SummaryViewController.swift */,
 				F55FBD501C72F55E00B57B24 /* TabiLog.xcdatamodeld */,
 			);
 			path = TabiLog;
@@ -160,6 +163,7 @@
 				F55FBD5F1C730C3F00B57B24 /* TravelListViewController.swift in Sources */,
 				F55FBD521C72F55E00B57B24 /* TabiLog.xcdatamodeld in Sources */,
 				F55FBD611C7319E200B57B24 /* NewTravelViewController.swift in Sources */,
+				F55FBD691C735FC200B57B24 /* Travel.swift in Sources */,
 				F55FBD631C731A6200B57B24 /* SummaryViewController.swift in Sources */,
 				F55FBD651C731B0400B57B24 /* DetailViewController.swift in Sources */,
 			);
