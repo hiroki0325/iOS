@@ -83,7 +83,7 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
         var to = appDelegate.getDateFormat(travelDetail[indexPath.row]["to"] as! NSDate)
         var cell = tableView.dequeueReusableCellWithIdentifier("travelList") as! TravelListTableViewCell
         cell.directionLabel?.text = travelDetail[indexPath.row]["destination"] as? String
-        cell.periodLabel?.text = "期間：\(from)~\(to)"
+        cell.periodLabel?.text = "\(from)~\(to)"
         
         // アイコンを付ける
         cell.accessoryType = .DisclosureIndicator
