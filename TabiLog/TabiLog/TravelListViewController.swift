@@ -12,7 +12,9 @@ import CoreData
 class TravelListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var travelListTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var travelNum = 0
     var travelDetail:[NSDictionary] = []
     
@@ -32,8 +34,6 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     func read() {
         // データの初期化
         self.travelDetail = []
-        // AppDeleteをコードで読み込む
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
         let managedObjectContext = appDelegate.managedObjectContext
@@ -79,11 +79,11 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     
     // 表示するセルの中身
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = TravelListTableViewCell(
-            style: .Default,
-            reuseIdentifier: "travelList")
-        cell.directionLabel?.text = travelDetail[indexPath.row]["destination"] as! String
-        //cell.periodLabel?.text = (travelDetail[indexPath.row]["budget"] as! String)
+        var from = appDelegate.getDateFormat(travelDetail[indexPath.row]["from"] as! NSDate)
+        var to = appDelegate.getDateFormat(travelDetail[indexPath.row]["to"] as! NSDate)
+        var cell = tableView.dequeueReusableCellWithIdentifier("travelList") as! TravelListTableViewCell
+        cell.directionLabel?.text = travelDetail[indexPath.row]["destination"] as? String
+        cell.periodLabel?.text = "期間：\(from)~\(to)"
         
         // アイコンを付ける
         cell.accessoryType = .DisclosureIndicator

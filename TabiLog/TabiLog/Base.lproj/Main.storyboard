@@ -74,7 +74,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="期間：from ~ to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-3V-qSN">
-                                                    <rect key="frame" x="101" y="16" width="121" height="21"/>
+                                                    <rect key="frame" x="101" y="16" width="254" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -113,6 +113,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="tableView" destination="D7c-0O-Agg" id="TYh-yz-GCX"/>
                         <outlet property="travelListTableView" destination="D7c-0O-Agg" id="TrR-Rr-DbS"/>
                     </connections>
                 </viewController>
@@ -221,7 +222,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="〜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoi-VH-gZa">
-                                <rect key="frame" x="215" y="149" width="16" height="21"/>
+                                <rect key="frame" x="229" y="149" width="16" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -234,24 +235,28 @@
                                     <action selector="didFinishEditDestination:" destination="ag4-9W-YAM" eventType="editingDidEndOnExit" id="3Zd-ZF-szP"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bp6-by-MwA">
-                                <rect key="frame" x="110" y="145" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GBa-eW-t3d">
+                                <rect key="frame" x="239" y="145" width="116" height="30"/>
+                                <state key="normal" title="to"/>
                                 <connections>
-                                    <action selector="didEndEditFrom:" destination="ag4-9W-YAM" eventType="editingDidEndOnExit" id="ezj-0h-0DH"/>
-                                    <action selector="touchFrom:" destination="ag4-9W-YAM" eventType="editingDidBegin" id="TH1-T3-83d"/>
+                                    <action selector="touchTo:" destination="ag4-9W-YAM" eventType="touchUpInside" id="h0W-K6-cit"/>
                                 </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VG0-jn-N3Z">
-                                <rect key="frame" x="239" y="144" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RG-R8-w5A">
+                                <rect key="frame" x="98" y="145" width="121" height="30"/>
+                                <state key="normal" title="from"/>
                                 <connections>
-                                    <action selector="didEndEditTo:" destination="ag4-9W-YAM" eventType="editingDidEndOnExit" id="t3d-eT-BUz"/>
-                                    <action selector="touchTo:" destination="ag4-9W-YAM" eventType="editingDidBegin" id="YZc-el-i5r"/>
+                                    <action selector="touchFrom:" destination="ag4-9W-YAM" eventType="touchUpInside" id="l9S-RU-jKa"/>
                                 </connections>
-                            </textField>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6I6-LO-dCv">
+                                <rect key="frame" x="172" y="557" width="30" height="30"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="tapRegist:" destination="ag4-9W-YAM" eventType="touchUpInside" id="1J1-Z7-SgA"/>
+                                    <segue destination="Orc-VB-Sg2" kind="unwind" unwindAction="returnList:" id="Jcd-Yp-QeR"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wfb-fK-aP4">
                                 <rect key="frame" x="110" y="196" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -260,11 +265,13 @@
                                     <action selector="didEndEditBudget:" destination="ag4-9W-YAM" eventType="editingDidEndOnExit" id="7Ky-QU-xLp"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="円" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ct8-EM-lQA">
-                                <rect key="frame" x="215" y="196" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnn-71-Hm4">
+                                <rect key="frame" x="249" y="196" width="97" height="30"/>
+                                <state key="normal" title="通貨"/>
+                                <connections>
+                                    <action selector="touchCurrency:" destination="ag4-9W-YAM" eventType="touchUpInside" id="WaK-MM-vHb"/>
+                                </connections>
+                            </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr3-0m-OyS">
                                 <rect key="frame" x="0.0" y="15" width="375" height="608"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -273,7 +280,7 @@
                                 </connections>
                             </button>
                             <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kj6-uJ-nem">
-                                <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                <rect key="frame" x="0.0" y="310" width="375" height="216"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <date key="date" timeIntervalSinceReferenceDate="477451778.06585199">
                                     <!--2016-02-18 01:29:38 +0000-->
@@ -283,14 +290,13 @@
                                     <action selector="didValueChanged:" destination="ag4-9W-YAM" eventType="valueChanged" id="OBI-6m-76Z"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6I6-LO-dCv">
-                                <rect key="frame" x="172" y="477" width="30" height="30"/>
-                                <state key="normal" title="登録"/>
+                            <pickerView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FB0-5y-Pbc">
+                                <rect key="frame" x="0.0" y="310" width="375" height="216"/>
                                 <connections>
-                                    <action selector="tapRegist:" destination="ag4-9W-YAM" eventType="touchUpInside" id="1J1-Z7-SgA"/>
-                                    <segue destination="Orc-VB-Sg2" kind="unwind" unwindAction="returnList:" id="Jcd-Yp-QeR"/>
+                                    <outlet property="dataSource" destination="ag4-9W-YAM" id="xI0-k7-533"/>
+                                    <outlet property="delegate" destination="ag4-9W-YAM" id="sHz-kA-JyW"/>
                                 </connections>
-                            </button>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -298,11 +304,13 @@
                     <connections>
                         <outlet property="budget" destination="Wfb-fK-aP4" id="ooN-Ll-zYH"/>
                         <outlet property="closeButton" destination="Yr3-0m-OyS" id="eeG-f0-LLX"/>
+                        <outlet property="currency" destination="Jnn-71-Hm4" id="RGL-FF-UnK"/>
                         <outlet property="datePicker" destination="Kj6-uJ-nem" id="4cE-q0-t2R"/>
                         <outlet property="destination" destination="ChZ-Cd-292" id="Tez-4N-MHT"/>
-                        <outlet property="from" destination="bp6-by-MwA" id="6R9-om-nGE"/>
+                        <outlet property="from" destination="0RG-R8-w5A" id="439-7I-CGo"/>
+                        <outlet property="pickerView" destination="FB0-5y-Pbc" id="Eby-Ua-yoL"/>
                         <outlet property="register" destination="6I6-LO-dCv" id="Qaf-od-PC3"/>
-                        <outlet property="to" destination="VG0-jn-N3Z" id="tZI-e8-Xol"/>
+                        <outlet property="to" destination="GBa-eW-t3d" id="hIB-aa-Jnq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncL-3q-NwE" userLabel="First Responder" sceneMemberID="firstResponder"/>

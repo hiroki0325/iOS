@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
     <entity name="Travel" representedClassName="TabiLog.Travel" syncable="YES">
         <attribute name="budget" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
-        <attribute name="budgetCurrency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="budgetCurrencyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="from" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="to" optional="YES" attributeType="Date" syncable="YES"/>

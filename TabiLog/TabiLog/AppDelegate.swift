@@ -43,6 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    // NSDateをフォーマットして返す
+    func getDateFormat(date: NSDate = NSDate()) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/M/d"
+        return dateFormatter.stringFromDate(date)
+    }
+
 
     // MARK: - Core Data stack
 

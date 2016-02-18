@@ -12,26 +12,30 @@ import CoreData
 class NewTravelViewController: UIViewController {
 
     @IBOutlet weak var destination: UITextField!
-    @IBOutlet weak var from: UITextField!
-    @IBOutlet weak var to: UITextField!
+    @IBOutlet weak var from: UIButton!
+    @IBOutlet weak var to: UIButton!
     @IBOutlet weak var budget: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var currency: UIButton!
     @IBOutlet weak var register: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var pickerView: UIPickerView!
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var selectedPeriod = "from"
     var fromDate:NSDate = NSDate()
     var toDate:NSDate = NSDate()
-    var budgetCurrency:String = "en"
+    var budgetCurrencyID:Int16 = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        currency.titleLabel!.text = "円"
+    }
+    
     @IBAction func tapRegist(sender: UIButton) {
-        // AppDeleteをコードで読み込む
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
         // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
         let managedObjectContext = appDelegate.managedObjectContext
                 
@@ -44,7 +48,7 @@ class NewTravelViewController: UIViewController {
         travel.from = fromDate
         travel.to = toDate
         travel.budget = Float(budget.text!)!
-        travel.budgetCurrency = "en"
+        travel.budgetCurrencyID = budgetCurrencyID
         
         // データの保存処理
         appDelegate.saveContext()
@@ -54,62 +58,76 @@ class NewTravelViewController: UIViewController {
     @IBAction func didFinishEditDestination(sender: UITextField) {
     }
     
+    @IBAction func didEndEditBudget(sender: UITextField) {
+        budget.resignFirstResponder()
+    }
+    
     @IBAction func touchCloseBtn(sender: UIButton) {
         self.view.endEditing(true)
         closeButton.hidden = true
         datePicker.hidden = true
-        register.hidden = false
+        pickerView.hidden = true
     }
     
-    @IBAction func touchFrom(sender: UITextField) {
+    
+    @IBAction func touchFrom(sender: UIButton) {
         self.view.endEditing(true)
         closeButton.hidden = false
         datePicker.hidden = false
-        register.hidden = true
         self.selectedPeriod = "from"
     }
     
-    @IBAction func touchTo(sender: UITextField) {
+    @IBAction func touchTo(sender: UIButton) {
         self.view.endEditing(true)
         closeButton.hidden = false
         datePicker.hidden = false
-        register.hidden = true
         self.selectedPeriod = "to"
     }
-    
-    @IBAction func didEndEditFrom(sender: UITextField) {
-        from.resignFirstResponder()
-    }
-    
-    @IBAction func didEndEditTo(sender: UITextField) {
-        to.resignFirstResponder()
-    }
 
+    @IBAction func touchCurrency(sender: UIButton) {
+        self.view.endEditing(true)
+        closeButton.hidden = false
+        pickerView.hidden = false
+    }
+    
     @IBAction func didValueChanged(sender: UIDatePicker) {
         if self.selectedPeriod == "from" {
-            from.text = getDateFormat(sender.date)
+            from.titleLabel?.text = appDelegate.getDateFormat(sender.date)
             fromDate = sender.date
         } else if selectedPeriod == "to" {
-            to.text = getDateFormat(sender.date)
+            to.titleLabel?.text = appDelegate.getDateFormat(sender.date)
             toDate = sender.date
         }
     }
     
-    // NSDateをフォーマットして返す
-    func getDateFormat(date: NSDate = NSDate()) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy/M/d"
-        return dateFormatter.stringFromDate(date)
-    }
-    
-    @IBAction func didEndEditBudget(sender: UITextField) {
-    }
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // データを配列で用意する
+    var currencyList = ["円", "ドル", "ペソ", "元"]
+        
+    // ピッカービューの列数
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // ピッカービューの行数
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return currencyList.count
+    }
+    
+    // ピッカービューに表示する文字
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return currencyList[row]
+    }
+    
+    // ピッカービューで選択されたときに行う処理
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        currency.titleLabel?.text = currencyList[row]
+        self.budgetCurrencyID = Int16(row)
+        print(currencyList[row])
+    }
 
 }
