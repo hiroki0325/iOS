@@ -79,16 +79,11 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     
     // 表示するセルの中身
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(
+        var cell = TravelListTableViewCell(
             style: .Default,
             reuseIdentifier: "travelList")
-        cell.textLabel?.text = travelDetail[indexPath.row]["destination"] as! String
-        
-        // 文字色を茶色にする
-        cell.textLabel?.textColor = UIColor.brownColor()
-        
-        // 文字サイズを20にする
-        cell.textLabel?.font = UIFont.systemFontOfSize(20)
+        cell.directionLabel?.text = travelDetail[indexPath.row]["destination"] as! String
+        //cell.periodLabel?.text = (travelDetail[indexPath.row]["budget"] as! String)
         
         // アイコンを付ける
         cell.accessoryType = .DisclosureIndicator

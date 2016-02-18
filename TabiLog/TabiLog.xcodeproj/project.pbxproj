@@ -19,6 +19,7 @@
 		F55FBD651C731B0400B57B24 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD641C731B0400B57B24 /* DetailViewController.swift */; };
 		F55FBD671C731B1B00B57B24 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */; };
 		F55FBD691C735FC200B57B24 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD681C735FC200B57B24 /* Travel.swift */; };
+		F55FBD6B1C7579C300B57B24 /* TravelListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD6A1C7579C300B57B24 /* TravelListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F55FBD641C731B0400B57B24 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		F55FBD681C735FC200B57B24 /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		F55FBD6A1C7579C300B57B24 /* TravelListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				F55FBD491C72F55E00B57B24 /* AppDelegate.swift */,
 				F55FBD4B1C72F55E00B57B24 /* ViewController.swift */,
 				F55FBD5E1C730C3F00B57B24 /* TravelListViewController.swift */,
+				F55FBD6A1C7579C300B57B24 /* TravelListTableViewCell.swift */,
 				F55FBD601C7319E200B57B24 /* NewTravelViewController.swift */,
 				F55FBD621C731A6200B57B24 /* SummaryViewController.swift */,
 				F55FBD641C731B0400B57B24 /* DetailViewController.swift */,
@@ -162,6 +165,7 @@
 				F55FBD671C731B1B00B57B24 /* ConfigViewController.swift in Sources */,
 				F55FBD5F1C730C3F00B57B24 /* TravelListViewController.swift in Sources */,
 				F55FBD521C72F55E00B57B24 /* TabiLog.xcdatamodeld in Sources */,
+				F55FBD6B1C7579C300B57B24 /* TravelListTableViewCell.swift in Sources */,
 				F55FBD611C7319E200B57B24 /* NewTravelViewController.swift in Sources */,
 				F55FBD691C735FC200B57B24 /* Travel.swift in Sources */,
 				F55FBD631C731A6200B57B24 /* SummaryViewController.swift in Sources */,
@@ -313,6 +317,7 @@
 				F55FBD5D1C72F55E00B57B24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

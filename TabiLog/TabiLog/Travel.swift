@@ -15,5 +15,6 @@ class Travel: NSManagedObject {
     @NSManaged var destination: String
     @NSManaged var from: NSDate
     @NSManaged var to: NSDate
+    @NSManaged var budgetCurrency: String
     
 }

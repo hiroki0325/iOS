@@ -66,15 +66,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelList" id="93o-0K-uh1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelList" id="93o-0K-uh1" customClass="TravelListTableViewCell" customModule="TabiLog" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="93o-0K-uh1" id="mXl-83-CGK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="期間：from ~ to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xda-3V-qSN">
+                                                    <rect key="frame" x="101" y="16" width="121" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="行き先" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0F-tv-zwR">
+                                                    <rect key="frame" x="17" y="6" width="66" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="MLB-w5-ajj" kind="show" identifier="showTravelDetail" action="showDetailViewController:sender:" id="5T3-Ia-r8z"/>
+                                            <outlet property="directionLabel" destination="L0F-tv-zwR" id="0X0-TF-iYd"/>
+                                            <outlet property="periodLabel" destination="Xda-3V-qSN" id="qlV-6H-0rx"/>
+                                            <segue destination="MLB-w5-ajj" kind="show" identifier="showTravelDetail" id="vg1-Pz-tBy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -213,7 +229,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ChZ-Cd-292">
                                 <rect key="frame" x="110" y="95" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="didFinishEditDestination:" destination="ag4-9W-YAM" eventType="editingDidEndOnExit" id="3Zd-ZF-szP"/>
                                 </connections>
@@ -222,17 +238,51 @@
                                 <rect key="frame" x="110" y="145" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wfb-fK-aP4">
-                                <rect key="frame" x="110" y="196" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndEditFrom:" destination="ag4-9W-YAM" eventType="editingDidEndOnExit" id="ezj-0h-0DH"/>
+                                    <action selector="touchFrom:" destination="ag4-9W-YAM" eventType="editingDidBegin" id="TH1-T3-83d"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VG0-jn-N3Z">
                                 <rect key="frame" x="239" y="144" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="didEndEditTo:" destination="ag4-9W-YAM" eventType="editingDidEndOnExit" id="t3d-eT-BUz"/>
+                                    <action selector="touchTo:" destination="ag4-9W-YAM" eventType="editingDidBegin" id="YZc-el-i5r"/>
+                                </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wfb-fK-aP4">
+                                <rect key="frame" x="110" y="196" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="didEndEditBudget:" destination="ag4-9W-YAM" eventType="editingDidEndOnExit" id="7Ky-QU-xLp"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="円" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ct8-EM-lQA">
+                                <rect key="frame" x="215" y="196" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr3-0m-OyS">
+                                <rect key="frame" x="0.0" y="15" width="375" height="608"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="touchCloseBtn:" destination="ag4-9W-YAM" eventType="touchUpInside" id="elT-rH-3wN"/>
+                                </connections>
+                            </button>
+                            <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kj6-uJ-nem">
+                                <rect key="frame" x="0.0" y="407" width="375" height="216"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <date key="date" timeIntervalSinceReferenceDate="477451778.06585199">
+                                    <!--2016-02-18 01:29:38 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ja"/>
+                                <connections>
+                                    <action selector="didValueChanged:" destination="ag4-9W-YAM" eventType="valueChanged" id="OBI-6m-76Z"/>
+                                </connections>
+                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6I6-LO-dCv">
                                 <rect key="frame" x="172" y="477" width="30" height="30"/>
                                 <state key="normal" title="登録"/>
@@ -241,17 +291,18 @@
                                     <segue destination="Orc-VB-Sg2" kind="unwind" unwindAction="returnList:" id="Jcd-Yp-QeR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="円" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ct8-EM-lQA">
-                                <rect key="frame" x="215" y="196" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="budget" destination="Wfb-fK-aP4" id="ooN-Ll-zYH"/>
+                        <outlet property="closeButton" destination="Yr3-0m-OyS" id="eeG-f0-LLX"/>
+                        <outlet property="datePicker" destination="Kj6-uJ-nem" id="4cE-q0-t2R"/>
                         <outlet property="destination" destination="ChZ-Cd-292" id="Tez-4N-MHT"/>
+                        <outlet property="from" destination="bp6-by-MwA" id="6R9-om-nGE"/>
+                        <outlet property="register" destination="6I6-LO-dCv" id="Qaf-od-PC3"/>
+                        <outlet property="to" destination="VG0-jn-N3Z" id="tZI-e8-Xol"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncL-3q-NwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
