@@ -20,6 +20,10 @@
 		F55FBD671C731B1B00B57B24 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */; };
 		F55FBD691C735FC200B57B24 /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD681C735FC200B57B24 /* Travel.swift */; };
 		F55FBD6B1C7579C300B57B24 /* TravelListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD6A1C7579C300B57B24 /* TravelListTableViewCell.swift */; };
+		F55FBD6D1C7616A300B57B24 /* UserPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD6C1C7616A300B57B24 /* UserPolicyViewController.swift */; };
+		F55FBD6F1C7616C300B57B24 /* CurrencyConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD6E1C7616C200B57B24 /* CurrencyConfigViewController.swift */; };
+		F55FBD751C76FB4B00B57B24 /* PaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD741C76FB4B00B57B24 /* PaymentDetailViewController.swift */; };
+		F55FBD771C76FD2E00B57B24 /* CategoryConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		F55FBD681C735FC200B57B24 /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		F55FBD6A1C7579C300B57B24 /* TravelListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelListTableViewCell.swift; sourceTree = "<group>"; };
+		F55FBD6C1C7616A300B57B24 /* UserPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPolicyViewController.swift; sourceTree = "<group>"; };
+		F55FBD6E1C7616C200B57B24 /* CurrencyConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConfigViewController.swift; sourceTree = "<group>"; };
+		F55FBD741C76FB4B00B57B24 /* PaymentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailViewController.swift; sourceTree = "<group>"; };
+		F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryConfigViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,10 @@
 				F55FBD621C731A6200B57B24 /* SummaryViewController.swift */,
 				F55FBD641C731B0400B57B24 /* DetailViewController.swift */,
 				F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */,
+				F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */,
+				F55FBD741C76FB4B00B57B24 /* PaymentDetailViewController.swift */,
+				F55FBD6E1C7616C200B57B24 /* CurrencyConfigViewController.swift */,
+				F55FBD6C1C7616A300B57B24 /* UserPolicyViewController.swift */,
 				F55FBD4D1C72F55E00B57B24 /* Main.storyboard */,
 				F55FBD531C72F55E00B57B24 /* Assets.xcassets */,
 				F55FBD551C72F55E00B57B24 /* LaunchScreen.storyboard */,
@@ -160,15 +172,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55FBD751C76FB4B00B57B24 /* PaymentDetailViewController.swift in Sources */,
 				F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */,
 				F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */,
 				F55FBD671C731B1B00B57B24 /* ConfigViewController.swift in Sources */,
 				F55FBD5F1C730C3F00B57B24 /* TravelListViewController.swift in Sources */,
+				F55FBD6D1C7616A300B57B24 /* UserPolicyViewController.swift in Sources */,
+				F55FBD6F1C7616C300B57B24 /* CurrencyConfigViewController.swift in Sources */,
 				F55FBD521C72F55E00B57B24 /* TabiLog.xcdatamodeld in Sources */,
 				F55FBD6B1C7579C300B57B24 /* TravelListTableViewCell.swift in Sources */,
 				F55FBD611C7319E200B57B24 /* NewTravelViewController.swift in Sources */,
 				F55FBD691C735FC200B57B24 /* Travel.swift in Sources */,
 				F55FBD631C731A6200B57B24 /* SummaryViewController.swift in Sources */,
+				F55FBD771C76FD2E00B57B24 /* CategoryConfigViewController.swift in Sources */,
 				F55FBD651C731B0400B57B24 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

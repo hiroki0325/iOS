@@ -93,8 +93,6 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     // 選択された時に行う処理
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        // SecondViewController へ遷移するために Segue を呼び出す
-        performSegueWithIdentifier("showTravelDetail",sender: nil)
     }
     
     // Segueで画面遷移する時

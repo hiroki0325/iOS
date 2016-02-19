@@ -32,7 +32,7 @@ class NewTravelViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        currency.titleLabel!.text = "円"
+        currency.setTitle("円", forState: UIControlState.Normal)
     }
     
     @IBAction func tapRegist(sender: UIButton) {
@@ -92,10 +92,10 @@ class NewTravelViewController: UIViewController {
     
     @IBAction func didValueChanged(sender: UIDatePicker) {
         if self.selectedPeriod == "from" {
-            from.titleLabel?.text = appDelegate.getDateFormat(sender.date)
+            from.setTitle(appDelegate.getDateFormat(sender.date), forState: UIControlState.Normal)
             fromDate = sender.date
         } else if selectedPeriod == "to" {
-            to.titleLabel?.text = appDelegate.getDateFormat(sender.date)
+            to.setTitle(appDelegate.getDateFormat(sender.date), forState: UIControlState.Normal)
             toDate = sender.date
         }
     }
@@ -125,9 +125,8 @@ class NewTravelViewController: UIViewController {
     
     // ピッカービューで選択されたときに行う処理
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currency.titleLabel?.text = currencyList[row]
+        currency.setTitle(currencyList[row], forState: UIControlState.Normal)
         self.budgetCurrencyID = Int16(row)
-        print(currencyList[row])
     }
 
 }
