@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F50D30151C79D41100F23AD1 /* PieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50D30141C79D41100F23AD1 /* PieGraphView.swift */; };
 		F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD491C72F55E00B57B24 /* AppDelegate.swift */; };
 		F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD4B1C72F55E00B57B24 /* ViewController.swift */; };
 		F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBD4D1C72F55E00B57B24 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F50D30141C79D41100F23AD1 /* PieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieGraphView.swift; sourceTree = "<group>"; };
 		F55FBD461C72F55E00B57B24 /* TabiLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabiLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55FBD491C72F55E00B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55FBD4B1C72F55E00B57B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */,
 				F55FBD6E1C7616C200B57B24 /* CurrencyConfigViewController.swift */,
 				F55FBD6C1C7616A300B57B24 /* UserPolicyViewController.swift */,
+				F50D30141C79D41100F23AD1 /* PieGraphView.swift */,
 				F55FBD4D1C72F55E00B57B24 /* Main.storyboard */,
 				F55FBD531C72F55E00B57B24 /* Assets.xcassets */,
 				F55FBD551C72F55E00B57B24 /* LaunchScreen.storyboard */,
@@ -183,6 +186,7 @@
 				F55FBD5F1C730C3F00B57B24 /* TravelListViewController.swift in Sources */,
 				F55FBD6D1C7616A300B57B24 /* UserPolicyViewController.swift in Sources */,
 				F55FBD6F1C7616C300B57B24 /* CurrencyConfigViewController.swift in Sources */,
+				F50D30151C79D41100F23AD1 /* PieGraphView.swift in Sources */,
 				F55FBD521C72F55E00B57B24 /* TabiLog.xcdatamodeld in Sources */,
 				F55FBD6B1C7579C300B57B24 /* TravelListTableViewCell.swift in Sources */,
 				F55FBD611C7319E200B57B24 /* NewTravelViewController.swift in Sources */,
