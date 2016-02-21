@@ -60,7 +60,7 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
                     "to":travel.to,
                     "budget":travel.budget 
                 ]
-                travelDetail.append(newTravel)
+                self.travelDetail.append(newTravel)
             }
         } catch let error1 as NSError {
             error = error1
@@ -92,7 +92,7 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     
     // 選択された時に行う処理
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        appDelegate.travelID = indexPath.row
     }
     
     // Segueで画面遷移する時

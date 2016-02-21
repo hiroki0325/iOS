@@ -137,11 +137,45 @@
                                 <rect key="frame" x="11" y="235" width="353" height="222"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="行き先" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWb-hb-Amf">
+                                <rect key="frame" x="20" y="85" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="支出総額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9n1-Gf-c7W">
+                                <rect key="frame" x="106" y="124" width="162" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金額" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-z8-kwg">
+                                <rect key="frame" x="80" y="152" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="期間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsr-Va-txa">
+                                <rect key="frame" x="109" y="85" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIt-Kq-OVE">
+                                <rect key="frame" x="245" y="148" width="30" height="30"/>
+                                <state key="normal" title="円"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Summary" id="Wjt-te-Ahp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="currencyButton" destination="mIt-Kq-OVE" id="o5v-le-4UR"/>
+                        <outlet property="directionLabel" destination="xWb-hb-Amf" id="Xkn-TM-3ao"/>
+                        <outlet property="periodLabel" destination="Fsr-Va-txa" id="Ces-pw-Hry"/>
+                        <outlet property="priceLabel" destination="lQ6-z8-kwg" id="B6O-N3-Pei"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQO-07-yBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,6 +203,26 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iM5-bf-711" id="nqd-W5-GFF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We7-vG-CtC">
+                                                    <rect key="frame" x="26" y="11" width="71" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金額＋通貨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fa-Hn-VQQ">
+                                                    <rect key="frame" x="190" y="11" width="93" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="勘定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ3-b1-usl">
+                                                    <rect key="frame" x="113" y="11" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="8Y8-gQ-AHU" kind="show" identifier="paymentDetail" id="W3p-Oy-kCW"/>
@@ -185,6 +239,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Detail" id="i2G-lS-U12"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="J6g-df-mBG" id="m1P-Sw-YpV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7U-3D-ed4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -296,14 +353,14 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eba-Cy-bAB">
-                                <rect key="frame" x="172" y="143" width="30" height="30"/>
+                                <rect key="frame" x="131" y="143" width="111" height="30"/>
                                 <state key="normal" title="日付"/>
                                 <connections>
                                     <action selector="touchDate:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="MJt-IF-inS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y23-QG-tsq">
-                                <rect key="frame" x="172" y="203" width="30" height="30"/>
+                                <rect key="frame" x="153" y="203" width="70" height="30"/>
                                 <state key="normal" title="分類"/>
                                 <connections>
                                     <action selector="touchCategory:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="eDF-Ua-LgV"/>
@@ -320,7 +377,7 @@
                                 <rect key="frame" x="67" y="373" width="240" height="175"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwc-Ez-vdE">
-                                <rect key="frame" x="283" y="275" width="30" height="30"/>
+                                <rect key="frame" x="265" y="275" width="50" height="30"/>
                                 <state key="normal" title="通貨"/>
                                 <connections>
                                     <action selector="touchCurrency:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="IFI-BG-xNx"/>
@@ -330,7 +387,14 @@
                                 <rect key="frame" x="172" y="578" width="30" height="30"/>
                                 <state key="normal" title="登録"/>
                                 <connections>
-                                    <action selector="touchRegist:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="jME-v0-lNN"/>
+                                    <action selector="touchRegist:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="CHn-ep-EI3"/>
+                                    <segue destination="iyl-e5-jLV" kind="unwind" unwindAction="returnDetail:" id="EJ2-xd-FAr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpE-3Q-Phr">
+                                <rect key="frame" x="0.0" y="64" width="369" height="554"/>
+                                <connections>
+                                    <action selector="touchCloseBtn:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="Jxf-Gi-Nir"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="l9k-na-VtJ">
@@ -338,25 +402,36 @@
                                 <date key="date" timeIntervalSinceReferenceDate="477558981.016895">
                                     <!--2016-02-19 07:16:21 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="ja"/>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="8Y8-gQ-AHU" eventType="valueChanged" id="Ffs-ub-nb1"/>
+                                </connections>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xoD-cG-rc2">
                                 <rect key="frame" x="0.0" y="363" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8Y8-gQ-AHU" id="uT9-1g-NN9"/>
+                                    <outlet property="delegate" destination="8Y8-gQ-AHU" id="544-f0-zGG"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="category" destination="y23-QG-tsq" id="3wH-hc-UxP"/>
-                        <outlet property="date" destination="eba-Cy-bAB" id="oyh-CY-QvG"/>
+                        <outlet property="categoryBtn" destination="y23-QG-tsq" id="JcM-nv-GSx"/>
+                        <outlet property="closeBtn" destination="fpE-3Q-Phr" id="LLL-hz-7Jw"/>
+                        <outlet property="currencyBtn" destination="bwc-Ez-vdE" id="yIA-4M-wgk"/>
+                        <outlet property="dateBtn" destination="eba-Cy-bAB" id="Vhu-ym-h8O"/>
                         <outlet property="datePicker" destination="l9k-na-VtJ" id="jdq-Il-esm"/>
                         <outlet property="imageView" destination="Aea-bR-CId" id="IYF-rH-6QS"/>
                         <outlet property="pickerView" destination="xoD-cG-rc2" id="ooV-rQ-Eh8"/>
-                        <outlet property="picture" destination="RCq-qd-BdO" id="fzQ-g6-JMN"/>
+                        <outlet property="pictureBtn" destination="RCq-qd-BdO" id="I42-7z-sEu"/>
                         <outlet property="price" destination="nx2-1N-L9r" id="jrR-5i-S4n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDR-Q2-d50" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iyl-e5-jLV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="956.5" y="2833.5"/>
         </scene>
@@ -522,6 +597,13 @@
                                     <action selector="touchCurrency:" destination="ag4-9W-YAM" eventType="touchUpInside" id="WaK-MM-vHb"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr3-0m-OyS">
+                                <rect key="frame" x="0.0" y="15" width="375" height="608"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="touchCloseBtn:" destination="ag4-9W-YAM" eventType="touchUpInside" id="elT-rH-3wN"/>
+                                </connections>
+                            </button>
                             <datePicker hidden="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Kj6-uJ-nem">
                                 <rect key="frame" x="0.0" y="310" width="375" height="216"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -540,13 +622,6 @@
                                     <outlet property="delegate" destination="ag4-9W-YAM" id="sHz-kA-JyW"/>
                                 </connections>
                             </pickerView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr3-0m-OyS">
-                                <rect key="frame" x="0.0" y="15" width="375" height="608"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="touchCloseBtn:" destination="ag4-9W-YAM" eventType="touchUpInside" id="elT-rH-3wN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

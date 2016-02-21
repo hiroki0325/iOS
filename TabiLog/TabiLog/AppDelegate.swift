@@ -13,10 +13,18 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let myDefault = NSUserDefaults.standardUserDefaults()
 
+    var travelID:Int = 0
+    var defaultCurrency = [["円":1], ["ドル":0.013], ["ペソ":0.4], ["元":0.8], ["ドン":0.03]]
+    var defaultCategory = ["日用品","食費","交通費","娯楽費"]
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        myDefault.setObject(self.defaultCategory, forKey: "category")
+        myDefault.setObject(self.defaultCurrency, forKey: "currency")
+        myDefault.synchronize()
+
         return true
     }
 
@@ -36,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
+}
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
@@ -44,13 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
     
-    // NSDateをフォーマットして返す
+    // NSDateをフォーマットして返す（年月日）
     func getDateFormat(date: NSDate = NSDate()) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/M/d"
         return dateFormatter.stringFromDate(date)
     }
-
+    // NSDateをフォーマットして返す（月日）
+    func getDateFormat2(date: NSDate = NSDate()) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "M月d日"
+        return dateFormatter.stringFromDate(date)
+    }
 
     // MARK: - Core Data stack
 
@@ -80,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
 
-            dict[NSUnderlyingErrorKey] = error as NSError
+            dict[NSUnderlyingErrorKey] = error as! NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.

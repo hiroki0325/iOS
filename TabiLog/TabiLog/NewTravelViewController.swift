@@ -22,6 +22,7 @@ class NewTravelViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var currencyList:[String] = []
     var selectedPeriod = "from"
     var fromDate:NSDate = NSDate()
     var toDate:NSDate = NSDate()
@@ -29,6 +30,15 @@ class NewTravelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        var currencyArray:Array = myDefault.arrayForKey("currency")!
+        for currency in currencyArray {
+            var currencyDictionary = currency as! NSDictionary
+            for(key,data) in currencyDictionary {
+                currencyList.append(key as! String)
+            }
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,7 +52,7 @@ class NewTravelViewController: UIViewController {
         // 新しくデータを追加するためのEntityを作成します
         let managedObject: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Travel", inManagedObjectContext: managedObjectContext)
             
-        // Todo EntityからObjectを生成し、Attributesに接続して値を代入
+        // travel EntityからObjectを生成し、Attributesに接続して値を代入
         let travel = managedObject as! Travel
         travel.destination = destination.text!
         travel.from = fromDate
@@ -105,9 +115,6 @@ class NewTravelViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // データを配列で用意する
-    var currencyList = ["円", "ドル", "ペソ", "元"]
-        
     // ピッカービューの列数
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -120,12 +127,12 @@ class NewTravelViewController: UIViewController {
     
     // ピッカービューに表示する文字
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyList[row]
+        return currencyList[row] 
     }
     
     // ピッカービューで選択されたときに行う処理
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currency.setTitle(currencyList[row], forState: UIControlState.Normal)
+        currency.setTitle(currencyList[row] , forState: UIControlState.Normal)
         self.budgetCurrencyID = Int16(row)
     }
 
