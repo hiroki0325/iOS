@@ -44,7 +44,7 @@ class SummaryViewController: UIViewController {
         params.append(["value":5,"color":UIColor.blueColor()])
         params.append(["value":8,"color":UIColor.greenColor()])
         params.append(["value":10,"color":UIColor.yellowColor()])
-        graphView = PieGraphView(frame: CGRectMake(30, 150, 320, 320), params: params)
+        graphView = PieGraphView(frame: CGRectMake(30, 200, 320, 320), params: params)
         self.view.addSubview(graphView)
         graphView.startAnimating()
     }
@@ -56,6 +56,8 @@ class SummaryViewController: UIViewController {
         // ユーザーデフォルトから通貨の情報を取得
         var myDefault = NSUserDefaults.standardUserDefaults()
         var currencyArray = myDefault.arrayForKey("currency")!
+        var categoryArray = myDefault.arrayForKey("category") as Array!
+        print(categoryArray)
         for currency in currencyArray {
             var currencyDictionary = currency as! NSDictionary
             for(key,data) in currencyDictionary
