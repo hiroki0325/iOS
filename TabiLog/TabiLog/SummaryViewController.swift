@@ -17,7 +17,6 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var currencyButton: UIButton!
 
-    var graphView:PieGraphView!;
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var paymentDetail:[NSDictionary] = []
     
@@ -39,14 +38,6 @@ class SummaryViewController: UIViewController {
         priceLabel.text = calculatePrice()
         currencyButton.setTitle("円", forState: .Normal)
         
-        var params = [Dictionary<String,AnyObject>]()
-        params.append(["value":7,"color":UIColor.redColor()])
-        params.append(["value":5,"color":UIColor.blueColor()])
-        params.append(["value":8,"color":UIColor.greenColor()])
-        params.append(["value":10,"color":UIColor.yellowColor()])
-        graphView = PieGraphView(frame: CGRectMake(30, 200, 320, 320), params: params)
-        self.view.addSubview(graphView)
-        graphView.startAnimating()
     }
     
     func calculatePrice () -> String {

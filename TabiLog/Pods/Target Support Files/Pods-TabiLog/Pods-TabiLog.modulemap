@@ -1,0 +1,6 @@
+framework module Pods_TabiLog {
+  umbrella header "Pods-TabiLog-umbrella.h"
+
+  export *
+  module * { export * }
+}
