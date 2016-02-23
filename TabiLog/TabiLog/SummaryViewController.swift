@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Charts
 
 class SummaryViewController: UIViewController {
     
@@ -16,9 +17,12 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var periodLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var currencyButton: UIButton!
+    @IBOutlet weak var pieChartView: PieChartView!
 
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var paymentDetail:[NSDictionary] = []
+    var categories:[String] = []
+    var prices:[Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,18 +41,26 @@ class SummaryViewController: UIViewController {
         periodLabel.text = "period"
         priceLabel.text = calculatePrice()
         currencyButton.setTitle("円", forState: .Normal)
-        
+
+        // グラフの表示
+        setChart(categories, values: prices)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func calculatePrice () -> String {
         var totalPrice:Double = 0
         var currencyList:[Double] = []
+        self.prices = [0,0,0,0]
         
         // ユーザーデフォルトから通貨の情報を取得
-        var myDefault = NSUserDefaults.standardUserDefaults()
+        let myDefault = NSUserDefaults.standardUserDefaults()
         var currencyArray = myDefault.arrayForKey("currency")!
         var categoryArray = myDefault.arrayForKey("category") as Array!
-        print(categoryArray)
+        self.categories = categoryArray as! [String]
         for currency in currencyArray {
             var currencyDictionary = currency as! NSDictionary
             for(key,data) in currencyDictionary
@@ -61,10 +73,11 @@ class SummaryViewController: UIViewController {
         read()
         for payment in self.paymentDetail{
             var currencyID = payment["currencyID"] as! Int
+            var categoryID = payment["categoryID"] as! Int
             var price = payment["price"] as! Double
             totalPrice += price / currencyList[currencyID]
+            self.prices[categoryID] += price / currencyList[currencyID]
         }
-
         return String(Int(totalPrice as! Double))
     }
     
@@ -107,10 +120,49 @@ class SummaryViewController: UIViewController {
             error = error1
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func setChart(dataPoints: [String], values: [Double]) {
+        
+        self.pieChartView.animate(yAxisDuration: 2.0)
+        // グラフの余白
+        self.pieChartView.extraTopOffset = 0.0
+        self.pieChartView.extraRightOffset = 0.0
+        self.pieChartView.extraBottomOffset = 0.0
+        self.pieChartView.extraLeftOffset = 0.0
+        
+        // タップでデータを選択できるか
+        self.pieChartView.highlightPerTapEnabled = false
+        // 回転させることが出来るか
+        self.pieChartView.rotationEnabled = false
+        
+        self.pieChartView.noDataText = "表示するデータがありません"
+        
+        self.pieChartView.usePercentValuesEnabled = true
+        self.pieChartView.descriptionText = ""
+        
+        
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: nil)
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+        pieChartDataSet.colors = ChartColorTemplates.colorful()
+        
+        
+        // %表示
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = NSNumberFormatterStyle.PercentStyle;
+        numberFormatter.maximumFractionDigits = 1;
+        numberFormatter.multiplier = NSNumber(int: 1)
+        numberFormatter.percentSymbol = " %";
+        pieChartData.setValueFormatter(numberFormatter)
+        
+        self.pieChartView.data = pieChartData
+        
     }
-
+    
 }

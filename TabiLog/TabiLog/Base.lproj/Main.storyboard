@@ -147,7 +147,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金額" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-z8-kwg">
                                 <rect key="frame" x="80" y="152" width="163" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -159,8 +159,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIt-Kq-OVE">
                                 <rect key="frame" x="245" y="148" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="円"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UmO-Ra-hJl" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="22" y="192" width="327" height="310"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -170,6 +175,7 @@
                         <outlet property="currencyButton" destination="mIt-Kq-OVE" id="o5v-le-4UR"/>
                         <outlet property="directionLabel" destination="xWb-hb-Amf" id="Xkn-TM-3ao"/>
                         <outlet property="periodLabel" destination="Fsr-Va-txa" id="Ces-pw-Hry"/>
+                        <outlet property="pieChartView" destination="UmO-Ra-hJl" id="a6v-mB-Atb"/>
                         <outlet property="priceLabel" destination="lQ6-z8-kwg" id="B6O-N3-Pei"/>
                     </connections>
                 </viewController>
