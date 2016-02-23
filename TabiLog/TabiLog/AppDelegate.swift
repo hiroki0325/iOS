@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let myDefault = NSUserDefaults.standardUserDefaults()
 
     var travelID:Int = 0
+    var period:String = ""
+    var direction:String = ""
     var defaultCurrency = [["円":1], ["ドル":0.013], ["ペソ":0.4], ["元":0.8], ["ドン":0.03]]
     var defaultCategory = ["日用品","食費","交通費","娯楽費"]
 

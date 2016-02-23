@@ -73,7 +73,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //performSegueWithIdentifier("paymentDetail", sender: nil)
+        
     }
     
     @IBAction func returnDetail(segue: UIStoryboardSegue){

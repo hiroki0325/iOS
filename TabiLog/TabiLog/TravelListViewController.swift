@@ -17,6 +17,7 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var travelNum = 0
     var travelDetail:[NSDictionary] = []
+    var period = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +93,12 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     
     // 選択された時に行う処理
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        appDelegate.direction = (travelDetail[indexPath.row]["destination"] as? String)!
         appDelegate.travelID = indexPath.row
+        var from = appDelegate.getDateFormat(travelDetail[indexPath.row]["from"] as! NSDate)
+        var to = appDelegate.getDateFormat(travelDetail[indexPath.row]["to"] as! NSDate)
+        period = "\(from)~\(to)"
+        appDelegate.period = period
     }
     
     // Segueで画面遷移する時

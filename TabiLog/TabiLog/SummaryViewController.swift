@@ -20,6 +20,8 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var pieChartView: PieChartView!
 
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var direction = "direction"
+    var period = "period"
     var paymentDetail:[NSDictionary] = []
     var categories:[String] = []
     var prices:[Double] = []
@@ -37,8 +39,8 @@ class SummaryViewController: UIViewController {
         //TODO:↓動かない…//
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.Plain, target: self, action: "newTravel")
         
-        directionLabel.text = "direction"
-        periodLabel.text = "period"
+        directionLabel.text = appDelegate.direction
+        periodLabel.text = appDelegate.period
         priceLabel.text = calculatePrice()
         currencyButton.setTitle("円", forState: .Normal)
 
