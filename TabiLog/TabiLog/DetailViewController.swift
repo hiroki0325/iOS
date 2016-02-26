@@ -27,19 +27,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(animated: Bool) {
         read()
-        self.tableView.reloadData()
-        // ユーザーデフォルトを用意する
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        // データを読みだす
-        self.categoryList = myDefault.arrayForKey("category")!
-        var currencyArray = myDefault.arrayForKey("currency")!
-        for currency in currencyArray {
-            var currencyDictionary = currency as! NSDictionary
-            for(key,data) in currencyDictionary
-            {
-                self.currencyList.append(key as! String)
-            }
+        appDelegate.readCurrency()
+        for var tmpCurrency in appDelegate.currencyList{
+            self.currencyList.append(tmpCurrency["name"] as! String)
         }
+        self.tableView.reloadData()
+
     }
 
     override func didReceiveMemoryWarning() {

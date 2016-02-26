@@ -26,46 +26,10 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     override func viewWillAppear(animated: Bool) {
-        read()
+        appDelegate.readTravel()
+        self.travelNum = appDelegate.travelNum
+        self.travelDetail = appDelegate.travelDetail
         self.travelListTableView.reloadData()
-    }
-    
-    
-    // すでに存在するデータの読み込み処理
-    func read() {
-        // データの初期化
-        self.travelDetail = []
-        
-        // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
-        let managedObjectContext = appDelegate.managedObjectContext
-            
-        // Entityを指定する設定
-        let entityDiscription = NSEntityDescription.entityForName("Travel", inManagedObjectContext: managedObjectContext)
-    
-        let fetchRequest = NSFetchRequest(entityName: "Travel")
-        fetchRequest.entity = entityDiscription
-        
-        // errorが発生した際にキャッチするための変数
-        var error: NSError? = nil
-        
-        // フェッチリクエスト (データの検索と取得処理) の実行
-        do {
-            let results = try managedObjectContext.executeFetchRequest(fetchRequest)
-            self.travelNum = results.count
-            for managedObject in results {
-                let travel = managedObject as! Travel
-                var newTravel:NSDictionary =
-                [
-                    "destination":travel.destination,
-                    "from":travel.from,
-                    "to":travel.to,
-                    "budget":travel.budget 
-                ]
-                self.travelDetail.append(newTravel)
-            }
-        } catch let error1 as NSError {
-            error = error1
-        }
     }
     
     func newTravel(){

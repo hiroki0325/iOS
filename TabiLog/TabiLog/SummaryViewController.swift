@@ -25,6 +25,8 @@ class SummaryViewController: UIViewController {
     var paymentDetail:[NSDictionary] = []
     var categories:[String] = []
     var prices:[Double] = []
+    var categoriesForPiecharts:[String] = []
+    var pricesForPiecharts:[Double] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,20 +34,17 @@ class SummaryViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController!.selectedIndex = 1
-        // 上記だけでOKっぽいが、後で不具合が生じた時のために下記も残しておく //
-        //let vc = self.tabBarController!.viewControllers![1]
-        //self.tabBarController!.selectedViewController = vc
-        
-        //TODO:↓動かない…//
-        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.Plain, target: self, action: "newTravel")
         
         directionLabel.text = appDelegate.direction
         periodLabel.text = appDelegate.period
         priceLabel.text = calculatePrice()
         currencyButton.setTitle("円", forState: .Normal)
-
-        // グラフの表示
-        setChart(categories, values: prices)
+        
+        // 0円の分類を円グラフから消す
+        formatForPiechart()
+        
+        // 円グラフの表示
+        setChart(categoriesForPiecharts, values: pricesForPiecharts)
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,35 +52,7 @@ class SummaryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func calculatePrice () -> String {
-        var totalPrice:Double = 0
-        var currencyList:[Double] = []
-        self.prices = [0,0,0,0]
-        
-        // ユーザーデフォルトから通貨の情報を取得
-        let myDefault = NSUserDefaults.standardUserDefaults()
-        var currencyArray = myDefault.arrayForKey("currency")!
-        var categoryArray = myDefault.arrayForKey("category") as Array!
-        self.categories = categoryArray as! [String]
-        for currency in currencyArray {
-            var currencyDictionary = currency as! NSDictionary
-            for(key,data) in currencyDictionary
-            {
-                currencyList.append(data as! Double)
-            }
-        }
-        
-        // コアデータからデータを取得
-        read()
-        for payment in self.paymentDetail{
-            var currencyID = payment["currencyID"] as! Int
-            var categoryID = payment["categoryID"] as! Int
-            var price = payment["price"] as! Double
-            totalPrice += price / currencyList[currencyID]
-            self.prices[categoryID] += price / currencyList[currencyID]
-        }
-        return String(Int(totalPrice as! Double))
-    }
+
     
     // すでに存在するデータの読み込み処理
     func read() {
@@ -120,6 +91,58 @@ class SummaryViewController: UIViewController {
             }
         } catch let error1 as NSError {
             error = error1
+        }
+    }
+    
+    func calculatePrice () -> String {
+        var totalPrice:Double = 0
+        var currencyList:[Double] = []
+        self.prices = []
+        
+        // 分類情報の取得
+        let myDefault = NSUserDefaults.standardUserDefaults()
+        var categoryArray = myDefault.arrayForKey("category") as Array!
+        self.categories = categoryArray as! [String]
+        
+        // 分類ごとの合計金額計算用配列の初期化
+        for(var i=0;i<self.categories.count;i++){
+            self.prices.append(0)
+        }
+        
+        // 通貨情報の取得
+        appDelegate.readCurrency()
+        var currencyArray = appDelegate.currencyList
+        for currency in currencyArray {
+            currencyList.append(currency["rate"] as! Double)
+        }
+        
+        // コアデータからデータを取得
+        read()
+        for payment in self.paymentDetail{
+            var currencyID = payment["currencyID"] as! Int
+            var categoryID = payment["categoryID"] as! Int
+            var price = payment["price"] as! Double
+            
+            // 合計金額に加算
+            totalPrice += price / currencyList[currencyID]
+            
+            // 分類ごとの合計金額を計算（円グラフ用）
+            self.prices[categoryID] += price / currencyList[currencyID]
+        }
+        return String(Int(totalPrice as! Double))
+    }
+    
+    func formatForPiechart(){
+        self.categoriesForPiecharts = []
+        self.pricesForPiecharts = []
+        
+        var i = 0
+        for data in self.prices{
+            if data != 0 {
+                self.pricesForPiecharts.append(data)
+                self.categoriesForPiecharts.append(self.categories[i])
+            }
+            i++
         }
     }
     

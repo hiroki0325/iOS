@@ -19,12 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var travelID:Int = 0
     var period:String = ""
     var direction:String = ""
-    var defaultCurrency = [["円":1], ["ドル":0.013], ["ペソ":0.4], ["元":0.8], ["ドン":0.03]]
+    var defaultCurrency = [["name":"円","rate":1], ["name":"ドル","rate":0.013], ["name":"ペソ","rate":0.4], ["name":"元","rate":0.8], ["name":"ドン","rate":0.03]]
     var defaultCategory = ["日用品","食費","交通費","娯楽費"]
+    var currencyList:[NSDictionary] = []
+    var travelDetail:[NSDictionary] = []
+    var travelNum:Int = 0
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         myDefault.setObject(self.defaultCategory, forKey: "category")
-        myDefault.setObject(self.defaultCurrency, forKey: "currency")
         myDefault.synchronize()
 
         return true
@@ -95,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
 
-            dict[NSUnderlyingErrorKey] = error as! NSError
+            dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -129,6 +131,73 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    // すでに存在する旅行データの読み込み処理(削除されていないもののみ)
+    func readTravel() {
+        // データの初期化
+        self.travelDetail = []
+        
+        // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
+        let managedObjectContext = self.managedObjectContext
+        
+        // Entityを指定する設定
+        let entityDiscription = NSEntityDescription.entityForName("Travel", inManagedObjectContext: managedObjectContext)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Travel")
+        fetchRequest.entity = entityDiscription
+        let predicate = NSPredicate(format: "%K = %d", "deleteFlg", 0)
+        fetchRequest.predicate = predicate
+        
+        // errorが発生した際にキャッチするための変数
+        var error: NSError? = nil
+        
+        // フェッチリクエスト (データの検索と取得処理) の実行
+        do {
+            let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+            self.travelNum = results.count
+            for managedObject in results {
+                let travel = managedObject as! Travel
+                var newTravel:NSDictionary =
+                [
+                    "destination":travel.destination,
+                    "from":travel.from,
+                    "to":travel.to,
+                    "budget":travel.budget
+                ]
+                self.travelDetail.append(newTravel)
+            }
+        } catch let error1 as NSError {
+            error = error1
+        }
+    }
+    
+    // すでに存在する通貨データの読み込み処理
+    func readCurrency() {
+        self.currencyList = []
+        let managedObjectContext = self.managedObjectContext
+        let entityDiscription = NSEntityDescription.entityForName("Currency", inManagedObjectContext: managedObjectContext)
+        let fetchRequest = NSFetchRequest(entityName: "Currency")
+        fetchRequest.entity = entityDiscription
+        let predicate = NSPredicate(format: "%K = %d", "travelID", self.travelID)
+        fetchRequest.predicate = predicate
+        var error: NSError? = nil
+        do {
+            let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+            for managedObject in results {
+                let currency = managedObject as! Currency
+                var newCurrency:NSDictionary =
+                [
+                    "name":currency.name,
+                    "rate":currency.rate,
+                    "useFlg":currency.useFlg!
+                ]
+                self.currencyList.append(newCurrency)
+            }
+        } catch let error1 as NSError {
+            error = error1
+        }
+    }
+
 
 }
 

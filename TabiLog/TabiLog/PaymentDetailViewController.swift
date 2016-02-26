@@ -26,7 +26,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     var date:NSDate = NSDate()
     var categoryList = ["日用品","食費","交通費","娯楽費"]
     var categoryID:Int16 = 0
-    var currencyList = ["円", "ドル", "ペソ", "元"]
+    var currencyList:[String] = []
     var currencyID:Int16 = 0
     var selectedPickerView = ""
     var imageURL:NSURL!
@@ -42,6 +42,11 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     override func viewWillAppear(animated: Bool) {
         self.travelID = Int16(appDelegate.travelID)
+        appDelegate.readCurrency()
+        for var tmpCurrency in appDelegate.currencyList{
+            self.currencyList.append(tmpCurrency["name"] as! String)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,7 +142,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         if selectedPickerView == "分類" {
             return categoryList[row]
         } else if selectedPickerView == "通貨" {
-            return currencyList[row]
+            return currencyList[row] as? String
         } else {
             return nil
         }
@@ -149,7 +154,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             categoryBtn.setTitle(categoryList[row], forState: UIControlState.Normal)
             self.categoryID = Int16(row)
         } else if selectedPickerView == "通貨" {
-            currencyBtn.setTitle(currencyList[row], forState: UIControlState.Normal)
+            currencyBtn.setTitle(currencyList[row] as? String, forState: UIControlState.Normal)
             self.currencyID = Int16(row)
         }
     }

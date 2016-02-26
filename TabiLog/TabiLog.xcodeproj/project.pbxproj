@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E885C34D5DB6A2AB0249655D /* Pods_TabiLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77105401462121CEB74DAE5E /* Pods_TabiLog.framework */; };
+		F52DCC091C7F2341000A4C95 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DCC081C7F2341000A4C95 /* Currency.swift */; };
 		F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD491C72F55E00B57B24 /* AppDelegate.swift */; };
 		F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD4B1C72F55E00B57B24 /* ViewController.swift */; };
 		F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBD4D1C72F55E00B57B24 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		77105401462121CEB74DAE5E /* Pods_TabiLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabiLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85D94E52AAAD182A4370A0C8 /* Pods-TabiLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabiLog.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabiLog/Pods-TabiLog.release.xcconfig"; sourceTree = "<group>"; };
 		A1A847914B28A74C62C963B4 /* Pods-TabiLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabiLog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabiLog/Pods-TabiLog.debug.xcconfig"; sourceTree = "<group>"; };
+		F52DCC081C7F2341000A4C95 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		F55FBD461C72F55E00B57B24 /* TabiLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabiLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55FBD491C72F55E00B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55FBD4B1C72F55E00B57B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				F55FBD681C735FC200B57B24 /* Travel.swift */,
 				F55FBD781C77099E00B57B24 /* Payment.swift */,
+				F52DCC081C7F2341000A4C95 /* Currency.swift */,
 				F55FBD491C72F55E00B57B24 /* AppDelegate.swift */,
 				F55FBD4B1C72F55E00B57B24 /* ViewController.swift */,
 				F55FBD5E1C730C3F00B57B24 /* TravelListViewController.swift */,
@@ -254,6 +257,7 @@
 				F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */,
 				F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */,
 				F55FBD671C731B1B00B57B24 /* ConfigViewController.swift in Sources */,
+				F52DCC091C7F2341000A4C95 /* Currency.swift in Sources */,
 				F55FBD791C77099E00B57B24 /* Payment.swift in Sources */,
 				F55FBD5F1C730C3F00B57B24 /* TravelListViewController.swift in Sources */,
 				F55FBD6D1C7616A300B57B24 /* UserPolicyViewController.swift in Sources */,

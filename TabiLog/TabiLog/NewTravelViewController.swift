@@ -27,22 +27,17 @@ class NewTravelViewController: UIViewController {
     var fromDate:NSDate = NSDate()
     var toDate:NSDate = NSDate()
     var budgetCurrencyID:Int16 = 1
+    var madeTravelID:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        var currencyArray:Array = myDefault.arrayForKey("currency")!
-        for currency in currencyArray {
-            var currencyDictionary = currency as! NSDictionary
-            for(key,data) in currencyDictionary {
-                currencyList.append(key as! String)
-            }
-        }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         currency.setTitle("円", forState: UIControlState.Normal)
+        for var tmpCurrency in appDelegate.defaultCurrency{
+            self.currencyList.append(tmpCurrency["name"] as! String)
+        }
     }
     
     @IBAction func tapRegist(sender: UIButton) {
@@ -59,9 +54,23 @@ class NewTravelViewController: UIViewController {
         travel.to = toDate
         travel.budget = Float(budget.text!)!
         travel.budgetCurrencyID = budgetCurrencyID
+        travel.deleteFlg = 0
         
         // データの保存処理
         appDelegate.saveContext()
+        
+        // 作ったデータのIDを取得
+        let entityDiscription = NSEntityDescription.entityForName("Travel", inManagedObjectContext: managedObjectContext)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Travel")
+        fetchRequest.entity = entityDiscription
+        do {
+            let results = try managedObjectContext.executeFetchRequest(fetchRequest)
+            self.madeTravelID = results.count
+        } catch let error1 as NSError{}
+        
+        // 初期通貨データの作成
+        setDefaultCurrencyList(self.madeTravelID)
         
     }
     
@@ -134,6 +143,26 @@ class NewTravelViewController: UIViewController {
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currency.setTitle(currencyList[row] , forState: UIControlState.Normal)
         self.budgetCurrencyID = Int16(row)
+    }
+    
+    func setDefaultCurrencyList(madeTravelID:Int){
+        let managedObjectContext = appDelegate.managedObjectContext
+        
+        for data in appDelegate.defaultCurrency{
+            // 新しくデータを追加するためのEntityを作成します
+            let managedObject: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Currency", inManagedObjectContext: managedObjectContext)
+            
+            // travel EntityからObjectを生成し、Attributesに接続して値を代入
+            let currency = managedObject as! Currency
+            currency.name = data["name"] as! String
+            currency.rate = data["rate"] as! Double
+            currency.useFlg = 1
+            currency.travelID = Int16(madeTravelID) as Int16
+            
+            // データの保存処理
+            appDelegate.saveContext()
+
+        }
     }
 
 }

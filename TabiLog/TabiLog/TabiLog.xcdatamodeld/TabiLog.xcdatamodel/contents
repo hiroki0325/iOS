@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Currency" representedClassName=".Currency" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="travelID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="useFlg" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
     <entity name="Payment" representedClassName="TabiLog.Payment" syncable="YES">
         <attribute name="categoryID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="currencyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -11,12 +17,14 @@
     <entity name="Travel" representedClassName="TabiLog.Travel" syncable="YES">
         <attribute name="budget" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
         <attribute name="budgetCurrencyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="deleteFlg" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="destination" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="from" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="to" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Travel" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="Payment" positionX="108" positionY="-18" width="128" height="133"/>
+        <element name="Travel" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Currency" positionX="27" positionY="27" width="128" height="105"/>
     </elements>
 </model>
