@@ -147,6 +147,7 @@ class NewTravelViewController: UIViewController {
     
     func setDefaultCurrencyList(madeTravelID:Int){
         let managedObjectContext = appDelegate.managedObjectContext
+        var currencyID:Int16 = 1
         
         for data in appDelegate.defaultCurrency{
             // 新しくデータを追加するためのEntityを作成します
@@ -158,9 +159,12 @@ class NewTravelViewController: UIViewController {
             currency.rate = data["rate"] as! Double
             currency.useFlg = 1
             currency.travelID = Int16(madeTravelID) as Int16
+            currency.currencyID = currencyID
             
             // データの保存処理
             appDelegate.saveContext()
+            
+            currencyID++
 
         }
     }

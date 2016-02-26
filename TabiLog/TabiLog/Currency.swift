@@ -15,5 +15,6 @@ class Currency: NSManagedObject {
     @NSManaged var rate: Double
     @NSManaged var useFlg: NSNumber?
     @NSManaged var travelID:Int16
+    @NSManaged var currencyID:Int16
     
 }

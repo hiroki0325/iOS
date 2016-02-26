@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var defaultCurrency = [["name":"円","rate":1], ["name":"ドル","rate":0.013], ["name":"ペソ","rate":0.4], ["name":"元","rate":0.8], ["name":"ドン","rate":0.03]]
     var defaultCategory = ["日用品","食費","交通費","娯楽費"]
     var currencyList:[NSDictionary] = []
+    var categoryList = []
     var travelDetail:[NSDictionary] = []
     var travelNum:Int = 0
 
@@ -196,6 +197,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch let error1 as NSError {
             error = error1
         }
+    }
+    
+    func readCategoryList(){
+        self.categoryList = myDefault.arrayForKey("category")!
     }
 
 

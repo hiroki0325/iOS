@@ -28,6 +28,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(animated: Bool) {
         read()
         appDelegate.readCurrency()
+        appDelegate.readCategoryList()
+        self.categoryList = appDelegate.categoryList
         for var tmpCurrency in appDelegate.currencyList{
             self.currencyList.append(tmpCurrency["name"] as! String)
         }
@@ -53,7 +55,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
             dateLabel.text = appDelegate.getDateFormat2((paymentDetail[indexPath.row-1]["date"] as? NSDate)!)
             categoryLabel.text = self.categoryList[(paymentDetail[indexPath.row-1]["categoryID"] as? Int)!] as? String
-            var price:String =  ((paymentDetail[indexPath.row-1]["price"] as? Int)?.description)!
+            var price:String = (paymentDetail[indexPath.row-1]["price"] as! Int).description 
             var currency:String = self.currencyList[(paymentDetail[indexPath.row-1]["currencyID"] as? Int)!]
             priceLabel.text = price+currency
             
@@ -61,6 +63,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return cell
         } else {
             cell.textLabel!.text = "新規作成"
+            var dateLabel = cell.viewWithTag(1) as! UILabel
+            var categoryLabel = cell.viewWithTag(2)as! UILabel
+            var priceLabel = cell.viewWithTag(3) as! UILabel
+            priceLabel.text = ""
+            dateLabel.text = ""
+            categoryLabel.text = ""
             return cell
         }
     }

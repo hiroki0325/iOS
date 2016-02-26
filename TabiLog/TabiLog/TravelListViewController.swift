@@ -58,7 +58,7 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     // 選択された時に行う処理
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         appDelegate.direction = (travelDetail[indexPath.row]["destination"] as? String)!
-        appDelegate.travelID = indexPath.row
+        appDelegate.travelID = indexPath.row+1
         var from = appDelegate.getDateFormat(travelDetail[indexPath.row]["from"] as! NSDate)
         var to = appDelegate.getDateFormat(travelDetail[indexPath.row]["to"] as! NSDate)
         period = "\(from)~\(to)"
