@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var period:String = ""
     var direction:String = ""
     var defaultCurrency = [["name":"円","rate":1], ["name":"ドル","rate":0.013], ["name":"ペソ","rate":0.4], ["name":"元","rate":0.8], ["name":"ドン","rate":0.03]]
-    var defaultCategory = ["日用品","食費","交通費","娯楽費"]
+    var defaultCategory = [["name":"日用品","deleteFlg":0],["name":"食費","deleteFlg":0],["name":"交通費","deleteFlg":0],["name":"娯楽費","deleteFlg":0]]
     var currencyList:[NSDictionary] = []
     var categoryList = []
     var travelDetail:[NSDictionary] = []

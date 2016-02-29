@@ -102,7 +102,9 @@ class SummaryViewController: UIViewController {
         // 分類情報の取得
         let myDefault = NSUserDefaults.standardUserDefaults()
         var categoryArray = myDefault.arrayForKey("category") as Array!
-        self.categories = categoryArray as! [String]
+        for data in categoryArray{
+            self.categories.append(data["name"] as! String)
+        }
         
         // 分類ごとの合計金額計算用配列の初期化
         for(var i=0;i<self.categories.count;i++){
@@ -129,7 +131,7 @@ class SummaryViewController: UIViewController {
             // 分類ごとの合計金額を計算（円グラフ用）
             self.prices[categoryID] += price / currencyList[currencyID]
         }
-        return String(Int(totalPrice as! Double))
+        return String(Int(totalPrice))
     }
     
     func formatForPiechart(){

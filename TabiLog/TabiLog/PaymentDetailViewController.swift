@@ -44,7 +44,9 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         self.travelID = Int16(appDelegate.travelID)
         appDelegate.readCurrency()
         for var tmpCurrency in appDelegate.currencyList{
-            self.currencyList.append(tmpCurrency["name"] as! String)
+            if tmpCurrency["useFlg"] as! Int == 1 {
+                self.currencyList.append(tmpCurrency["name"] as! String)
+            }
         }
 
     }
@@ -142,7 +144,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         if selectedPickerView == "分類" {
             return categoryList[row]
         } else if selectedPickerView == "通貨" {
-            return currencyList[row] as? String
+            return currencyList[row] as String
         } else {
             return nil
         }
@@ -154,7 +156,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             categoryBtn.setTitle(categoryList[row], forState: UIControlState.Normal)
             self.categoryID = Int16(row)
         } else if selectedPickerView == "通貨" {
-            currencyBtn.setTitle(currencyList[row] as? String, forState: UIControlState.Normal)
+            currencyBtn.setTitle(currencyList[row] as String, forState: UIControlState.Normal)
             self.currencyID = Int16(row)
         }
     }

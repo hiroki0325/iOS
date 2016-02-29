@@ -67,7 +67,9 @@ class NewTravelViewController: UIViewController {
         do {
             let results = try managedObjectContext.executeFetchRequest(fetchRequest)
             self.madeTravelID = results.count
-        } catch let error1 as NSError{}
+        } catch let error as NSError{
+            print(error.localizedDescription)
+        }
         
         // 初期通貨データの作成
         setDefaultCurrencyList(self.madeTravelID)

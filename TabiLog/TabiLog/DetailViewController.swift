@@ -54,7 +54,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             var priceLabel = cell.viewWithTag(3) as! UILabel
 
             dateLabel.text = appDelegate.getDateFormat2((paymentDetail[indexPath.row-1]["date"] as? NSDate)!)
-            categoryLabel.text = self.categoryList[(paymentDetail[indexPath.row-1]["categoryID"] as? Int)!] as? String
+            categoryLabel.text = self.categoryList[(paymentDetail[indexPath.row-1]["categoryID"] as? Int)!]["name"] as? String
             var price:String = (paymentDetail[indexPath.row-1]["price"] as! Int).description 
             var currency:String = self.currencyList[(paymentDetail[indexPath.row-1]["currencyID"] as? Int)!]
             priceLabel.text = price+currency
@@ -90,11 +90,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let managedObjectContext = appDelegate.managedObjectContext
         
         // Entityを指定する設定
-        let entityDiscription = NSEntityDescription.entityForName("Payment", inManagedObjectContext: managedObjectContext)
-        
         let fetchRequest = NSFetchRequest(entityName: "Payment")
-        fetchRequest.entity = entityDiscription
+        let entityDiscription = NSEntityDescription.entityForName("Payment", inManagedObjectContext: managedObjectContext)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
         let predicate = NSPredicate(format: "%K = %d", "travelID", appDelegate.travelID)
+        fetchRequest.entity = entityDiscription
+        fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.predicate = predicate
 
         
