@@ -18,6 +18,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var detailNum = 0
     var categoryList = []
     var currencyList:[String] = []
+    var managedObjects:[NSManagedObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             priceLabel.text = price+currency
             
             cell.accessoryType = .DisclosureIndicator
+            cell.tag = 100+indexPath.row
             return cell
         } else {
             cell.textLabel!.text = "新規作成"
@@ -69,12 +71,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             priceLabel.text = ""
             dateLabel.text = ""
             categoryLabel.text = ""
+            cell.tag = 100
             return cell
         }
     }
     
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
     
     @IBAction func returnDetail(segue: UIStoryboardSegue){
@@ -104,9 +107,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // フェッチリクエスト (データの検索と取得処理) の実行
         do {
+            self.managedObjects = []
             let results = try managedObjectContext.executeFetchRequest(fetchRequest)
             self.detailNum = results.count
             for managedObject in results {
+                self.managedObjects.append(managedObject as! NSManagedObject)
                 let payment = managedObject as! Payment
                 var newPayment:NSDictionary =
                 [
@@ -122,6 +127,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             error = error1
         }
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if sender?.tag > 100{
+            let nextVC = segue.destinationViewController as! PaymentDetailViewController
+            nextVC.selectedManagedObject = self.managedObjects[(sender?.tag)! - 101]
+        }
+    }
 
 }

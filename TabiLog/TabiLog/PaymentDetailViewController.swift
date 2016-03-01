@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AssetsLibrary
 
 class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -22,10 +23,13 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var registBtn: UIButton!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var selectedManagedObject:NSManagedObject?
     var date:NSDate = NSDate()
     var categoryList = []
+    var categoryListForPickerView:[String] = []
     var categoryID:Int16 = 0
     var currencyList:[String] = []
     var currencyID:Int16 = 0
@@ -44,6 +48,11 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     override func viewWillAppear(animated: Bool) {
         appDelegate.readCategoryList()
         self.categoryList = appDelegate.categoryList
+        for data in categoryList{
+            if data["deleteFlg"] as! Int != 1 {
+                categoryListForPickerView.append(data["name"] as! String)
+            }
+        }
         self.travelID = Int16(appDelegate.travelID)
         appDelegate.readCurrency()
         for var tmpCurrency in appDelegate.currencyList{
@@ -51,7 +60,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
                 self.currencyList.append(tmpCurrency["name"] as! String)
             }
         }
-
+        setDefaultData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,11 +104,17 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     @IBAction func touchRegist(sender: UIButton) {
-        // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
-        let managedObjectContext = appDelegate.managedObjectContext
-        
-        // 新しくデータを追加するためのEntityを作成します
-        let managedObject: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Payment", inManagedObjectContext: managedObjectContext)
+        var managedObject: AnyObject?
+        if self.selectedManagedObject != nil {
+            managedObject = self.selectedManagedObject as? AnyObject
+            print("更新")
+        } else {
+            // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
+            let managedObjectContext = appDelegate.managedObjectContext
+            // 新しくデータを追加するためのEntityを作成します
+            managedObject = NSEntityDescription.insertNewObjectForEntityForName("Payment", inManagedObjectContext: managedObjectContext)
+            print("新規")
+        }
         
         // Todo EntityからObjectを生成し、Attributesに接続して値を代入
         let payment = managedObject as! Payment
@@ -137,7 +152,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     // ピッカービューの行数
      func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if selectedPickerView == "分類" {
-            return categoryList.count
+            return categoryListForPickerView.count
         } else if selectedPickerView == "通貨" {
             return currencyList.count
         } else {
@@ -148,7 +163,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     // ピッカービューに表示する文字
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if selectedPickerView == "分類" {
-            return categoryList[row]["name"] as? String
+            return categoryListForPickerView[row] as String
         } else if selectedPickerView == "通貨" {
             return currencyList[row] as String
         } else {
@@ -159,13 +174,56 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     // ピッカービューで選択されたときに行う処理
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if selectedPickerView == "分類" {
-            categoryBtn.setTitle(categoryList[row]["name"] as? String, forState: UIControlState.Normal)
-            self.categoryID = Int16(row)
+            categoryBtn.setTitle(categoryListForPickerView[row] as String, forState: UIControlState.Normal)
+            var i = 0
+            for (data) in self.categoryList{
+                if data["name"] as! String == categoryListForPickerView[row]{
+                    self.categoryID = Int16(i)
+                }
+                i++
+            }
         } else if selectedPickerView == "通貨" {
             currencyBtn.setTitle(currencyList[row] as String, forState: UIControlState.Normal)
             self.currencyID = Int16(row)
         }
     }
+    
+    func setDefaultData(){
+        if self.selectedManagedObject != nil {
+            registBtn.setTitle("更新", forState: UIControlState.Normal)
+            let paymentDetail = selectedManagedObject as! Payment
+            self.dateBtn.setTitle(appDelegate.getDateFormat(paymentDetail.date), forState: UIControlState.Normal)
+            self.date = paymentDetail.date
+            self.price.text = String(Int(paymentDetail.price))
+            self.currencyBtn.setTitle(self.currencyList[Int(paymentDetail.currencyID)], forState: UIControlState.Normal)
+            self.currencyID = paymentDetail.currencyID
+            self.categoryBtn.setTitle(appDelegate.categoryList[Int(paymentDetail.categoryID)]["name"] as? String, forState: UIControlState.Normal)
+            self.categoryID = paymentDetail.categoryID
+            self.commentTextView.text = paymentDetail.comment
+            if paymentDetail.picturePath != nil {
+                self.imageURL = NSURL(string: paymentDetail.picturePath!)
+                let url = NSURL(string: paymentDetail.picturePath!)
+                getUIImagefromAsseturl(url!)
+            }
+        }
+    }
+    
+    func getUIImagefromAsseturl (url: NSURL) {
+        let asset = ALAssetsLibrary()
+        asset.assetForURL(url, resultBlock: { asset in
+            if let ast = asset {
+                let assetRep = ast.defaultRepresentation()
+                let iref = assetRep.fullResolutionImage().takeUnretainedValue()
+                let image = UIImage(CGImage: iref)
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.imageView.image = image
+                })
+            }
+            }, failureBlock: { error in
+                print("Error: \(error)")
+        })
+    }
+    
 }
 
 extension PaymentDetailViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{

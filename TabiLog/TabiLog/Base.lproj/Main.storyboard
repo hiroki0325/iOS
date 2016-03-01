@@ -162,10 +162,18 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UmO-Ra-hJl" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="24" y="192" width="327" height="310"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03T-RB-HIl">
+                                <rect key="frame" x="9" y="186" width="355" height="320"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UmO-Ra-hJl" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="14" y="10" width="327" height="302"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bB8-Va-loM">
+                                <rect key="frame" x="168" y="510" width="39" height="37"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -174,9 +182,11 @@
                     <connections>
                         <outlet property="currencyButton" destination="mIt-Kq-OVE" id="o5v-le-4UR"/>
                         <outlet property="directionLabel" destination="xWb-hb-Amf" id="Xkn-TM-3ao"/>
+                        <outlet property="dots" destination="bB8-Va-loM" id="p9b-Ox-RzE"/>
                         <outlet property="periodLabel" destination="Fsr-Va-txa" id="Ces-pw-Hry"/>
                         <outlet property="pieChartView" destination="UmO-Ra-hJl" id="a6v-mB-Atb"/>
                         <outlet property="priceLabel" destination="lQ6-z8-kwg" id="B6O-N3-Pei"/>
+                        <outlet property="scroll" destination="03T-RB-HIl" id="xpi-X0-NRF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQO-07-yBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -443,6 +453,7 @@
                         <outlet property="pickerView" destination="xoD-cG-rc2" id="ooV-rQ-Eh8"/>
                         <outlet property="pictureBtn" destination="RCq-qd-BdO" id="I42-7z-sEu"/>
                         <outlet property="price" destination="nx2-1N-L9r" id="jrR-5i-S4n"/>
+                        <outlet property="registBtn" destination="hm4-NW-edI" id="NQQ-xd-GaY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDR-Q2-d50" userLabel="First Responder" sceneMemberID="firstResponder"/>

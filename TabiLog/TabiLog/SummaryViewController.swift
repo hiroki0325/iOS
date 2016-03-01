@@ -18,6 +18,8 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var currencyButton: UIButton!
     @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var scroll: UIScrollView!
+    @IBOutlet weak var dots: UIPageControl!
 
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var direction = "direction"
@@ -34,6 +36,11 @@ class SummaryViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController!.selectedIndex = 1
+        scroll?.showsHorizontalScrollIndicator = false
+        scroll?.showsVerticalScrollIndicator = false
+        scroll?.pagingEnabled = true
+        //dots.numberOfPages = 2
+
         directionLabel.text = appDelegate.direction
         periodLabel.text = appDelegate.period
         priceLabel.text = calculatePrice()
