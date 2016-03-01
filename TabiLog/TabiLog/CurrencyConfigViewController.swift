@@ -87,7 +87,12 @@ class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITa
     }
     
     @IBAction func tapBtn(sender: UIButton) {
-        // 為替データの更新処理
+        appDelegate.updateCurrencyLate()
+        for(var i=1; i<appDelegate.defaultCurrency.count; i++){
+            updateCurrency(Double(appDelegate.defaultCurrency[i]["rate"] as! Double), key: "rate", tag: i, tagGap: 0)
+        }
+        loadView()
+        viewDidLoad()
     }
     
     

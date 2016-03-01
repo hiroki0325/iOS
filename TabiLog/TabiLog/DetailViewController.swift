@@ -113,7 +113,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     "categoryID": Int(payment.categoryID),
                     "currencyID": Int(payment.currencyID),
                     "date": payment.date,
-                    "picturePath":payment.picturePath,
                     "price":payment.price,
                     "travelID":Int(payment.travelID)
                 ]

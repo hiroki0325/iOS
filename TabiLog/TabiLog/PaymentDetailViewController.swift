@@ -16,6 +16,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var price: UITextField!
     @IBOutlet weak var currencyBtn: UIButton!
     @IBOutlet weak var categoryBtn: UIButton!
+    @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var pictureBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -24,7 +25,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var date:NSDate = NSDate()
-    var categoryList = ["日用品","食費","交通費","娯楽費"]
+    var categoryList = []
     var categoryID:Int16 = 0
     var currencyList:[String] = []
     var currencyID:Int16 = 0
@@ -41,6 +42,8 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     override func viewWillAppear(animated: Bool) {
+        appDelegate.readCategoryList()
+        self.categoryList = appDelegate.categoryList
         self.travelID = Int16(appDelegate.travelID)
         appDelegate.readCurrency()
         for var tmpCurrency in appDelegate.currencyList{
@@ -82,6 +85,8 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBAction func editPrice(sender: UITextField) {
     }
     
+    
+    
     @IBAction func touchCurrency(sender: UIButton) {
         selectedPickerView = "通貨"
         pickerView.reloadAllComponents()
@@ -101,7 +106,8 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         payment.categoryID = categoryID
         payment.currencyID = self.currencyID
         payment.date = date
-        payment.picturePath = imageURL.absoluteString
+        payment.comment = commentTextView.text as String?
+        payment.picturePath = imageURL?.absoluteString
         payment.price = NSString(string:price.text!).floatValue
         payment.travelID = self.travelID
         
@@ -142,7 +148,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     // ピッカービューに表示する文字
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if selectedPickerView == "分類" {
-            return categoryList[row]
+            return categoryList[row]["name"] as? String
         } else if selectedPickerView == "通貨" {
             return currencyList[row] as String
         } else {
@@ -153,7 +159,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     // ピッカービューで選択されたときに行う処理
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if selectedPickerView == "分類" {
-            categoryBtn.setTitle(categoryList[row], forState: UIControlState.Normal)
+            categoryBtn.setTitle(categoryList[row]["name"] as? String, forState: UIControlState.Normal)
             self.categoryID = Int16(row)
         } else if selectedPickerView == "通貨" {
             currencyBtn.setTitle(currencyList[row] as String, forState: UIControlState.Normal)

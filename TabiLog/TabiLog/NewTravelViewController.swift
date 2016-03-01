@@ -88,6 +88,11 @@ class NewTravelViewController: UIViewController {
         closeButton.hidden = true
         datePicker.hidden = true
         pickerView.hidden = true
+        if self.selectedPeriod == "from" {
+            datePicker.minimumDate = self.fromDate
+        } else if selectedPeriod == "to" {
+            datePicker.maximumDate = self.toDate
+        }
     }
     
     
@@ -95,6 +100,7 @@ class NewTravelViewController: UIViewController {
         self.view.endEditing(true)
         closeButton.hidden = false
         datePicker.hidden = false
+        datePicker.minimumDate = nil
         self.selectedPeriod = "from"
     }
     
@@ -102,6 +108,7 @@ class NewTravelViewController: UIViewController {
         self.view.endEditing(true)
         closeButton.hidden = false
         datePicker.hidden = false
+        datePicker.maximumDate = nil
         self.selectedPeriod = "to"
     }
 
@@ -150,6 +157,7 @@ class NewTravelViewController: UIViewController {
     func setDefaultCurrencyList(madeTravelID:Int){
         let managedObjectContext = appDelegate.managedObjectContext
         var currencyID:Int16 = 1
+        appDelegate.updateCurrencyLate()
         
         for data in appDelegate.defaultCurrency{
             // 新しくデータを追加するためのEntityを作成します

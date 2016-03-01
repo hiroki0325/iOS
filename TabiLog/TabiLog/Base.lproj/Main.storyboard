@@ -156,16 +156,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="円"/>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UmO-Ra-hJl" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="22" y="192" width="327" height="310"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-z8-kwg">
                                 <rect key="frame" x="106" y="152" width="163" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UmO-Ra-hJl" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="24" y="192" width="327" height="310"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -329,40 +329,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日付：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FX-6G-qUT">
-                                <rect key="frame" x="56" y="147" width="51" height="21"/>
+                                <rect key="frame" x="56" y="84" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="分類：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ex5-MZ-02W">
-                                <rect key="frame" x="56" y="207" width="51" height="21"/>
+                                <rect key="frame" x="56" y="128" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金額：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRc-TF-cbI">
-                                <rect key="frame" x="56" y="279" width="51" height="21"/>
+                                <rect key="frame" x="56" y="178" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nx2-1N-L9r">
-                                <rect key="frame" x="139" y="275" width="97" height="30"/>
+                                <rect key="frame" x="132" y="174" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
                                     <action selector="editPrice:" destination="8Y8-gQ-AHU" eventType="editingDidEndOnExit" id="tfj-FB-cdb"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メモ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIy-6f-iqt">
+                                <rect key="frame" x="56" y="224" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="メモ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4pM-d3-MF2">
+                                <rect key="frame" x="115" y="220" width="240" height="95"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eba-Cy-bAB">
-                                <rect key="frame" x="131" y="143" width="111" height="30"/>
+                                <rect key="frame" x="125" y="79" width="111" height="30"/>
                                 <state key="normal" title="日付"/>
                                 <connections>
                                     <action selector="touchDate:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="MJt-IF-inS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y23-QG-tsq">
-                                <rect key="frame" x="153" y="203" width="70" height="30"/>
+                                <rect key="frame" x="152" y="128" width="70" height="30"/>
                                 <state key="normal" title="分類"/>
                                 <connections>
                                     <action selector="touchCategory:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="eDF-Ua-LgV"/>
@@ -379,7 +391,7 @@
                                 <rect key="frame" x="67" y="373" width="240" height="175"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwc-Ez-vdE">
-                                <rect key="frame" x="265" y="275" width="50" height="30"/>
+                                <rect key="frame" x="264" y="174" width="50" height="30"/>
                                 <state key="normal" title="通貨"/>
                                 <connections>
                                     <action selector="touchCurrency:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="IFI-BG-xNx"/>
@@ -394,7 +406,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpE-3Q-Phr">
-                                <rect key="frame" x="0.0" y="64" width="369" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <connections>
                                     <action selector="touchCloseBtn:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="Jxf-Gi-Nir"/>
                                 </connections>
@@ -423,6 +435,7 @@
                     <connections>
                         <outlet property="categoryBtn" destination="y23-QG-tsq" id="JcM-nv-GSx"/>
                         <outlet property="closeBtn" destination="fpE-3Q-Phr" id="LLL-hz-7Jw"/>
+                        <outlet property="commentTextView" destination="4pM-d3-MF2" id="19C-QN-qX7"/>
                         <outlet property="currencyBtn" destination="bwc-Ez-vdE" id="yIA-4M-wgk"/>
                         <outlet property="dateBtn" destination="eba-Cy-bAB" id="Vhu-ym-h8O"/>
                         <outlet property="datePicker" destination="l9k-na-VtJ" id="jdq-Il-esm"/>
@@ -539,8 +552,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtZ-p3-Y5E">
-                                <rect key="frame" x="172" y="617" width="30" height="30"/>
-                                <state key="normal" title="更新"/>
+                                <rect key="frame" x="51" y="617" width="273" height="30"/>
+                                <state key="normal" title="最新の為替データを反映"/>
                                 <connections>
                                     <action selector="tapBtn:" destination="rMK-Aj-2OQ" eventType="touchUpInside" id="4tj-KO-GQs"/>
                                 </connections>

@@ -14,7 +14,8 @@ class Payment: NSManagedObject {
     @NSManaged var categoryID: Int16
     @NSManaged var currencyID: Int16
     @NSManaged var date: NSDate
-    @NSManaged var picturePath:String
+    @NSManaged var picturePath:String?
+    @NSManaged var comment:String?
     @NSManaged var price:Float
     @NSManaged var travelID:Int16
     

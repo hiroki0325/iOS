@@ -60,12 +60,15 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
 
     @IBAction func changeSwitch(sender: UISwitch) {
         if sender.on == true {
-            //TODO:直す
-            //self.CategoryList[sender.tag-100]["deleteFlg"] as! Int = 1
+            var tmpCategoryList = NSMutableDictionary(dictionary: self.categoryList[sender.tag-100] as! [NSObject : AnyObject])
+            tmpCategoryList["deleteFlg"] = 0
+            self.categoryList[sender.tag-100] = tmpCategoryList
             appDelegate.myDefault.setObject(self.categoryList, forKey: "category")
             appDelegate.myDefault.synchronize()
         } else {
-            //self.CategoryList[sender.tag-100]["deleteFlg"] as! Int = 0
+            var tmpCategoryList = NSMutableDictionary(dictionary: self.categoryList[sender.tag-100] as! [NSObject : AnyObject])
+            tmpCategoryList["deleteFlg"] = 1
+            self.categoryList[sender.tag-100] = tmpCategoryList
             appDelegate.myDefault.setObject(self.categoryList, forKey: "category")
             appDelegate.myDefault.synchronize()
         }

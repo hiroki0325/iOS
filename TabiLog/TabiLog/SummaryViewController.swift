@@ -34,7 +34,6 @@ class SummaryViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.tabBarController!.selectedIndex = 1
-        
         directionLabel.text = appDelegate.direction
         periodLabel.text = appDelegate.period
         priceLabel.text = calculatePrice()
@@ -83,7 +82,6 @@ class SummaryViewController: UIViewController {
                     "categoryID": Int(payment.categoryID),
                     "currencyID": Int(payment.currencyID),
                     "date": payment.date,
-                    "picturePath":payment.picturePath,
                     "price":payment.price,
                     "travelID":Int(payment.travelID)
                 ]
@@ -97,11 +95,12 @@ class SummaryViewController: UIViewController {
     func calculatePrice () -> String {
         var totalPrice:Double = 0
         var currencyList:[Double] = []
+        self.categories = []
         self.prices = []
         
         // 分類情報の取得
-        let myDefault = NSUserDefaults.standardUserDefaults()
-        var categoryArray = myDefault.arrayForKey("category") as Array!
+        appDelegate.readCategoryList()
+        var categoryArray = appDelegate.categoryList
         for data in categoryArray{
             self.categories.append(data["name"] as! String)
         }

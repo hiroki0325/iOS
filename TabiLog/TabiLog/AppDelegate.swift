@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var travelID:Int = 0
     var period:String = ""
     var direction:String = ""
-    var defaultCurrency = [["name":"円","rate":1], ["name":"ドル","rate":0.013], ["name":"ペソ","rate":0.4], ["name":"元","rate":0.8], ["name":"ドン","rate":0.03]]
+    var defaultCurrency:NSMutableArray = [["name":"円","rate":1], ["name":"ドル","rate":0.013,"code":"USD"], ["name":"ペソ","rate":0.4,"code":"PHP"], ["name":"元","rate":0.8,"code":"CNY"], ["name":"ドン","rate":0.03,"code":"VND"]]
     var defaultCategory = [["name":"日用品","deleteFlg":0],["name":"食費","deleteFlg":0],["name":"交通費","deleteFlg":0],["name":"娯楽費","deleteFlg":0]]
     var currencyList:[NSDictionary] = []
     var categoryList = []
@@ -200,9 +200,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func readCategoryList(){
-        self.categoryList = myDefault.arrayForKey("category")!
+        self.categoryList = NSMutableArray(array: myDefault.arrayForKey("category")!)
     }
-
-
+    
+    func updateCurrencyLate(){
+        var url = "http://api.aoikujira.com/kawase/json/jpy"
+        var URL = NSURL(string: url)
+        var request = NSURLRequest(URL: URL!)
+        var jsondata = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+        var jsonDictionary = try! NSJSONSerialization.JSONObjectWithData(jsondata, options: []) as! NSDictionary
+        
+        for(var i=1; self.defaultCurrency.count-1>i; i++){
+            var tmpCurrencyList = NSMutableDictionary(dictionary: self.defaultCurrency[i] as! [NSObject : AnyObject])
+            tmpCurrencyList["rate"] = Double(jsonDictionary[self.defaultCurrency[i]["code"] as! String] as! String)
+            self.defaultCurrency[i] = tmpCurrencyList
+        }
+    }
+    
 }
-
