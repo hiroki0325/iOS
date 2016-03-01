@@ -10,8 +10,9 @@ import UIKit
 
 class CustomCell: UICollectionViewCell {
     
-    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var categoryBtn: UIButton!
     @IBOutlet weak var categorySwitch: UISwitch!
+    @IBOutlet weak var categoryTextField: UITextField!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
