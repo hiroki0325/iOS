@@ -250,6 +250,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Detail" id="i2G-lS-U12"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="J6g-df-mBG" id="m1P-Sw-YpV"/>
@@ -359,7 +361,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nx2-1N-L9r">
                                 <rect key="frame" x="132" y="174" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                 <connections>
                                     <action selector="editPrice:" destination="8Y8-gQ-AHU" eventType="editingDidEndOnExit" id="tfj-FB-cdb"/>
                                 </connections>
@@ -438,9 +440,21 @@
                                     <outlet property="delegate" destination="8Y8-gQ-AHU" id="544-f0-zGG"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe8-aM-XHJ">
+                                <rect key="frame" x="284" y="578" width="30" height="30"/>
+                                <state key="normal" title="削除">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchDelete:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="obX-Ne-rYI"/>
+                                    <segue destination="iyl-e5-jLV" kind="unwind" unwindAction="returnDetail:" id="WP5-0Z-1Yn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="categoryBtn" destination="y23-QG-tsq" id="JcM-nv-GSx"/>
@@ -449,6 +463,7 @@
                         <outlet property="currencyBtn" destination="bwc-Ez-vdE" id="yIA-4M-wgk"/>
                         <outlet property="dateBtn" destination="eba-Cy-bAB" id="Vhu-ym-h8O"/>
                         <outlet property="datePicker" destination="l9k-na-VtJ" id="jdq-Il-esm"/>
+                        <outlet property="deleteBtn" destination="oe8-aM-XHJ" id="go3-Rb-CbU"/>
                         <outlet property="imageView" destination="Aea-bR-CId" id="IYF-rH-6QS"/>
                         <outlet property="pickerView" destination="xoD-cG-rc2" id="ooV-rQ-Eh8"/>
                         <outlet property="pictureBtn" destination="RCq-qd-BdO" id="I42-7z-sEu"/>

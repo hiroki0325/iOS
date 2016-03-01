@@ -24,6 +24,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var registBtn: UIButton!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var selectedManagedObject:NSManagedObject?
@@ -37,7 +38,6 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     var imageURL:NSURL!
     var travelID:Int16 = 0
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker.hidden = true
@@ -46,6 +46,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     override func viewWillAppear(animated: Bool) {
+        deleteBtn.hidden = true
         appDelegate.readCategoryList()
         self.categoryList = appDelegate.categoryList
         for data in categoryList{
@@ -143,6 +144,11 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         pickerView.hidden = true
     }
     
+    @IBAction func touchDelete(sender: UIButton) {
+        let managedContext: NSManagedObjectContext = self.appDelegate.managedObjectContext
+        managedContext.deleteObject(self.selectedManagedObject!)
+        try! managedContext.save()
+    }
     
     // ピッカービューの列数
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -191,6 +197,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     func setDefaultData(){
         if self.selectedManagedObject != nil {
             registBtn.setTitle("更新", forState: UIControlState.Normal)
+            deleteBtn.hidden = false
             let paymentDetail = selectedManagedObject as! Payment
             self.dateBtn.setTitle(appDelegate.getDateFormat(paymentDetail.date), forState: UIControlState.Normal)
             self.date = paymentDetail.date
