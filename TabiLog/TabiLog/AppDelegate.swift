@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var categoryList = []
     var travelDetail:[NSDictionary] = []
     var travelNum:Int = 0
+    var managedObjects:[NSManagedObject] = []
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         myDefault.setObject(self.defaultCategory, forKey: "category")
@@ -157,6 +158,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let results = try managedObjectContext.executeFetchRequest(fetchRequest)
             self.travelNum = results.count
             for managedObject in results {
+                self.managedObjects.append(managedObject as! NSManagedObject)
                 let travel = managedObject as! Travel
                 var newTravel:NSDictionary =
                 [

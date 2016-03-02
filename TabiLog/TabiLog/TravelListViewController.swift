@@ -79,6 +79,42 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
         
     }
 
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.editing = editing
+    }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // 先にデータを更新する
+        let managedContext: NSManagedObjectContext = self.appDelegate.managedObjectContext
+        managedContext.deleteObject(appDelegate.managedObjects[indexPath.row])
+        try! managedContext.save()
+        
+        // テーブルビュー用の配列を取得し直す
+        appDelegate.readTravel()
+        self.travelNum = appDelegate.travelNum
+        self.travelDetail = appDelegate.travelDetail
+        
+        // それからテーブルの更新
+        tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: indexPath.row, inSection: indexPath.section)],withRowAnimation: UITableViewRowAnimation.Fade)
+        
+    }
+
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if tableView.editing {
+            return UITableViewCellEditingStyle.Delete
+        } else {
+            return UITableViewCellEditingStyle.None
+        }
+    }
 
 }
