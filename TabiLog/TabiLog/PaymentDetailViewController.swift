@@ -12,17 +12,15 @@ import AssetsLibrary
 
 class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    
-    @IBOutlet weak var dateBtn: UIButton!
+
+
+    @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var price: UITextField!
-    @IBOutlet weak var currencyBtn: UIButton!
-    @IBOutlet weak var categoryBtn: UIButton!
+    @IBOutlet weak var currencyField: UITextField!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var pictureBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var registBtn: UIButton!
     @IBOutlet weak var deleteBtn: UIButton!
     
@@ -40,13 +38,11 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker.hidden = true
-        pickerView.hidden = true
-        closeBtn.hidden = true
-        pickerView.backgroundColor = UIColor.whiteColor()
+        makeDatePicker()
     }
     
     override func viewWillAppear(animated: Bool) {
+        makePickerView()
         deleteBtn.hidden = true
         appDelegate.readCategoryList()
         self.categoryList = appDelegate.categoryList
@@ -69,16 +65,19 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func touchDate(sender: UIButton) {
-        datePicker.hidden = false
-        closeBtn.hidden = false
+    @IBAction func editDate(sender: UITextField) {
+        let datePickerView: UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.locale = NSLocale(localeIdentifier: "ja_JP")
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
-    @IBAction func touchCategory(sender: UIButton) {
+    @IBAction func editCategory(sender: UITextField) {
         selectedPickerView = "分類"
-        pickerView.reloadAllComponents()
-        closeBtn.hidden = false
-        pickerView.hidden = false
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        categoryField.inputView = pickerView
     }
     
     @IBAction func touchPicture(sender: UIButton) {
@@ -96,26 +95,22 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBAction func editPrice(sender: UITextField) {
     }
     
-    
-    
-    @IBAction func touchCurrency(sender: UIButton) {
+    @IBAction func editCurrency(sender: AnyObject) {
         selectedPickerView = "通貨"
-        pickerView.reloadAllComponents()
-        closeBtn.hidden = false
-        pickerView.hidden = false
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        currencyField.inputView = pickerView
     }
     
     @IBAction func touchRegist(sender: UIButton) {
         var managedObject: AnyObject?
         if self.selectedManagedObject != nil {
             managedObject = self.selectedManagedObject as? AnyObject
-            print("更新")
         } else {
             // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
             let managedObjectContext = appDelegate.managedObjectContext
             // 新しくデータを追加するためのEntityを作成します
             managedObject = NSEntityDescription.insertNewObjectForEntityForName("Payment", inManagedObjectContext: managedObjectContext)
-            print("新規")
         }
         
         // Todo EntityからObjectを生成し、Attributesに接続して値を代入
@@ -134,15 +129,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     @IBAction func changeDatePicker(sender: UIDatePicker) {
-        dateBtn.setTitle(appDelegate.getDateFormat(sender.date), forState: UIControlState.Normal)
         date = sender.date
-    }
-    
-    @IBAction func touchCloseBtn(sender: UIButton) {
-        self.view.endEditing(true)
-        closeBtn.hidden = true
-        datePicker.hidden = true
-        pickerView.hidden = true
     }
     
     @IBAction func touchDelete(sender: UIButton) {
@@ -181,7 +168,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     // ピッカービューで選択されたときに行う処理
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if selectedPickerView == "分類" {
-            categoryBtn.setTitle(categoryListForPickerView[row] as String, forState: UIControlState.Normal)
+            categoryField.text = categoryListForPickerView[row] as String
             var i = 0
             for (data) in self.categoryList{
                 if data["name"] as! String == categoryListForPickerView[row]{
@@ -190,7 +177,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
                 i++
             }
         } else if selectedPickerView == "通貨" {
-            currencyBtn.setTitle(currencyList[row] as String, forState: UIControlState.Normal)
+            currencyField.text = currencyList[row] as String
             self.currencyID = Int16(row)
         }
     }
@@ -200,12 +187,12 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             registBtn.setTitle("更新", forState: UIControlState.Normal)
             deleteBtn.hidden = false
             let paymentDetail = selectedManagedObject as! Payment
-            self.dateBtn.setTitle(appDelegate.getDateFormat(paymentDetail.date), forState: UIControlState.Normal)
+            self.dateField.text = appDelegate.getDateFormat(paymentDetail.date)
             self.date = paymentDetail.date
             self.price.text = String(Int(paymentDetail.price))
-            self.currencyBtn.setTitle(self.currencyList[Int(paymentDetail.currencyID)], forState: UIControlState.Normal)
+            self.currencyField.text = self.currencyList[Int(paymentDetail.currencyID)]
             self.currencyID = paymentDetail.currencyID
-            self.categoryBtn.setTitle(appDelegate.categoryList[Int(paymentDetail.categoryID)]["name"] as? String, forState: UIControlState.Normal)
+            self.categoryField.text = appDelegate.categoryList[Int(paymentDetail.categoryID)]["name"] as? String
             self.categoryID = paymentDetail.categoryID
             self.commentTextView.text = paymentDetail.comment
             if paymentDetail.picturePath != nil {
@@ -232,20 +219,81 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         })
     }
     
+    func donePressed(sender: UIBarButtonItem) {
+        dateField.resignFirstResponder()
+        categoryField.resignFirstResponder()
+        currencyField.resignFirstResponder()
+    }
+    
+    func tappedToolBarBtn(sender: UIBarButtonItem) {
+        dateField.text = appDelegate.getDateFormat(NSDate())
+        self.date = NSDate()
+        dateField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func datePickerValueChanged(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        self.date = sender.date
+        dateField.text = appDelegate.getDateFormat(sender.date)
+    }
+    
+    func makeDatePicker(){
+        let toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        toolBar.barStyle = UIBarStyle.BlackTranslucent
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
+        let todayBtn = UIBarButtonItem(title: "Today", style: UIBarButtonItemStyle.Plain, target: self, action: "tappedToolBarBtn:")
+        let okBarBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "donePressed:")
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
+        label.font = UIFont(name: "Helvetica", size: 12)
+        label.backgroundColor = UIColor.clearColor()
+        label.textColor = UIColor.whiteColor()
+        label.text = ""
+        label.textAlignment = NSTextAlignment.Center
+        let textBtn = UIBarButtonItem(customView: label)
+        toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
+        dateField.inputAccessoryView = toolBar
+    }
+    
+    func makePickerView(){
+        let toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        toolBar.barStyle = UIBarStyle.BlackTranslucent
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "donePressed:")
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
+        label.font = UIFont(name: "Helvetica", size: 12)
+        label.backgroundColor = UIColor.clearColor()
+        label.textColor = UIColor.whiteColor()
+        label.text = ""
+        label.textAlignment = NSTextAlignment.Center
+        let textBtn = UIBarButtonItem(customView: label)
+        toolBar.setItems([flexSpace,textBtn,flexSpace,doneButton], animated: true)
+        categoryField.inputAccessoryView = toolBar
+        currencyField.inputAccessoryView = toolBar
+    }
+
 }
 
 extension PaymentDetailViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        
         // 選択した画像・写真を取得し、imageViewに表示
         if let info = editingInfo, let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
             imageView.image = editedImage
         }else{
             imageView.image = image
         }
-        
         imageURL = editingInfo![UIImagePickerControllerReferenceURL] as! NSURL
-        
         // フォトライブラリの画像・写真選択画面を閉じる
         picker.dismissViewControllerAnimated(true, completion: nil)
     }

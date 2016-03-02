@@ -12,7 +12,6 @@ import CoreData
 class NewTravelViewController: UIViewController {
 
     @IBOutlet weak var destination: UITextField!
-    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var register: UIButton!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
@@ -90,16 +89,6 @@ class NewTravelViewController: UIViewController {
     }
     
     @IBAction func didFinishEditDestination(sender: UITextField) {
-    }
-    
-    @IBAction func touchCloseBtn(sender: UIButton) {
-        self.view.endEditing(true)
-        closeButton.hidden = true
-    }
-
-    @IBAction func touchCurrency(sender: UIButton) {
-        self.view.endEditing(true)
-        closeButton.hidden = false
     }
     
     override func didReceiveMemoryWarning() {
