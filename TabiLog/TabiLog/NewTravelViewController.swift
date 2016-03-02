@@ -12,32 +12,23 @@ import CoreData
 class NewTravelViewController: UIViewController {
 
     @IBOutlet weak var destination: UITextField!
-    @IBOutlet weak var from: UIButton!
-    @IBOutlet weak var to: UIButton!
-    @IBOutlet weak var budget: UITextField!
     @IBOutlet weak var closeButton: UIButton!
-    @IBOutlet weak var currency: UIButton!
     @IBOutlet weak var register: UIButton!
-    @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var fromTextField: UITextField!
+    @IBOutlet weak var toTextField: UITextField!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    var currencyList:[String] = []
     var selectedPeriod = "from"
-    var fromDate:NSDate = NSDate()
-    var toDate:NSDate = NSDate()
-    var budgetCurrencyID:Int16 = 1
+    var fromDate:NSDate?
+    var toDate:NSDate?
     var madeTravelID:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeDatePicker()
     }
     
     override func viewWillAppear(animated: Bool) {
-        currency.setTitle("円", forState: UIControlState.Normal)
-        for var tmpCurrency in appDelegate.defaultCurrency{
-            self.currencyList.append(tmpCurrency["name"] as! String)
-        }
     }
     
     @IBAction func tapRegist(sender: UIButton) {
@@ -50,10 +41,10 @@ class NewTravelViewController: UIViewController {
         // travel EntityからObjectを生成し、Attributesに接続して値を代入
         let travel = managedObject as! Travel
         travel.destination = destination.text!
-        travel.from = fromDate
-        travel.to = toDate
-        travel.budget = Float(budget.text!)!
-        travel.budgetCurrencyID = budgetCurrencyID
+        travel.from = fromDate!
+        travel.to = toDate!
+        travel.budget = 0
+        travel.budgetCurrencyID = 0
         travel.deleteFlg = 0
         
         // データの保存処理
@@ -76,56 +67,39 @@ class NewTravelViewController: UIViewController {
         
     }
     
-    @IBAction func didFinishEditDestination(sender: UITextField) {
+    @IBAction func editFrom(sender: UITextField) {
+        self.fromDate = nil
+        self.selectedPeriod = "from"
+        let datePickerView: UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.locale = NSLocale(localeIdentifier: "ja_JP")
+        datePickerView.maximumDate = self.toDate
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
     
-    @IBAction func didEndEditBudget(sender: UITextField) {
-        budget.resignFirstResponder()
+    @IBAction func editTo(sender: UITextField) {
+        self.toDate = nil
+        self.selectedPeriod = "to"
+        let datePickerView: UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.locale = NSLocale(localeIdentifier: "ja_JP")
+        datePickerView.minimumDate = self.fromDate
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    @IBAction func didFinishEditDestination(sender: UITextField) {
     }
     
     @IBAction func touchCloseBtn(sender: UIButton) {
         self.view.endEditing(true)
         closeButton.hidden = true
-        datePicker.hidden = true
-        pickerView.hidden = true
-        if self.selectedPeriod == "from" {
-            datePicker.minimumDate = self.fromDate
-        } else if selectedPeriod == "to" {
-            datePicker.maximumDate = self.toDate
-        }
-    }
-    
-    
-    @IBAction func touchFrom(sender: UIButton) {
-        self.view.endEditing(true)
-        closeButton.hidden = false
-        datePicker.hidden = false
-        datePicker.minimumDate = nil
-        self.selectedPeriod = "from"
-    }
-    
-    @IBAction func touchTo(sender: UIButton) {
-        self.view.endEditing(true)
-        closeButton.hidden = false
-        datePicker.hidden = false
-        datePicker.maximumDate = nil
-        self.selectedPeriod = "to"
     }
 
     @IBAction func touchCurrency(sender: UIButton) {
         self.view.endEditing(true)
         closeButton.hidden = false
-        pickerView.hidden = false
-    }
-    
-    @IBAction func didValueChanged(sender: UIDatePicker) {
-        if self.selectedPeriod == "from" {
-            from.setTitle(appDelegate.getDateFormat(sender.date), forState: UIControlState.Normal)
-            fromDate = sender.date
-        } else if selectedPeriod == "to" {
-            to.setTitle(appDelegate.getDateFormat(sender.date), forState: UIControlState.Normal)
-            toDate = sender.date
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -133,50 +107,81 @@ class NewTravelViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // ピッカービューの列数
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    // ピッカービューの行数
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currencyList.count
-    }
-    
-    // ピッカービューに表示する文字
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencyList[row] 
-    }
-    
-    // ピッカービューで選択されたときに行う処理
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        currency.setTitle(currencyList[row] , forState: UIControlState.Normal)
-        self.budgetCurrencyID = Int16(row)
-    }
-    
+    // 通貨情報のデフォルト値を設定する関数
     func setDefaultCurrencyList(madeTravelID:Int){
         let managedObjectContext = appDelegate.managedObjectContext
         var currencyID:Int16 = 1
         appDelegate.updateCurrencyLate()
-        
         for data in appDelegate.defaultCurrency{
-            // 新しくデータを追加するためのEntityを作成します
             let managedObject: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Currency", inManagedObjectContext: managedObjectContext)
-            
-            // travel EntityからObjectを生成し、Attributesに接続して値を代入
             let currency = managedObject as! Currency
             currency.name = data["name"] as! String
             currency.rate = data["rate"] as! Double
             currency.useFlg = 1
             currency.travelID = Int16(madeTravelID) as Int16
             currency.currencyID = currencyID
-            
-            // データの保存処理
             appDelegate.saveContext()
-            
             currencyID++
-
         }
     }
+    
+    func donePressed(sender: UIBarButtonItem) {
+        if self.selectedPeriod == "from" {
+            fromTextField.resignFirstResponder()
+        } else {
+            toTextField.resignFirstResponder()
+        }
+    }
+    
+    func tappedToolBarBtn(sender: UIBarButtonItem) {
+        if self.selectedPeriod == "from" {
+            fromTextField.text = appDelegate.getDateFormat(NSDate())
+            self.fromDate = NSDate()
+            fromTextField.resignFirstResponder()
+        } else {
+            toTextField.text = appDelegate.getDateFormat(NSDate())
+            self.toDate = NSDate()
+            toTextField.resignFirstResponder()
+        }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func datePickerValueChanged(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        if self.selectedPeriod == "from" {
+            self.fromDate = sender.date
+            fromTextField.text = appDelegate.getDateFormat(sender.date)
+        } else {
+            self.toDate = sender.date
+            toTextField.text = appDelegate.getDateFormat(sender.date)
+        }
+    }
+    
+    func makeDatePicker(){
+        let toolBar = UIToolbar(frame: CGRectMake(0, self.view.frame.size.height/6, self.view.frame.size.width, 40.0))
+        toolBar.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
+        toolBar.barStyle = UIBarStyle.BlackTranslucent
+        toolBar.tintColor = UIColor.whiteColor()
+        toolBar.backgroundColor = UIColor.blackColor()
+        let todayBtn = UIBarButtonItem(title: "Today", style: UIBarButtonItemStyle.Plain, target: self, action: "tappedToolBarBtn:")
+        let okBarBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "donePressed:")
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: self, action: nil)
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
+        label.font = UIFont(name: "Helvetica", size: 12)
+        label.backgroundColor = UIColor.clearColor()
+        label.textColor = UIColor.whiteColor()
+        label.text = ""
+        label.textAlignment = NSTextAlignment.Center
+        let textBtn = UIBarButtonItem(customView: label)
+        toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
+        fromTextField.inputAccessoryView = toolBar
+        toTextField.inputAccessoryView = toolBar
+    }
+
 
 }

@@ -43,6 +43,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         datePicker.hidden = true
         pickerView.hidden = true
         closeBtn.hidden = true
+        pickerView.backgroundColor = UIColor.whiteColor()
     }
     
     override func viewWillAppear(animated: Bool) {
