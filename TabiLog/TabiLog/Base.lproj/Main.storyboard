@@ -397,31 +397,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCq-qd-BdO">
-                                <rect key="frame" x="56" y="285" width="75" height="30"/>
+                                <rect key="frame" x="56" y="297" width="75" height="30"/>
                                 <state key="normal" title="画像を登録"/>
                                 <connections>
                                     <action selector="touchPicture:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="LH6-Qh-urJ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-bR-CId">
-                                <rect key="frame" x="56" y="323" width="240" height="247"/>
+                                <rect key="frame" x="56" y="332" width="240" height="247"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm4-NW-edI">
                                 <rect key="frame" x="172" y="578" width="30" height="30"/>
                                 <state key="normal" title="登録"/>
                                 <connections>
                                     <action selector="touchRegist:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="CHn-ep-EI3"/>
-                                    <segue destination="iyl-e5-jLV" kind="unwind" unwindAction="returnDetail:" id="EJ2-xd-FAr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe8-aM-XHJ">
-                                <rect key="frame" x="284" y="578" width="30" height="30"/>
-                                <state key="normal" title="削除">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="touchDelete:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="obX-Ne-rYI"/>
-                                    <segue destination="iyl-e5-jLV" kind="unwind" unwindAction="returnDetail:" id="WP5-0Z-1Yn"/>
+                                    <segue destination="iyl-e5-jLV" kind="unwind" identifier="returnDetail" unwindAction="returnDetail:" id="EJ2-xd-FAr"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4pM-d3-MF2">
@@ -440,7 +430,6 @@
                         <outlet property="commentTextView" destination="4pM-d3-MF2" id="19C-QN-qX7"/>
                         <outlet property="currencyField" destination="AB9-Rl-3Hp" id="vmD-3v-zt8"/>
                         <outlet property="dateField" destination="BaN-Hz-i53" id="weX-wT-dBL"/>
-                        <outlet property="deleteBtn" destination="oe8-aM-XHJ" id="go3-Rb-CbU"/>
                         <outlet property="imageView" destination="Aea-bR-CId" id="IYF-rH-6QS"/>
                         <outlet property="pictureBtn" destination="RCq-qd-BdO" id="I42-7z-sEu"/>
                         <outlet property="price" destination="nx2-1N-L9r" id="jrR-5i-S4n"/>

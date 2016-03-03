@@ -36,8 +36,6 @@
 		A1A847914B28A74C62C963B4 /* Pods-TabiLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabiLog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabiLog/Pods-TabiLog.debug.xcconfig"; sourceTree = "<group>"; };
 		F52DCC081C7F2341000A4C95 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		F52DCC0A1C832C35000A4C95 /* CategoryConfigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryConfigCell.swift; sourceTree = "<group>"; };
-		F52DCC0C1C85C382000A4C95 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		F52DCC0E1C85C4AE000A4C95 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		F55FBD461C72F55E00B57B24 /* TabiLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabiLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55FBD491C72F55E00B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55FBD4B1C72F55E00B57B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +82,6 @@
 		B9AB47AEC592579CEB1F8A00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F52DCC0E1C85C4AE000A4C95 /* Photos.framework */,
-				F52DCC0C1C85C382000A4C95 /* AssetsLibrary.framework */,
 				77105401462121CEB74DAE5E /* Pods_TabiLog.framework */,
 			);
 			name = Frameworks;

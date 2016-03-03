@@ -22,7 +22,6 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @IBOutlet weak var pictureBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var registBtn: UIButton!
-    @IBOutlet weak var deleteBtn: UIButton!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var selectedManagedObject:NSManagedObject?
@@ -45,7 +44,6 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     override func viewWillAppear(animated: Bool) {
         makePickerView()
-        deleteBtn.hidden = true
         appDelegate.readCategoryList()
         self.categoryList = appDelegate.categoryList
         for data in categoryList{
@@ -131,11 +129,13 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         
     }
     
-    @IBAction func touchDelete(sender: UIButton) {
+    func delete(){
         let managedContext: NSManagedObjectContext = self.appDelegate.managedObjectContext
         managedContext.deleteObject(self.selectedManagedObject!)
         try! managedContext.save()
+        performSegueWithIdentifier("returnDetail",sender: nil)
     }
+
     
     // ピッカービューの列数
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -184,8 +184,10 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     func setDefaultData(){
         if self.selectedManagedObject != nil {
+            var deleteBtn:UIBarButtonItem = UIBarButtonItem(title: "削除", style: UIBarButtonItemStyle.Plain, target: self, action: "delete")
+            deleteBtn.tintColor = UIColor.redColor()
+            self.navigationItem.setRightBarButtonItems([deleteBtn], animated: true)
             registBtn.setTitle("更新", forState: UIControlState.Normal)
-            deleteBtn.hidden = false
             let paymentDetail = selectedManagedObject as! Payment
             self.dateField.text = appDelegate.getDateFormat(paymentDetail.date)
             self.date = paymentDetail.date

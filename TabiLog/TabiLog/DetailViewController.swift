@@ -22,8 +22,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // ↓動かない
-        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "削除", style: UIBarButtonItemStyle.Plain, target: self, action: "hoge")
     }
     
     override func viewWillAppear(animated: Bool) {
