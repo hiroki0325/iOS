@@ -47,8 +47,8 @@ class SummaryViewController: UIViewController, NADViewDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
-        nadView.resume()
         self.tabBarController!.selectedIndex = 1
+        nadView.resume()
         scroll?.showsHorizontalScrollIndicator = false
         scroll?.showsVerticalScrollIndicator = false
         scroll?.pagingEnabled = true
@@ -220,10 +220,5 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         nadView.frame = CGRect(x: (self.view.frame.size.width - nadView.frame.size.width)/2, y: self.view.frame.size.height - nadView.frame.size.height - self.tabBarController!.tabBar.frame.size.height, width: nadView.frame.size.width, height: nadView.frame.size.height)
         self.view.addSubview(nadView)
     }
-    
-    deinit {
-        nadView.delegate = nil
-        nadView = nil
-    }
-    
+        
 }

@@ -10,6 +10,13 @@
 		E885C34D5DB6A2AB0249655D /* Pods_TabiLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77105401462121CEB74DAE5E /* Pods_TabiLog.framework */; };
 		F52DCC091C7F2341000A4C95 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DCC081C7F2341000A4C95 /* Currency.swift */; };
 		F52DCC0B1C832C35000A4C95 /* CategoryConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DCC0A1C832C35000A4C95 /* CategoryConfigCell.swift */; };
+		F52DCC521C887C8F000A4C95 /* noImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC511C887C8F000A4C95 /* noImage.jpg */; };
+		F52DCC591C888154000A4C95 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC571C888154000A4C95 /* Settings.png */; };
+		F52DCC5A1C888154000A4C95 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC581C888154000A4C95 /* Settings@2x.png */; };
+		F52DCC5F1C88828F000A4C95 /* Doughnut Chart.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC5B1C88828F000A4C95 /* Doughnut Chart.png */; };
+		F52DCC601C88828F000A4C95 /* Doughnut Chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC5C1C88828F000A4C95 /* Doughnut Chart@2x.png */; };
+		F52DCC611C88828F000A4C95 /* Saving Book.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC5D1C88828F000A4C95 /* Saving Book.png */; };
+		F52DCC621C88828F000A4C95 /* Saving Book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC5E1C88828F000A4C95 /* Saving Book@2x.png */; };
 		F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD491C72F55E00B57B24 /* AppDelegate.swift */; };
 		F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD4B1C72F55E00B57B24 /* ViewController.swift */; };
 		F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBD4D1C72F55E00B57B24 /* Main.storyboard */; };
@@ -37,6 +44,13 @@
 		F52DCC081C7F2341000A4C95 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		F52DCC0A1C832C35000A4C95 /* CategoryConfigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryConfigCell.swift; sourceTree = "<group>"; };
 		F52DCC501C8826D8000A4C95 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		F52DCC511C887C8F000A4C95 /* noImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noImage.jpg; sourceTree = "<group>"; };
+		F52DCC571C888154000A4C95 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		F52DCC581C888154000A4C95 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
+		F52DCC5B1C88828F000A4C95 /* Doughnut Chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Doughnut Chart.png"; sourceTree = "<group>"; };
+		F52DCC5C1C88828F000A4C95 /* Doughnut Chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Doughnut Chart@2x.png"; sourceTree = "<group>"; };
+		F52DCC5D1C88828F000A4C95 /* Saving Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saving Book.png"; sourceTree = "<group>"; };
+		F52DCC5E1C88828F000A4C95 /* Saving Book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saving Book@2x.png"; sourceTree = "<group>"; };
 		F55FBD461C72F55E00B57B24 /* TabiLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabiLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55FBD491C72F55E00B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55FBD4B1C72F55E00B57B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,12 +130,19 @@
 				F55FBD491C72F55E00B57B24 /* AppDelegate.swift */,
 				F55FBD4B1C72F55E00B57B24 /* ViewController.swift */,
 				F55FBD5E1C730C3F00B57B24 /* TravelListViewController.swift */,
+				F52DCC5B1C88828F000A4C95 /* Doughnut Chart.png */,
+				F52DCC5C1C88828F000A4C95 /* Doughnut Chart@2x.png */,
+				F52DCC5D1C88828F000A4C95 /* Saving Book.png */,
+				F52DCC5E1C88828F000A4C95 /* Saving Book@2x.png */,
+				F52DCC511C887C8F000A4C95 /* noImage.jpg */,
 				F55FBD6A1C7579C300B57B24 /* TravelListTableViewCell.swift */,
 				F55FBD601C7319E200B57B24 /* NewTravelViewController.swift */,
 				F55FBD621C731A6200B57B24 /* SummaryViewController.swift */,
 				F55FBD641C731B0400B57B24 /* DetailViewController.swift */,
 				F55FBD741C76FB4B00B57B24 /* PaymentDetailViewController.swift */,
 				F55FBD661C731B1B00B57B24 /* ConfigViewController.swift */,
+				F52DCC571C888154000A4C95 /* Settings.png */,
+				F52DCC581C888154000A4C95 /* Settings@2x.png */,
 				F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */,
 				F52DCC0A1C832C35000A4C95 /* CategoryConfigCell.swift */,
 				F55FBD6E1C7616C200B57B24 /* CurrencyConfigViewController.swift */,
@@ -197,8 +218,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F52DCC5F1C88828F000A4C95 /* Doughnut Chart.png in Resources */,
+				F52DCC591C888154000A4C95 /* Settings.png in Resources */,
+				F52DCC601C88828F000A4C95 /* Doughnut Chart@2x.png in Resources */,
+				F52DCC5A1C888154000A4C95 /* Settings@2x.png in Resources */,
 				F55FBD571C72F55E00B57B24 /* LaunchScreen.storyboard in Resources */,
 				F55FBD541C72F55E00B57B24 /* Assets.xcassets in Resources */,
+				F52DCC521C887C8F000A4C95 /* noImage.jpg in Resources */,
+				F52DCC611C88828F000A4C95 /* Saving Book.png in Resources */,
+				F52DCC621C88828F000A4C95 /* Saving Book@2x.png in Resources */,
 				F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

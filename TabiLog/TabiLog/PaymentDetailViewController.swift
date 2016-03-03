@@ -12,8 +12,6 @@ import AssetsLibrary
 
 class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-
-
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var price: UITextField!
@@ -37,13 +35,11 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = UIImage(named: "noImage.jpg")
         makeDatePicker()
         commentTextView.layer.borderWidth = 1
-        commentTextView.layer.cornerRadius = 10
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        makePickerView()
+        commentTextView.layer.borderColor = UIColor(red:0.9, green:0.9, blue:0.9, alpha:1.0).CGColor
+        commentTextView.layer.cornerRadius = 5
         appDelegate.readCategoryList()
         self.categoryList = appDelegate.categoryList
         for data in categoryList{
@@ -51,7 +47,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
                 categoryListForPickerView.append(data["name"] as! String)
             }
         }
-        self.travelID = Int16(appDelegate.travelID)
+        self.currencyList = []
         appDelegate.readCurrency()
         for var tmpCurrency in appDelegate.currencyList{
             if tmpCurrency["useFlg"] as! Int == 1 {
@@ -59,6 +55,12 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             }
         }
         setDefaultData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        makePickerView()
+        self.categoryList = []
+        self.travelID = Int16(appDelegate.travelID)
         changeButtonStatus()
     }
 
@@ -316,8 +318,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             registBtn.enabled = false
         }
     }
-
-
+    
 }
 
 extension PaymentDetailViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -328,9 +329,14 @@ extension PaymentDetailViewController:UIImagePickerControllerDelegate, UINavigat
         if info[UIImagePickerControllerOriginalImage] != nil {
             if let photo:UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
                 
+                imageView.image = nil
+                imageURL = nil
+                
+
                 // ImageViewにその画像を設定
                 imageView.image = photo
                 imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+                
             }
         }
         
