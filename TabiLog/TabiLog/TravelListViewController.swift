@@ -58,7 +58,7 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     // 選択された時に行う処理
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         appDelegate.direction = (travelDetail[indexPath.row]["destination"] as? String)!
-        appDelegate.travelID = indexPath.row+1
+        appDelegate.travelID = (appDelegate.travelIDs[indexPath.row])
         var from = appDelegate.getDateFormat(travelDetail[indexPath.row]["from"] as! NSDate)
         var to = appDelegate.getDateFormat(travelDetail[indexPath.row]["to"] as! NSDate)
         period = "\(from)~\(to)"
@@ -94,8 +94,6 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
         let managedContext: NSManagedObjectContext = self.appDelegate.managedObjectContext
         managedContext.deleteObject(appDelegate.managedObjects[indexPath.row])
         try! managedContext.save()
-        
-        // テーブルビュー用の配列を取得し直す
         appDelegate.readTravel()
         self.travelNum = appDelegate.travelNum
         self.travelDetail = appDelegate.travelDetail

@@ -10,7 +10,6 @@ import UIKit
 
 class CustomCell: UICollectionViewCell {
     
-    @IBOutlet weak var categoryBtn: UIButton!
     @IBOutlet weak var categorySwitch: UISwitch!
     @IBOutlet weak var categoryTextField: UITextField!
     

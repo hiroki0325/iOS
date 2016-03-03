@@ -28,9 +28,12 @@ class NewTravelViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        changeButtonStatus()
     }
     
     @IBAction func tapRegist(sender: UIButton) {
+        appDelegate.getLatestTravelID()
+        appDelegate.myDefault.setInteger(appDelegate.latestTravelID+1, forKey: "latestTravelID")
         // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
         let managedObjectContext = appDelegate.managedObjectContext
                 
@@ -39,6 +42,7 @@ class NewTravelViewController: UIViewController {
             
         // travel EntityからObjectを生成し、Attributesに接続して値を代入
         let travel = managedObject as! Travel
+        travel.id = Int16(appDelegate.latestTravelID+1)
         travel.destination = destination.text!
         travel.from = fromDate!
         travel.to = toDate!
@@ -49,20 +53,8 @@ class NewTravelViewController: UIViewController {
         // データの保存処理
         appDelegate.saveContext()
         
-        // 作ったデータのIDを取得
-        let entityDiscription = NSEntityDescription.entityForName("Travel", inManagedObjectContext: managedObjectContext)
-        
-        let fetchRequest = NSFetchRequest(entityName: "Travel")
-        fetchRequest.entity = entityDiscription
-        do {
-            let results = try managedObjectContext.executeFetchRequest(fetchRequest)
-            self.madeTravelID = results.count
-        } catch let error as NSError{
-            print(error.localizedDescription)
-        }
-        
         // 初期通貨データの作成
-        setDefaultCurrencyList(self.madeTravelID)
+        setDefaultCurrencyList(appDelegate.latestTravelID+1)
         
     }
     
@@ -89,6 +81,7 @@ class NewTravelViewController: UIViewController {
     }
     
     @IBAction func didFinishEditDestination(sender: UITextField) {
+        changeButtonStatus()
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,6 +113,7 @@ class NewTravelViewController: UIViewController {
         } else {
             toTextField.resignFirstResponder()
         }
+        changeButtonStatus()
     }
     
     func tappedToolBarBtn(sender: UIBarButtonItem) {
@@ -132,6 +126,7 @@ class NewTravelViewController: UIViewController {
             self.toDate = NSDate()
             toTextField.resignFirstResponder()
         }
+        changeButtonStatus()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -149,6 +144,7 @@ class NewTravelViewController: UIViewController {
             self.toDate = sender.date
             toTextField.text = appDelegate.getDateFormat(sender.date)
         }
+        changeButtonStatus()
     }
     
     func makeDatePicker(){
@@ -170,6 +166,22 @@ class NewTravelViewController: UIViewController {
         toolBar.setItems([todayBtn,flexSpace,textBtn,flexSpace,okBarBtn], animated: true)
         fromTextField.inputAccessoryView = toolBar
         toTextField.inputAccessoryView = toolBar
+    }
+    
+    func checkValidation() -> Bool {
+        if (destination.text != "" && toTextField.text != "" &&  fromTextField.text != "") {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func changeButtonStatus(){
+        if checkValidation() {
+            register.enabled = true
+        } else {
+            register.enabled = false
+        }
     }
 
 

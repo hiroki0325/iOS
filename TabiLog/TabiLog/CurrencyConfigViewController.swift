@@ -18,6 +18,7 @@ class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currencyTableView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -55,7 +56,12 @@ class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITa
     }
     
     @IBAction func changeRate(sender: UITextField) {
-        updateCurrency(Double(sender.text!)!, key: "rate", tag: sender.tag, tagGap: 100)
+        if sender.text != "" && Double(sender.text!) != nil && Double(sender.text!) != 0 {
+            updateCurrency(Double(sender.text!)!, key: "rate", tag: sender.tag, tagGap: 100)
+        } else {
+            alert()
+        }
+
     }
     
     @IBAction func changeSwitch(sender: UISwitch) {
@@ -95,5 +101,20 @@ class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITa
         viewDidLoad()
     }
     
-    
+    func alert(){
+        var alertController = UIAlertController(
+            title: "",
+            message: "為替レートを正しく入力してください\n(レートに0を設定することは出来ません)",
+            preferredStyle: UIAlertControllerStyle.ActionSheet
+        )
+        alertController.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: .Default,
+                handler: nil
+            )
+        )
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+        
 }

@@ -26,11 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var travelDetail:[NSDictionary] = []
     var travelNum:Int = 0
     var managedObjects:[NSManagedObject] = []
-
+    var travelIDs:[Int] = []
+    var latestTravelID:Int = 0
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        myDefault.setObject(self.defaultCategory, forKey: "category")
-        myDefault.synchronize()
-
+        if myDefault.integerForKey("latestTravelID") == 0 {
+            myDefault.setInteger(latestTravelID, forKey: "latestTravelID")
+            myDefault.setObject(self.defaultCategory, forKey: "category")
+            myDefault.synchronize()
+        }
         return true
     }
 
@@ -157,11 +161,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
             let results = try managedObjectContext.executeFetchRequest(fetchRequest)
             self.travelNum = results.count
+            self.travelIDs = []
             for managedObject in results {
                 self.managedObjects.append(managedObject as! NSManagedObject)
                 let travel = managedObject as! Travel
+                self.travelIDs.append(Int(travel.id))
                 var newTravel:NSDictionary =
                 [
+                    "id":Int(travel.id),
                     "destination":travel.destination,
                     "from":travel.from,
                     "to":travel.to,
@@ -212,11 +219,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var jsondata = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
         var jsonDictionary = try! NSJSONSerialization.JSONObjectWithData(jsondata, options: []) as! NSDictionary
         
-        for(var i=1; self.defaultCurrency.count-1>i; i++){
+        for(var i=1; self.defaultCurrency.count>i; i++){
             var tmpCurrencyList = NSMutableDictionary(dictionary: self.defaultCurrency[i] as! [NSObject : AnyObject])
             tmpCurrencyList["rate"] = Double(jsonDictionary[self.defaultCurrency[i]["code"] as! String] as! String)
             self.defaultCurrency[i] = tmpCurrencyList
         }
+    }
+    
+    func getLatestTravelID(){
+        self.latestTravelID = myDefault.integerForKey("latestTravelID")
     }
     
 }

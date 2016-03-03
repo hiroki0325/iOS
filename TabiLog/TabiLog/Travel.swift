@@ -17,5 +17,6 @@ class Travel: NSManagedObject {
     @NSManaged var to: NSDate
     @NSManaged var budgetCurrencyID: Int16
     @NSManaged var deleteFlg: NSNumber?
+    @NSManaged var id: Int16
     
 }

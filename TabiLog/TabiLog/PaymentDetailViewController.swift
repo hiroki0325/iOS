@@ -39,6 +39,8 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         makeDatePicker()
+        commentTextView.layer.borderWidth = 1
+        commentTextView.layer.cornerRadius = 10
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +61,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             }
         }
         setDefaultData()
+        changeButtonStatus()
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,13 +89,13 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             // フォトライブラリの画像・写真選択画面を表示
             let imagePickerController = UIImagePickerController()
             imagePickerController.sourceType = .PhotoLibrary
-            imagePickerController.allowsEditing = true
             imagePickerController.delegate = self
             presentViewController(imagePickerController, animated: true, completion: nil)
         }
     }
     
     @IBAction func editPrice(sender: UITextField) {
+        changeButtonStatus()
     }
     
     @IBAction func editCurrency(sender: AnyObject) {
@@ -126,10 +129,6 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         // データの保存処理
         appDelegate.saveContext()
         
-    }
-    
-    @IBAction func changeDatePicker(sender: UIDatePicker) {
-        date = sender.date
     }
     
     @IBAction func touchDelete(sender: UIButton) {
@@ -180,6 +179,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             currencyField.text = currencyList[row] as String
             self.currencyID = Int16(row)
         }
+        changeButtonStatus()
     }
     
     func setDefaultData(){
@@ -209,7 +209,20 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             if let ast = asset {
                 let assetRep = ast.defaultRepresentation()
                 let iref = assetRep.fullResolutionImage().takeUnretainedValue()
-                let image = UIImage(CGImage: iref)
+                let scale = CGFloat(assetRep.scale())
+                let photoOrientation = assetRep.orientation().hashValue
+                var orientation:UIImageOrientation?
+                switch(photoOrientation) {
+                case 0:
+                    orientation = UIImageOrientation.Up
+                case 1:
+                    orientation = UIImageOrientation.Down
+                case 2:
+                    orientation = UIImageOrientation.Left
+                default :
+                    orientation = UIImageOrientation.Right
+                }
+                let image = UIImage(CGImage: iref, scale: scale, orientation:orientation!)
                 dispatch_async(dispatch_get_main_queue(), {
                     self.imageView.image = image
                 })
@@ -223,12 +236,14 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         dateField.resignFirstResponder()
         categoryField.resignFirstResponder()
         currencyField.resignFirstResponder()
+        changeButtonStatus()
     }
     
     func tappedToolBarBtn(sender: UIBarButtonItem) {
         dateField.text = appDelegate.getDateFormat(NSDate())
         self.date = NSDate()
         dateField.resignFirstResponder()
+        changeButtonStatus()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -241,6 +256,7 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         self.date = sender.date
         dateField.text = appDelegate.getDateFormat(sender.date)
+        changeButtonStatus()
     }
     
     func makeDatePicker(){
@@ -282,19 +298,49 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         categoryField.inputAccessoryView = toolBar
         currencyField.inputAccessoryView = toolBar
     }
+    
+    func checkValidation() -> Bool {
+        if (dateField.text != "" && categoryField.text != "" && price.text != "" &&  currencyField.text != "" && NSString(string:price.text!).floatValue != 0 && Float(price.text!) != nil) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func changeButtonStatus(){
+        if checkValidation() {
+            registBtn.enabled = true
+        } else {
+            registBtn.enabled = false
+        }
+    }
+
 
 }
 
 extension PaymentDetailViewController:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        // 選択した画像・写真を取得し、imageViewに表示
-        if let info = editingInfo, let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
-            imageView.image = editedImage
-        }else{
-            imageView.image = image
+    // 写真選択時に呼ばれる
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        // 選択した画像を取得
+        if info[UIImagePickerControllerOriginalImage] != nil {
+            if let photo:UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                
+                // ImageViewにその画像を設定
+                imageView.image = photo
+                imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+            }
         }
-        imageURL = editingInfo![UIImagePickerControllerReferenceURL] as! NSURL
-        // フォトライブラリの画像・写真選択画面を閉じる
+        
         picker.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    /**
+     画像選択がキャンセルされた時に呼ばれる.
+     */
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
+        // モーダルビューを閉じる
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

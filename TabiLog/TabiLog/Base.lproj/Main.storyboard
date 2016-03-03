@@ -396,21 +396,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="メモ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4pM-d3-MF2">
-                                <rect key="frame" x="115" y="220" width="240" height="95"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCq-qd-BdO">
-                                <rect key="frame" x="56" y="335" width="75" height="30"/>
+                                <rect key="frame" x="56" y="285" width="75" height="30"/>
                                 <state key="normal" title="画像を登録"/>
                                 <connections>
                                     <action selector="touchPicture:" destination="8Y8-gQ-AHU" eventType="touchUpInside" id="LH6-Qh-urJ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-bR-CId">
-                                <rect key="frame" x="67" y="373" width="240" height="175"/>
+                                <rect key="frame" x="56" y="323" width="240" height="247"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hm4-NW-edI">
                                 <rect key="frame" x="172" y="578" width="30" height="30"/>
@@ -430,6 +424,11 @@
                                     <segue destination="iyl-e5-jLV" kind="unwind" unwindAction="returnDetail:" id="WP5-0Z-1Yn"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4pM-d3-MF2">
+                                <rect key="frame" x="132" y="220" width="209" height="70"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -488,13 +487,6 @@
                                                         <action selector="changeSwitch:" destination="me6-7b-aod" eventType="valueChanged" id="u18-NL-xpM"/>
                                                     </connections>
                                                 </switch>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRx-IP-VYg">
-                                                    <rect key="frame" x="15" y="9" width="45" height="30"/>
-                                                    <state key="normal" title="分類名"/>
-                                                    <connections>
-                                                        <action selector="editCategory:" destination="me6-7b-aod" eventType="touchUpInside" id="EHs-gE-f8I"/>
-                                                    </connections>
-                                                </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odE-q4-kXR">
                                                     <rect key="frame" x="8" y="12" width="80" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -508,7 +500,6 @@
                                         </view>
                                         <size key="customSize" width="180" height="50"/>
                                         <connections>
-                                            <outlet property="categoryBtn" destination="TRx-IP-VYg" id="eaW-Ii-4Ff"/>
                                             <outlet property="categorySwitch" destination="yLv-Xu-REx" id="7ii-A4-t3s"/>
                                             <outlet property="categoryTextField" destination="odE-q4-kXR" id="0x4-e5-VI2"/>
                                         </connections>
