@@ -2,11 +2,14 @@ PODS:
   - Charts (2.2.2):
     - Charts/Core (= 2.2.2)
   - Charts/Core (2.2.2)
+  - NendSDK_iOS (3.0.3)
 
 DEPENDENCIES:
   - Charts
+  - NendSDK_iOS
 
 SPEC CHECKSUMS:
   Charts: e32b718fa716bdb7693b9e419d6d4a39a3f7992e
+  NendSDK_iOS: c1440bb15197139473d47a1541a6f9368bc71583
 
 COCOAPODS: 0.39.0

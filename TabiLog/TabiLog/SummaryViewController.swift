@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 import Charts
 
-class SummaryViewController: UIViewController {
+class SummaryViewController: UIViewController, NADViewDelegate {
     
+    private var nadView: NADView!
     
     @IBOutlet weak var directionLabel: UILabel!
     @IBOutlet weak var periodLabel: UILabel!
@@ -32,9 +33,21 @@ class SummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // NADViewクラスを生成
+        nadView = NADView(frame: CGRect(x: 0, y: 0, width: 320, height: 50), isAdjustAdSize: true)
+        // 広告枠のapikey/spotidを設定(必須)
+        nadView.setNendID("e422de3890cc54751e0d731ba4b93ae7745726da", spotID: "552837")
+        // nendSDKログ出力の設定(任意)
+        nadView.isOutputLog = false
+        // delegateを受けるオブジェクトを指定(必須)
+        nadView.delegate = self
+        // 読み込み開始(必須)
+        nadView.load()
+
     }
     
     override func viewWillAppear(animated: Bool) {
+        nadView.resume()
         self.tabBarController!.selectedIndex = 1
         scroll?.showsHorizontalScrollIndicator = false
         scroll?.showsVerticalScrollIndicator = false
@@ -51,6 +64,11 @@ class SummaryViewController: UIViewController {
         
         // 円グラフの表示
         setChart(categoriesForPiecharts, values: pricesForPiecharts)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        nadView.pause()
     }
     
     override func didReceiveMemoryWarning() {
@@ -195,7 +213,17 @@ class SummaryViewController: UIViewController {
         pieChartData.setValueFormatter(numberFormatter)
         
         self.pieChartView.data = pieChartData
-        
+    }
+    
+    func nadViewDidFinishLoad(adView: NADView!) {
+        print("delegate nadViewDidFinishLoad:")
+        nadView.frame = CGRect(x: (self.view.frame.size.width - nadView.frame.size.width)/2, y: self.view.frame.size.height - nadView.frame.size.height - self.tabBarController!.tabBar.frame.size.height, width: nadView.frame.size.width, height: nadView.frame.size.height)
+        self.view.addSubview(nadView)
+    }
+    
+    deinit {
+        nadView.delegate = nil
+        nadView = nil
     }
     
 }

@@ -36,6 +36,7 @@
 		A1A847914B28A74C62C963B4 /* Pods-TabiLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabiLog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabiLog/Pods-TabiLog.debug.xcconfig"; sourceTree = "<group>"; };
 		F52DCC081C7F2341000A4C95 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		F52DCC0A1C832C35000A4C95 /* CategoryConfigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryConfigCell.swift; sourceTree = "<group>"; };
+		F52DCC501C8826D8000A4C95 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		F55FBD461C72F55E00B57B24 /* TabiLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabiLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55FBD491C72F55E00B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55FBD4B1C72F55E00B57B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		F55FBD3D1C72F55E00B57B24 = {
 			isa = PBXGroup;
 			children = (
+				F52DCC501C8826D8000A4C95 /* Header.h */,
 				F55FBD481C72F55E00B57B24 /* TabiLog */,
 				F55FBD471C72F55E00B57B24 /* Products */,
 				7EE2F25718882A8C80C723B7 /* Pods */,
@@ -388,6 +390,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.TabiLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 			};
 			name = Debug;
 		};
@@ -400,6 +403,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.TabiLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 			};
 			name = Release;
 		};

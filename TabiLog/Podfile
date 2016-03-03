@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'TabiLog' do
  pod 'Charts'
+ pod 'NendSDK_iOS'
 end
