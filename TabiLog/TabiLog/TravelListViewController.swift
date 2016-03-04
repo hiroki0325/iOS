@@ -67,6 +67,10 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
     
     // Segueで画面遷移する時
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        if segue.identifier != "createNewTravel" {
+            let nextVC = segue.destinationViewController as! UITabBarController
+            nextVC.selectedIndex = 1
+        }
     }
 
     override func didReceiveMemoryWarning() {

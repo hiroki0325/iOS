@@ -139,6 +139,30 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     func delete(){
+        var alertController = UIAlertController(
+            title: "",
+            message: "本当に削除しますか？",
+            preferredStyle: .Alert
+        )
+        alertController.addAction(
+            UIAlertAction(
+                title: "キャンセル",
+                style: .Cancel,
+                handler: nil
+            )
+        )
+        alertController.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertActionStyle.Destructive,
+                handler: {action in self.confirmedDelete()}
+            )
+        )
+
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func confirmedDelete(){
         let managedContext: NSManagedObjectContext = self.appDelegate.managedObjectContext
         managedContext.deleteObject(self.selectedManagedObject!)
         try! managedContext.save()

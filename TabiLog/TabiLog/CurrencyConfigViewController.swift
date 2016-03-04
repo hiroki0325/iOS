@@ -105,7 +105,7 @@ class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITa
         var alertController = UIAlertController(
             title: "",
             message: "為替レートを正しく入力してください\n(レートに0を設定することは出来ません)",
-            preferredStyle: UIAlertControllerStyle.ActionSheet
+            preferredStyle: .Alert
         )
         alertController.addAction(
             UIAlertAction(

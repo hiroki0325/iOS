@@ -43,12 +43,9 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         nadView.delegate = self
         // 読み込み開始(必須)
         nadView.load()
-
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tabBarController!.selectedIndex = 1
-        nadView.resume()
         scroll?.showsHorizontalScrollIndicator = false
         scroll?.showsVerticalScrollIndicator = false
         scroll?.pagingEnabled = true
@@ -64,6 +61,8 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         
         // 円グラフの表示
         setChart(categoriesForPiecharts, values: pricesForPiecharts)
+        nadView.resume()
+
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -195,7 +194,6 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         self.pieChartView.usePercentValuesEnabled = true
         self.pieChartView.descriptionText = ""
         
-        
         var dataEntries: [ChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
@@ -206,7 +204,6 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: nil)
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         pieChartDataSet.colors = ChartColorTemplates.colorful()
-        
         
         // %表示
         let numberFormatter = NSNumberFormatter()

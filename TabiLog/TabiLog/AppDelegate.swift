@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var period:String = ""
     var direction:String = ""
     var defaultCurrency:NSMutableArray = [["name":"円","rate":1], ["name":"ドル","rate":0.013,"code":"USD"], ["name":"ペソ","rate":0.4,"code":"PHP"], ["name":"元","rate":0.8,"code":"CNY"], ["name":"ドン","rate":0.03,"code":"VND"]]
-    var defaultCategory = [["ID":1,"name":"日用品","deleteFlg":0,],["ID":2,"name":"食費","deleteFlg":0],["ID":3,"name":"交通費","deleteFlg":0],["ID":4,"name":"娯楽費","deleteFlg":0]]
+    var defaultCategory = [["ID":1,"name":"日用品","deleteFlg":0,],["ID":2,"name":"食費","deleteFlg":0],["ID":3,"name":"交通費","deleteFlg":0],["ID":4,"name":"娯楽費","deleteFlg":0],["ID":100,"name":"その他","deleteFlg":0]]
     var currencyList:[NSDictionary] = []
     var categoryList = []
     var travelDetail:[NSDictionary] = []
@@ -166,6 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let results = try managedObjectContext.executeFetchRequest(fetchRequest)
             self.travelNum = results.count
             self.travelIDs = []
+            self.managedObjects = []
             for managedObject in results {
                 self.managedObjects.append(managedObject as! NSManagedObject)
                 let travel = managedObject as! Travel
