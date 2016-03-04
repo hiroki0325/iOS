@@ -26,7 +26,7 @@ class SummaryViewController: UIViewController, NADViewDelegate {
     var direction = "direction"
     var period = "period"
     var paymentDetail:[NSDictionary] = []
-    var categories:[String] = []
+    var categories = []
     var prices:[Double] = []
     var categoriesForPiecharts:[String] = []
     var pricesForPiecharts:[Double] = []
@@ -125,10 +125,7 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         
         // 分類情報の取得
         appDelegate.readCategoryList()
-        var categoryArray = appDelegate.categoryList
-        for data in categoryArray{
-            self.categories.append(data["name"] as! String)
-        }
+        self.categories = appDelegate.categoryList
         
         // 分類ごとの合計金額計算用配列の初期化
         for(var i=0;i<self.categories.count;i++){
@@ -148,12 +145,19 @@ class SummaryViewController: UIViewController, NADViewDelegate {
             var currencyID = payment["currencyID"] as! Int
             var categoryID = payment["categoryID"] as! Int
             var price = payment["price"] as! Double
+            var categoryNo = 0
+            for(var i=0;i<categories.count;i++){
+                var dic = appDelegate.categoryList[i]
+                if dic["ID"] as! Int == categoryID {
+                    categoryNo = i
+                }
+            }
             
             // 合計金額に加算
             totalPrice += price / currencyList[currencyID]
             
             // 分類ごとの合計金額を計算（円グラフ用）
-            self.prices[categoryID] += price / currencyList[currencyID]
+            self.prices[categoryNo] += price / currencyList[currencyID]
         }
         return String(Int(totalPrice))
     }
@@ -161,12 +165,12 @@ class SummaryViewController: UIViewController, NADViewDelegate {
     func formatForPiechart(){
         self.categoriesForPiecharts = []
         self.pricesForPiecharts = []
-        
         var i = 0
+        
         for data in self.prices{
             if data != 0 {
                 self.pricesForPiecharts.append(data)
-                self.categoriesForPiecharts.append(self.categories[i])
+                self.categoriesForPiecharts.append(categories[i]["name"] as! String)
             }
             i++
         }
@@ -220,5 +224,5 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         nadView.frame = CGRect(x: (self.view.frame.size.width - nadView.frame.size.width)/2, y: self.view.frame.size.height - nadView.frame.size.height - self.tabBarController!.tabBar.frame.size.height, width: nadView.frame.size.width, height: nadView.frame.size.height)
         self.view.addSubview(nadView)
     }
-        
+    
 }

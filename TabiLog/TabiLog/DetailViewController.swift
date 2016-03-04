@@ -71,8 +71,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             var priceLabel = cell.viewWithTag(3) as! UILabel
 
             dateLabel.text = appDelegate.getDateFormat2((paymentDetail[indexPath.row-1]["date"] as? NSDate)!)
-            categoryLabel.text = self.categoryList[(paymentDetail[indexPath.row-1]["categoryID"] as? Int)!]["name"] as? String
-            var price:String = (paymentDetail[indexPath.row-1]["price"] as! Int).description 
+            for data in self.categoryList {
+                if data["ID"] as? Int == paymentDetail[indexPath.row-1]["categoryID"] as? Int {
+                    categoryLabel.text = data["name"] as? String
+                }
+            }
+            var price:String = (paymentDetail[indexPath.row-1]["price"] as! Int).description
             var currency:String = self.currencyList[(paymentDetail[indexPath.row-1]["currencyID"] as? Int)!]
             priceLabel.text = price+currency
             

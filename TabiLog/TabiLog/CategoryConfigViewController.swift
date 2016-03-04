@@ -78,9 +78,11 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
     
     @IBAction func makeNewCategory(sender: UITextField) {
         if sender.text != "" {
+            appDelegate.getnextCategoryID()
             var text = String(sender.text!)
-            self.categoryList.append(["name":text,"deleteFlg":0])
+            self.categoryList.append(["ID":appDelegate.nextCategoryID,"name":text,"deleteFlg":0])
             appDelegate.myDefault.setObject(self.categoryList, forKey: "category")
+            appDelegate.myDefault.setInteger(appDelegate.nextCategoryID+1, forKey: "nextCategoryID")
             appDelegate.myDefault.synchronize()
             self.collectionView.reloadData()
         }
@@ -90,6 +92,7 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
         var newCategoryList:[AnyObject] = []
         //削除
         if sender.text == "" && self.categoryList.count == 1 {
+            // ラスト1個なとき
             alert()
         } else {
             if sender.text == ""{
@@ -98,9 +101,10 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
                 self.categoryList[sender.tag-200] = tmpCategoryList
                 for(var i=0;i<categoryList.count;i++){
                     if categoryList[i]["name"] as! String != "" {
+                        var id = categoryList[i]["ID"] as! Int
                         var text = categoryList[i]["name"] as! String
                         var deleteFlg = categoryList[i]["deleteFlg"] as! Int
-                        newCategoryList.append(["name":text,"deleteFlg":deleteFlg])
+                        newCategoryList.append(["ID":id,"name":text,"deleteFlg":deleteFlg])
                     }
                 }
             } else {

@@ -32,8 +32,7 @@ class NewTravelViewController: UIViewController {
     }
     
     @IBAction func tapRegist(sender: UIButton) {
-        appDelegate.getLatestTravelID()
-        appDelegate.myDefault.setInteger(appDelegate.latestTravelID+1, forKey: "latestTravelID")
+        appDelegate.getnextTravelID()
         // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
         let managedObjectContext = appDelegate.managedObjectContext
                 
@@ -42,7 +41,7 @@ class NewTravelViewController: UIViewController {
             
         // travel EntityからObjectを生成し、Attributesに接続して値を代入
         let travel = managedObject as! Travel
-        travel.id = Int16(appDelegate.latestTravelID+1)
+        travel.id = Int16(appDelegate.nextTravelID)
         travel.destination = destination.text!
         travel.from = fromDate!
         travel.to = toDate!
@@ -54,8 +53,10 @@ class NewTravelViewController: UIViewController {
         appDelegate.saveContext()
         
         // 初期通貨データの作成
-        setDefaultCurrencyList(appDelegate.latestTravelID+1)
+        setDefaultCurrencyList(appDelegate.nextTravelID)
         
+        // 次のIDを更新
+        appDelegate.myDefault.setInteger(appDelegate.nextTravelID+1, forKey: "nextTravelID")
     }
     
     @IBAction func editFrom(sender: UITextField) {

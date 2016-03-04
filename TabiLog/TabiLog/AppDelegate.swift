@@ -20,18 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var period:String = ""
     var direction:String = ""
     var defaultCurrency:NSMutableArray = [["name":"円","rate":1], ["name":"ドル","rate":0.013,"code":"USD"], ["name":"ペソ","rate":0.4,"code":"PHP"], ["name":"元","rate":0.8,"code":"CNY"], ["name":"ドン","rate":0.03,"code":"VND"]]
-    var defaultCategory = [["name":"日用品","deleteFlg":0,],["name":"食費","deleteFlg":0],["name":"交通費","deleteFlg":0],["name":"娯楽費","deleteFlg":0]]
+    var defaultCategory = [["ID":1,"name":"日用品","deleteFlg":0,],["ID":2,"name":"食費","deleteFlg":0],["ID":3,"name":"交通費","deleteFlg":0],["ID":4,"name":"娯楽費","deleteFlg":0]]
     var currencyList:[NSDictionary] = []
     var categoryList = []
     var travelDetail:[NSDictionary] = []
     var travelNum:Int = 0
     var managedObjects:[NSManagedObject] = []
     var travelIDs:[Int] = []
-    var latestTravelID:Int = 0
+    var nextTravelID:Int = 0
+    var nextCategoryID = 5
+    var lastCurrencyID:Int = -1
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        if myDefault.integerForKey("latestTravelID") == 0 {
-            myDefault.setInteger(latestTravelID, forKey: "latestTravelID")
+        if myDefault.integerForKey("nextTravelID") == 0 {
+            myDefault.setInteger(self.nextTravelID, forKey: "nextTravelID")
+            myDefault.setInteger(self.lastCurrencyID, forKey: "lastCurrencyID")
+            myDefault.setInteger(self.nextCategoryID, forKey: "nextCategoryID")
             myDefault.setObject(self.defaultCategory, forKey: "category")
             myDefault.synchronize()
         }
@@ -226,8 +230,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func getLatestTravelID(){
-        self.latestTravelID = myDefault.integerForKey("latestTravelID")
+    func getnextTravelID(){
+        self.nextTravelID = myDefault.integerForKey("nextTravelID")
+    }
+    
+    func getnextCategoryID(){
+        self.nextCategoryID = myDefault.integerForKey("nextCategoryID")
     }
     
 }

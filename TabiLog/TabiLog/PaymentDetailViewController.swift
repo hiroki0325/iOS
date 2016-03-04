@@ -54,12 +54,16 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
                 self.currencyList.append(tmpCurrency["name"] as! String)
             }
         }
+        appDelegate.lastCurrencyID = appDelegate.myDefault.integerForKey("lastCurrencyID")
+        if appDelegate.lastCurrencyID != -1 {
+            self.currencyID = Int16(appDelegate.lastCurrencyID)
+            self.currencyField.text = self.currencyList[appDelegate.lastCurrencyID]
+        }
         setDefaultData()
     }
     
     override func viewWillAppear(animated: Bool) {
         makePickerView()
-        self.categoryList = []
         self.travelID = Int16(appDelegate.travelID)
         changeButtonStatus()
     }
@@ -129,6 +133,9 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         // データの保存処理
         appDelegate.saveContext()
         
+        appDelegate.myDefault.setInteger(Int(currencyID), forKey: "lastCurrencyID")
+        appDelegate.myDefault.synchronize()
+        
     }
     
     func delete(){
@@ -170,12 +177,10 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if selectedPickerView == "分類" {
             categoryField.text = categoryListForPickerView[row] as String
-            var i = 0
             for (data) in self.categoryList{
                 if data["name"] as! String == categoryListForPickerView[row]{
-                    self.categoryID = Int16(i)
+                    self.categoryID = Int16(data["ID"] as! Int)
                 }
-                i++
             }
         } else if selectedPickerView == "通貨" {
             currencyField.text = currencyList[row] as String
@@ -196,7 +201,11 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             self.price.text = String(Int(paymentDetail.price))
             self.currencyField.text = self.currencyList[Int(paymentDetail.currencyID)]
             self.currencyID = paymentDetail.currencyID
-            self.categoryField.text = appDelegate.categoryList[Int(paymentDetail.categoryID)]["name"] as? String
+            for data in self.categoryList{
+                if data["ID"] as! Int == Int(paymentDetail.categoryID){
+                    self.categoryField.text = data["name"] as? String
+                }
+            }
             self.categoryID = paymentDetail.categoryID
             self.commentTextView.text = paymentDetail.comment
             if paymentDetail.picturePath != nil {
@@ -328,15 +337,9 @@ extension PaymentDetailViewController:UIImagePickerControllerDelegate, UINavigat
         // 選択した画像を取得
         if info[UIImagePickerControllerOriginalImage] != nil {
             if let photo:UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                
-                imageView.image = nil
-                imageURL = nil
-                
-
                 // ImageViewにその画像を設定
                 imageView.image = photo
                 imageURL = info[UIImagePickerControllerReferenceURL] as! NSURL
-                
             }
         }
         
