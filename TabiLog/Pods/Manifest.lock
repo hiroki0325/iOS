@@ -1,15 +1,18 @@
 PODS:
-  - Charts (2.2.2):
-    - Charts/Core (= 2.2.2)
-  - Charts/Core (2.2.2)
+  - Charts (2.2.3):
+    - Charts/Core (= 2.2.3)
+  - Charts/Core (2.2.3)
+  - Google-Mobile-Ads-SDK (7.7.0)
   - NendSDK_iOS (3.0.3)
 
 DEPENDENCIES:
   - Charts
+  - Google-Mobile-Ads-SDK
   - NendSDK_iOS
 
 SPEC CHECKSUMS:
-  Charts: e32b718fa716bdb7693b9e419d6d4a39a3f7992e
+  Charts: f54267bb3f0f0e74520c6f248517cf5074dfd6fc
+  Google-Mobile-Ads-SDK: d290e523a6e2f223256abcbf8e0c778b55b1f04e
   NendSDK_iOS: c1440bb15197139473d47a1541a6f9368bc71583
 
 COCOAPODS: 0.39.0

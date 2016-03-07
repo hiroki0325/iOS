@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
 class NewTravelViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class NewTravelViewController: UIViewController {
     @IBOutlet weak var register: UIButton!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var selectedPeriod = "from"
@@ -24,7 +26,11 @@ class NewTravelViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        register.layer.cornerRadius = 10
         makeDatePicker()
+        self.bannerView.adUnitID = "ca-app-pub-1924092324559548/2717102318"
+        self.bannerView.rootViewController = self
+        self.bannerView.loadRequest(GADRequest())
     }
     
     override func viewWillAppear(animated: Bool) {

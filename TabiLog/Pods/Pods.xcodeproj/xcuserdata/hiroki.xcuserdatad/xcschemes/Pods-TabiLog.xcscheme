@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B51E943CF0ED20FB49BA3380'
+               BlueprintIdentifier = '22D2629E9289542812958784'
                BlueprintName = 'Pods-TabiLog'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_TabiLog.framework'>

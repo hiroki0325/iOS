@@ -23,6 +23,7 @@ class TravelListViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "新規作成", style: UIBarButtonItemStyle.Plain, target: self, action: "newTravel")
+        
     }
     
     override func viewWillAppear(animated: Bool) {

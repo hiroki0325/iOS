@@ -207,6 +207,10 @@ Apache License
 
 
 
+## Google-Mobile-Ads-SDK
+
+Copyright 2011 Google Inc. All Rights Reserved.
+
 ## NendSDK_iOS
 
 Copyright 2016 F@N Communications, Inc. All Rights Reserved.

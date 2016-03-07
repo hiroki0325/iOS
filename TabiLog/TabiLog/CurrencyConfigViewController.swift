@@ -11,6 +11,7 @@ import CoreData
 
 class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var updateBtn: UIButton!
     @IBOutlet weak var currencyTableView: UITableView!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -19,6 +20,7 @@ class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         currencyTableView.reloadData()
+        updateBtn.layer.cornerRadius = 10
     }
     
     override func viewWillAppear(animated: Bool) {

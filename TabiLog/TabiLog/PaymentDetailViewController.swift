@@ -40,25 +40,9 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         commentTextView.layer.borderWidth = 1
         commentTextView.layer.borderColor = UIColor(red:0.9, green:0.9, blue:0.9, alpha:1.0).CGColor
         commentTextView.layer.cornerRadius = 5
-        appDelegate.readCategoryList()
-        self.categoryList = appDelegate.categoryList
-        for data in categoryList{
-            if data["deleteFlg"] as! Int != 1 {
-                categoryListForPickerView.append(data["name"] as! String)
-            }
-        }
-        self.currencyList = []
-        appDelegate.readCurrency()
-        for var tmpCurrency in appDelegate.currencyList{
-            if tmpCurrency["useFlg"] as! Int == 1 {
-                self.currencyList.append(tmpCurrency["name"] as! String)
-            }
-        }
-        appDelegate.lastCurrencyID = appDelegate.myDefault.integerForKey("lastCurrencyID")
-        if appDelegate.lastCurrencyID != -1 {
-            self.currencyID = Int16(appDelegate.lastCurrencyID)
-            self.currencyField.text = self.currencyList[appDelegate.lastCurrencyID]
-        }
+        pictureBtn.layer.cornerRadius = 10
+        registBtn.layer.cornerRadius = 10
+        makeData()
         setDefaultData()
     }
     
@@ -350,6 +334,29 @@ class PaymentDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         } else {
             registBtn.enabled = false
         }
+    }
+    
+    func makeData(){
+        appDelegate.readCategoryList()
+        self.categoryList = appDelegate.categoryList
+        for data in categoryList{
+            if data["deleteFlg"] as! Int != 1 {
+                categoryListForPickerView.append(data["name"] as! String)
+            }
+        }
+        self.currencyList = []
+        appDelegate.readCurrency()
+        for var tmpCurrency in appDelegate.currencyList{
+            if tmpCurrency["useFlg"] as! Int == 1 {
+                self.currencyList.append(tmpCurrency["name"] as! String)
+            }
+        }
+        appDelegate.lastCurrencyID = appDelegate.myDefault.integerForKey("lastCurrencyID")
+        if appDelegate.lastCurrencyID != -1 {
+            self.currencyID = Int16(appDelegate.lastCurrencyID)
+            self.currencyField.text = self.currencyList[appDelegate.lastCurrencyID]
+        }
+
     }
     
 }
