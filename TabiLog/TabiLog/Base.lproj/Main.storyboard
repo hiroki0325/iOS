@@ -618,8 +618,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QrD-qH-g4G">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QrD-qH-g4G">
+                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SbG-m4-0ND">
                                     <size key="itemSize" width="180" height="50"/>
@@ -635,15 +635,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLv-Xu-REx">
+                                                <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLv-Xu-REx">
                                                     <rect key="frame" x="114" y="9" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="changeSwitch:" destination="me6-7b-aod" eventType="valueChanged" id="u18-NL-xpM"/>
                                                     </connections>
                                                 </switch>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odE-q4-kXR">
-                                                    <rect key="frame" x="8" y="12" width="80" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odE-q4-kXR">
+                                                    <rect key="frame" x="8" y="12" width="81" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="endEditCategory:" destination="me6-7b-aod" eventType="editingDidEndOnExit" id="XUc-g1-m0k"/>
@@ -653,6 +653,13 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="yLv-Xu-REx" firstAttribute="centerY" secondItem="b6I-8J-IwY" secondAttribute="centerY" id="LYf-yW-goe"/>
+                                            <constraint firstItem="odE-q4-kXR" firstAttribute="leading" secondItem="b6I-8J-IwY" secondAttribute="leadingMargin" id="dB6-rq-wvc"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="yLv-Xu-REx" secondAttribute="trailing" constant="9" id="h0s-2C-Vjb"/>
+                                            <constraint firstItem="odE-q4-kXR" firstAttribute="bottom" secondItem="b6I-8J-IwY" secondAttribute="bottomMargin" id="s0y-ZX-OXg"/>
+                                            <constraint firstItem="yLv-Xu-REx" firstAttribute="leading" secondItem="odE-q4-kXR" secondAttribute="trailing" constant="25" id="sob-nh-iZi"/>
+                                        </constraints>
                                         <size key="customSize" width="180" height="50"/>
                                         <connections>
                                             <outlet property="categorySwitch" destination="yLv-Xu-REx" id="7ii-A4-t3s"/>
@@ -660,15 +667,15 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="newCell" id="drR-gK-Bko">
-                                        <rect key="frame" x="195" y="64" width="180" height="50"/>
+                                        <rect key="frame" x="203" y="64" width="180" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新規作成" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvE-II-GFS">
-                                                    <rect key="frame" x="27" y="10" width="127" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新規作成" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvE-II-GFS">
+                                                    <rect key="frame" x="8" y="10" width="164" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="makeNewCategory:" destination="me6-7b-aod" eventType="editingDidEndOnExit" id="ArT-vb-81j"/>
@@ -678,6 +685,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="pvE-II-GFS" secondAttribute="trailing" id="6fw-JI-hql"/>
+                                            <constraint firstItem="pvE-II-GFS" firstAttribute="centerY" secondItem="drR-gK-Bko" secondAttribute="centerY" id="QfQ-2V-pem"/>
+                                            <constraint firstItem="pvE-II-GFS" firstAttribute="leading" secondItem="drR-gK-Bko" secondAttribute="leadingMargin" id="RXc-2a-SyU"/>
+                                        </constraints>
                                         <size key="customSize" width="180" height="50"/>
                                     </collectionViewCell>
                                 </cells>
@@ -688,6 +700,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="QrD-qH-g4G" secondAttribute="trailing" constant="-20" id="K95-qV-wRg"/>
+                            <constraint firstItem="cD9-tQ-78C" firstAttribute="top" secondItem="QrD-qH-g4G" secondAttribute="bottom" id="bhZ-WH-w3Q"/>
+                            <constraint firstItem="QrD-qH-g4G" firstAttribute="leading" secondItem="HQH-dH-Abe" secondAttribute="leadingMargin" constant="-20" id="eRf-lB-UN7"/>
+                            <constraint firstItem="QrD-qH-g4G" firstAttribute="top" secondItem="eM8-fK-tr6" secondAttribute="bottom" id="ldi-pl-x98"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -757,7 +775,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="95" id="Hm4-LB-b92"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
