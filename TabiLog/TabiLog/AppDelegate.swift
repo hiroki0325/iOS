@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var travelID:Int = 0
     var period:String = ""
     var direction:String = ""
-    var defaultCurrency:NSMutableArray = [["name":"円","rate":1], ["name":"ドル","rate":0.013,"code":"USD"], ["name":"ペソ","rate":0.4,"code":"PHP"], ["name":"元","rate":0.8,"code":"CNY"], ["name":"ドン","rate":0.03,"code":"VND"]]
-    var defaultCategory = [["ID":1,"name":"日用品","deleteFlg":0,],["ID":2,"name":"食費","deleteFlg":0],["ID":3,"name":"交通費","deleteFlg":0],["ID":4,"name":"娯楽費","deleteFlg":0],["ID":100,"name":"その他","deleteFlg":0]]
+    var defaultCurrency:NSMutableArray = [["name":"円","rate":1], ["name":"ドル","rate":0.00881,"code":"USD"], ["name":"ユーロ","rate":0.00804,"code":"EUR"], ["name":"元","rate":0.05742,"code":"CNY"], ["name":"ウォン","rate":10.61915,"code":"KRW"],["name":"ポンド","rate":0.00622,"code":"GBP"],["name":"香港ドル","rate":0.06843,"code":"HKD"],["name":"台湾ドル","rate":0.2882,"code":"TWD"],["name":"シンガポールドル","rate":0.01217,"code":"SGD"],["name":"オーストラリアドル","rate":0.01187,"code":"AUD"],["name":"カナダドル","rate":0.01177,"code":"CAD"],["name":"インドルピー","rate":0.5919,"code":"INR"],["name":"ペソ","rate":0.41336,"code":"PHP"],["name":"ドン","rate":196.39563,"code":"VND"],["name":"バーツ","rate":0.31184,"code":"THB"],["name":"ルピア","rate":115.17704,"code":"IDR"],["name":"リンギット","rate":0.03604,"code":"MYR"]]
+    var defaultCategory = [["ID":1,"name":"食費","deleteFlg":0,],["ID":2,"name":"交通費","deleteFlg":0],["ID":3,"name":"日用品","deleteFlg":0],["ID":4,"name":"宿泊費","deleteFlg":0],["ID":5,"name":"娯楽費","deleteFlg":0],["ID":6,"name":"通信料","deleteFlg":0],["ID":100,"name":"その他","deleteFlg":0]]
     var currencyList:[NSDictionary] = []
     var categoryList = []
     var travelDetail:[NSDictionary] = []
@@ -221,14 +221,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var url = "http://api.aoikujira.com/kawase/json/jpy"
         var URL = NSURL(string: url)
         var request = NSURLRequest(URL: URL!)
-        var jsondata = try! NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
-        var jsonDictionary = try! NSJSONSerialization.JSONObjectWithData(jsondata, options: []) as! NSDictionary
-        
-        for(var i=1; self.defaultCurrency.count>i; i++){
-            var tmpCurrencyList = NSMutableDictionary(dictionary: self.defaultCurrency[i] as! [NSObject : AnyObject])
-            tmpCurrencyList["rate"] = Double(jsonDictionary[self.defaultCurrency[i]["code"] as! String] as! String)
-            self.defaultCurrency[i] = tmpCurrencyList
+        do {
+            var jsondata = try NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)
+            var jsonDictionary = try NSJSONSerialization.JSONObjectWithData(jsondata, options: []) as! NSDictionary
+            for(var i=1; self.defaultCurrency.count>i; i++){
+                var tmpCurrencyList = NSMutableDictionary(dictionary: self.defaultCurrency[i] as! [NSObject : AnyObject])
+                tmpCurrencyList["rate"] = Double(jsonDictionary[self.defaultCurrency[i]["code"] as! String] as! String)
+                self.defaultCurrency[i] = tmpCurrencyList
+            }
+        } catch {
         }
+        
     }
     
     func getnextTravelID(){

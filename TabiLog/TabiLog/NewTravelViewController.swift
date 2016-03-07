@@ -44,7 +44,10 @@ class NewTravelViewController: UIViewController {
                 
         // 新しくデータを追加するためのEntityを作成します
         let managedObject: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Travel", inManagedObjectContext: managedObjectContext)
-            
+        
+        // 初期通貨データの作成
+        setDefaultCurrencyList(appDelegate.nextTravelID)
+        
         // travel EntityからObjectを生成し、Attributesに接続して値を代入
         let travel = managedObject as! Travel
         travel.id = Int16(appDelegate.nextTravelID)
@@ -57,9 +60,6 @@ class NewTravelViewController: UIViewController {
         
         // データの保存処理
         appDelegate.saveContext()
-        
-        // 初期通貨データの作成
-        setDefaultCurrencyList(appDelegate.nextTravelID)
         
         // 次のIDを更新
         appDelegate.myDefault.setInteger(appDelegate.nextTravelID+1, forKey: "nextTravelID")
