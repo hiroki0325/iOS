@@ -19,6 +19,7 @@
 		F52DCC621C88828F000A4C95 /* Saving Book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC5E1C88828F000A4C95 /* Saving Book@2x.png */; };
 		F52DCC681C8982BB000A4C95 /* 58notext.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC671C8982BB000A4C95 /* 58notext.png */; };
 		F52DCC6A1C8D5FDE000A4C95 /* Cool-Text-169889991915566.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC691C8D5FDE000A4C95 /* Cool-Text-169889991915566.png */; };
+		F52DCC6C1C8DE202000A4C95 /* CurrencyConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DCC6B1C8DE201000A4C95 /* CurrencyConfigCell.swift */; };
 		F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD491C72F55E00B57B24 /* AppDelegate.swift */; };
 		F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD4B1C72F55E00B57B24 /* ViewController.swift */; };
 		F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBD4D1C72F55E00B57B24 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		F52DCC5E1C88828F000A4C95 /* Saving Book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saving Book@2x.png"; sourceTree = "<group>"; };
 		F52DCC671C8982BB000A4C95 /* 58notext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58notext.png; sourceTree = "<group>"; };
 		F52DCC691C8D5FDE000A4C95 /* Cool-Text-169889991915566.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cool-Text-169889991915566.png"; sourceTree = "<group>"; };
+		F52DCC6B1C8DE201000A4C95 /* CurrencyConfigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConfigCell.swift; sourceTree = "<group>"; };
 		F55FBD461C72F55E00B57B24 /* TabiLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabiLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55FBD491C72F55E00B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55FBD4B1C72F55E00B57B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */,
 				F52DCC0A1C832C35000A4C95 /* CategoryConfigCell.swift */,
 				F55FBD6E1C7616C200B57B24 /* CurrencyConfigViewController.swift */,
+				F52DCC6B1C8DE201000A4C95 /* CurrencyConfigCell.swift */,
 				F55FBD6C1C7616A300B57B24 /* UserPolicyViewController.swift */,
 				F55FBD4D1C72F55E00B57B24 /* Main.storyboard */,
 				F55FBD531C72F55E00B57B24 /* Assets.xcassets */,
@@ -308,6 +311,7 @@
 				F55FBD6B1C7579C300B57B24 /* TravelListTableViewCell.swift in Sources */,
 				F55FBD611C7319E200B57B24 /* NewTravelViewController.swift in Sources */,
 				F55FBD691C735FC200B57B24 /* Travel.swift in Sources */,
+				F52DCC6C1C8DE202000A4C95 /* CurrencyConfigCell.swift in Sources */,
 				F55FBD631C731A6200B57B24 /* SummaryViewController.swift in Sources */,
 				F55FBD771C76FD2E00B57B24 /* CategoryConfigViewController.swift in Sources */,
 				F55FBD651C731B0400B57B24 /* DetailViewController.swift in Sources */,

@@ -40,13 +40,13 @@ class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("currencyCell")! as UITableViewCell
-        var currencyName = cell.viewWithTag(1) as! UILabel
+        var cell:CustomTableCell = tableView.dequeueReusableCellWithIdentifier("currencyCell")! as! CustomTableCell
+        var currencyName = cell.label
         currencyName.text = currencyList[indexPath.row+1]["name"] as? String
-        var rate = cell.viewWithTag(2) as! UITextField
+        var rate = cell.textField
         rate.text = String(currencyList[indexPath.row+1]["rate"] as! Double)
         rate.tag = 100+indexPath.row+1
-        var useSwitch = cell.viewWithTag(3) as! UISwitch
+        var useSwitch = cell.`switch`
         if currencyList[indexPath.row+1]["useFlg"] as! Int == 1 {
             useSwitch.on = true
         } else {

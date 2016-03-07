@@ -739,21 +739,21 @@
                                     <action selector="tapBtn:" destination="rMK-Aj-2OQ" eventType="touchUpInside" id="4tj-KO-GQs"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="djO-cg-fqc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="djO-cg-fqc">
                                 <rect key="frame" x="-4" y="64" width="383" height="532"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyCell" id="mah-g9-2rH">
-                                        <rect key="frame" x="0.0" y="28" width="383" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyCell" id="mah-g9-2rH" customClass="CustomTableCell" customModule="TabiLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="383" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mah-g9-2rH" id="IKS-8B-yio">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jao-l5-7FK">
-                                                    <rect key="frame" x="305" y="6" width="52" height="31"/>
+                                                    <rect key="frame" x="305" y="5" width="52" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="lRy-cD-N7d"/>
                                                     </constraints>
@@ -762,16 +762,16 @@
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通貨名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRm-vu-YUJ">
-                                                    <rect key="frame" x="38" y="11" width="104" height="21"/>
+                                                    <rect key="frame" x="38" y="11" width="140" height="18.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="104" id="QJ9-vM-bfz"/>
+                                                        <constraint firstAttribute="width" constant="140" id="QJ9-vM-bfz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWs-Yb-Opf">
-                                                    <rect key="frame" x="105" y="6" width="170" height="30"/>
+                                                    <rect key="frame" x="186" y="5" width="111" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="95" id="Hm4-LB-b92"/>
                                                     </constraints>
@@ -791,14 +791,19 @@
                                                 <constraint firstItem="tRm-vu-YUJ" firstAttribute="top" secondItem="IKS-8B-yio" secondAttribute="topMargin" constant="3" id="A4I-qY-IcI"/>
                                                 <constraint firstItem="aWs-Yb-Opf" firstAttribute="centerY" secondItem="IKS-8B-yio" secondAttribute="centerY" id="Cgy-2A-GKI"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="jao-l5-7FK" secondAttribute="trailing" constant="20" id="I9S-kB-pYt"/>
-                                                <constraint firstItem="aWs-Yb-Opf" firstAttribute="leading" secondItem="IKS-8B-yio" secondAttribute="leadingMargin" constant="97" id="OkS-7f-AJX"/>
+                                                <constraint firstItem="aWs-Yb-Opf" firstAttribute="leading" secondItem="IKS-8B-yio" secondAttribute="leadingMargin" constant="178" id="OkS-7f-AJX"/>
                                                 <constraint firstItem="tRm-vu-YUJ" firstAttribute="leading" secondItem="IKS-8B-yio" secondAttribute="leadingMargin" constant="30" id="myU-bV-McR"/>
                                                 <constraint firstItem="tRm-vu-YUJ" firstAttribute="centerY" secondItem="aWs-Yb-Opf" secondAttribute="centerY" id="qKu-LO-A2K"/>
                                                 <constraint firstItem="jao-l5-7FK" firstAttribute="top" secondItem="aWs-Yb-Opf" secondAttribute="top" id="rZR-UG-IDV"/>
-                                                <constraint firstItem="jao-l5-7FK" firstAttribute="leading" secondItem="aWs-Yb-Opf" secondAttribute="trailing" constant="30" id="yvv-vD-Hof"/>
+                                                <constraint firstItem="jao-l5-7FK" firstAttribute="leading" secondItem="aWs-Yb-Opf" secondAttribute="trailing" constant="8" id="yvv-vD-Hof"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="label" destination="tRm-vu-YUJ" id="gbN-gL-p2r"/>
+                                            <outlet property="switch" destination="jao-l5-7FK" id="7Qa-kQ-NKL"/>
+                                            <outlet property="textField" destination="aWs-Yb-Opf" id="TwX-hG-EqW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
