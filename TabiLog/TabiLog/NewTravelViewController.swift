@@ -62,7 +62,7 @@ class NewTravelViewController: UIViewController {
         appDelegate.saveContext()
         
         // 次のIDを更新
-        appDelegate.myDefault.setInteger(appDelegate.nextTravelID+1, forKey: "nextTravelID")
+        appDelegate.myDefault.setInteger((appDelegate.nextTravelID+1), forKey: "nextTravelID")
     }
     
     @IBAction func editFrom(sender: UITextField) {

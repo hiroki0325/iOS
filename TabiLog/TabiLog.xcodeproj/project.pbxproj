@@ -18,8 +18,8 @@
 		F52DCC611C88828F000A4C95 /* Saving Book.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC5D1C88828F000A4C95 /* Saving Book.png */; };
 		F52DCC621C88828F000A4C95 /* Saving Book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC5E1C88828F000A4C95 /* Saving Book@2x.png */; };
 		F52DCC681C8982BB000A4C95 /* 58notext.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC671C8982BB000A4C95 /* 58notext.png */; };
-		F52DCC6A1C8D5FDE000A4C95 /* Cool-Text-169889991915566.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC691C8D5FDE000A4C95 /* Cool-Text-169889991915566.png */; };
 		F52DCC6C1C8DE202000A4C95 /* CurrencyConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52DCC6B1C8DE201000A4C95 /* CurrencyConfigCell.swift */; };
+		F52DCC6E1C8E9D15000A4C95 /* Cool-Text-170107287518200.png in Resources */ = {isa = PBXBuildFile; fileRef = F52DCC6D1C8E9D15000A4C95 /* Cool-Text-170107287518200.png */; };
 		F55FBD4A1C72F55E00B57B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD491C72F55E00B57B24 /* AppDelegate.swift */; };
 		F55FBD4C1C72F55E00B57B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD4B1C72F55E00B57B24 /* ViewController.swift */; };
 		F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBD4D1C72F55E00B57B24 /* Main.storyboard */; };
@@ -55,8 +55,8 @@
 		F52DCC5D1C88828F000A4C95 /* Saving Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saving Book.png"; sourceTree = "<group>"; };
 		F52DCC5E1C88828F000A4C95 /* Saving Book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saving Book@2x.png"; sourceTree = "<group>"; };
 		F52DCC671C8982BB000A4C95 /* 58notext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 58notext.png; sourceTree = "<group>"; };
-		F52DCC691C8D5FDE000A4C95 /* Cool-Text-169889991915566.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cool-Text-169889991915566.png"; sourceTree = "<group>"; };
 		F52DCC6B1C8DE201000A4C95 /* CurrencyConfigCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyConfigCell.swift; sourceTree = "<group>"; };
+		F52DCC6D1C8E9D15000A4C95 /* Cool-Text-170107287518200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cool-Text-170107287518200.png"; sourceTree = "<group>"; };
 		F55FBD461C72F55E00B57B24 /* TabiLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabiLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55FBD491C72F55E00B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55FBD4B1C72F55E00B57B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		F55FBD481C72F55E00B57B24 /* TabiLog */ = {
 			isa = PBXGroup;
 			children = (
-				F52DCC691C8D5FDE000A4C95 /* Cool-Text-169889991915566.png */,
+				F52DCC6D1C8E9D15000A4C95 /* Cool-Text-170107287518200.png */,
 				F52DCC511C887C8F000A4C95 /* noImage.jpg */,
 				F52DCC5B1C88828F000A4C95 /* Doughnut Chart.png */,
 				F52DCC5C1C88828F000A4C95 /* Doughnut Chart@2x.png */,
@@ -227,7 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F52DCC6A1C8D5FDE000A4C95 /* Cool-Text-169889991915566.png in Resources */,
 				F52DCC5F1C88828F000A4C95 /* Doughnut Chart.png in Resources */,
 				F52DCC591C888154000A4C95 /* Settings.png in Resources */,
 				F52DCC601C88828F000A4C95 /* Doughnut Chart@2x.png in Resources */,
@@ -237,6 +236,7 @@
 				F52DCC521C887C8F000A4C95 /* noImage.jpg in Resources */,
 				F52DCC611C88828F000A4C95 /* Saving Book.png in Resources */,
 				F52DCC681C8982BB000A4C95 /* 58notext.png in Resources */,
+				F52DCC6E1C8E9D15000A4C95 /* Cool-Text-170107287518200.png in Resources */,
 				F52DCC621C88828F000A4C95 /* Saving Book@2x.png in Resources */,
 				F55FBD4F1C72F55E00B57B24 /* Main.storyboard in Resources */,
 			);

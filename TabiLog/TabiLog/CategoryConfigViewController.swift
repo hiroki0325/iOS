@@ -15,13 +15,16 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var categoryList:[AnyObject] = []
+    var frame:CGRect?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.frame=collectionView.frame
     }
     
     override func viewWillAppear(animated: Bool) {
         reloadData()
+        loadView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +87,7 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
             appDelegate.myDefault.setInteger(appDelegate.nextCategoryID+1, forKey: "nextCategoryID")
             appDelegate.myDefault.synchronize()
             reloadData()
+            loadView()
         }
     }
     
@@ -114,6 +118,7 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
         appDelegate.myDefault.synchronize()
         appDelegate.categoryList = []
         reloadData()
+        loadView()
     }
     
     // 削除されたカテゴリに紐付いていた支払い情報のカテゴリを書き換える処理
@@ -141,7 +146,7 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
         appDelegate.readCategoryList()
         self.categoryList = appDelegate.categoryList as [AnyObject]
         self.collectionView.reloadData()
-        loadView()
+        collectionView.frame = self.frame!
     }
     
     
