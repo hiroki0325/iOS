@@ -52,7 +52,6 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
                 cell.categorySwitch.hidden = false
                 cell.categoryTextField.enabled = true
             }
-            print(cell.categoryTextField.enabled)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("newCell", forIndexPath: indexPath)
