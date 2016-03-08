@@ -204,6 +204,7 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: nil)
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         pieChartDataSet.colors = ChartColorTemplates.colorful()
+        pieChartDataSet.valueColors = ChartColorTemplates.liberty()
         
         // %表示
         let numberFormatter = NSNumberFormatter()
