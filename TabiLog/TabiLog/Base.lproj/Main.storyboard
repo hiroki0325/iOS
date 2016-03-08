@@ -180,13 +180,13 @@
                                     <constraint firstAttribute="width" constant="81" id="dhm-nw-aHi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支出総額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9n1-Gf-c7W">
                                 <rect key="frame" x="106" y="123" width="162" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsr-Va-txa">
@@ -195,7 +195,7 @@
                                     <constraint firstAttribute="height" constant="21" id="OfH-me-0UE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-z8-kwg">
@@ -286,19 +286,19 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="We7-vG-CtC">
                                                     <rect key="frame" x="26" y="11" width="71" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="勘定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZ3-b1-usl">
                                                     <rect key="frame" x="113" y="11" width="60" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金額＋通貨" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fa-Hn-VQQ">
                                                     <rect key="frame" x="189" y="11" width="93" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -510,7 +510,7 @@
                                     <constraint firstAttribute="height" constant="21" id="PL0-DN-Yxc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メモ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIy-6f-iqt">
@@ -519,7 +519,7 @@
                                     <constraint firstAttribute="height" constant="21" id="a1d-g0-PSf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4pM-d3-MF2">
@@ -618,8 +618,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QrD-qH-g4G">
-                                <rect key="frame" x="-4" y="64" width="391" height="603"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QrD-qH-g4G">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SbG-m4-0ND">
                                     <size key="itemSize" width="180" height="50"/>
@@ -635,7 +635,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odE-q4-kXR">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odE-q4-kXR">
                                                     <rect key="frame" x="8" y="12" width="79" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -643,7 +643,7 @@
                                                         <action selector="endEditCategory:" destination="me6-7b-aod" eventType="editingDidEndOnExit" id="XUc-g1-m0k"/>
                                                     </connections>
                                                 </textField>
-                                                <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLv-Xu-REx">
+                                                <switch opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLv-Xu-REx">
                                                     <rect key="frame" x="112" y="9" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="changeSwitch:" destination="me6-7b-aod" eventType="valueChanged" id="u18-NL-xpM"/>
@@ -653,13 +653,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="yLv-Xu-REx" firstAttribute="centerY" secondItem="b6I-8J-IwY" secondAttribute="centerY" id="LYf-yW-goe"/>
-                                            <constraint firstItem="odE-q4-kXR" firstAttribute="leading" secondItem="b6I-8J-IwY" secondAttribute="leadingMargin" id="dB6-rq-wvc"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="yLv-Xu-REx" secondAttribute="trailing" constant="9" id="h0s-2C-Vjb"/>
-                                            <constraint firstItem="odE-q4-kXR" firstAttribute="bottom" secondItem="b6I-8J-IwY" secondAttribute="bottomMargin" id="s0y-ZX-OXg"/>
-                                            <constraint firstItem="yLv-Xu-REx" firstAttribute="leading" secondItem="odE-q4-kXR" secondAttribute="trailing" constant="25" id="sob-nh-iZi"/>
-                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <size key="customSize" width="178" height="50"/>
                                         <connections>
                                             <outlet property="categorySwitch" destination="yLv-Xu-REx" id="7ii-A4-t3s"/>
@@ -673,7 +667,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新規作成" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvE-II-GFS">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="新規作成" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pvE-II-GFS">
                                                     <rect key="frame" x="8" y="10" width="158" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -685,11 +679,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="pvE-II-GFS" secondAttribute="trailing" constant="3" id="6fw-JI-hql"/>
-                                            <constraint firstItem="pvE-II-GFS" firstAttribute="centerY" secondItem="drR-gK-Bko" secondAttribute="centerY" id="QfQ-2V-pem"/>
-                                            <constraint firstItem="pvE-II-GFS" firstAttribute="leading" secondItem="drR-gK-Bko" secondAttribute="leadingMargin" id="RXc-2a-SyU"/>
-                                        </constraints>
                                         <size key="customSize" width="177" height="50"/>
                                     </collectionViewCell>
                                 </cells>
@@ -700,12 +689,6 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="QrD-qH-g4G" secondAttribute="trailing" constant="-28" id="K95-qV-wRg"/>
-                            <constraint firstItem="cD9-tQ-78C" firstAttribute="top" secondItem="QrD-qH-g4G" secondAttribute="bottom" id="bhZ-WH-w3Q"/>
-                            <constraint firstItem="QrD-qH-g4G" firstAttribute="leading" secondItem="HQH-dH-Abe" secondAttribute="leadingMargin" constant="-20" id="eRf-lB-UN7"/>
-                            <constraint firstItem="QrD-qH-g4G" firstAttribute="top" secondItem="eM8-fK-tr6" secondAttribute="bottom" id="ldi-pl-x98"/>
-                        </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -767,7 +750,7 @@
                                                         <constraint firstAttribute="width" constant="140" id="QJ9-vM-bfz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aWs-Yb-Opf">
@@ -849,7 +832,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lzX-f5-OFu">
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">利用規約 
+                                <string key="text">利用規約 
 この規約（以下「本規約」といいます。）は、geechs asia Pte. Ltd（以下「当社」といいます。）が提供・運営する「たびログ」（以下「本サービス」といいます。）の利用に関して、お客様に同意していただく必要のある事柄を記載しています。お客様が本サービスをご利用になる際には、本規約が適用されます。なお、お客様が利用を開始した時点で、本規約に同意されたものとさせていただきますので、ご利用の前に必ずお読みください。
  第1条 適用範囲
 1 本規約は、本サービスの利用に関する基本的な事項を規定しており、本サービスの利用に関し、当社及びユーザーに対して適用されます。 
@@ -944,7 +927,7 @@
 
 第11条 準拠法及び合意管轄
 本規約は日本法に準拠するものとし、本規約に起因し又は関連する一切の紛争については、東京地方裁判所を第一審の専属的合意管轄裁判所とします。
-2016年03月08日</mutableString>
+2016年03月08日</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

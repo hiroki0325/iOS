@@ -15,16 +15,13 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var categoryList:[AnyObject] = []
-    var frame:CGRect?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.frame=collectionView.frame
     }
     
     override func viewWillAppear(animated: Bool) {
         reloadData()
-        loadView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,21 +34,25 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if indexPath.row != categoryList.count {
+        if indexPath.item != categoryList.count {
             let cell:CustomCell = collectionView.dequeueReusableCellWithReuseIdentifier("categoryCell", forIndexPath: indexPath) as! CustomCell
-            cell.categoryTextField.tag = 200+indexPath.row
-            cell.categoryTextField.text = categoryList[indexPath.row]["name"] as? String
+            cell.categoryTextField.tag = 200+indexPath.item
+            cell.categoryTextField.text = categoryList[indexPath.item]["name"] as? String
 
-            cell.categorySwitch.tag = 100+indexPath.row
-            if categoryList[indexPath.row]["deleteFlg"] as! Int == 0 {
+            cell.categorySwitch.tag = 100+indexPath.item
+            if categoryList[indexPath.item]["deleteFlg"] as! Int == 0 {
                 cell.categorySwitch.on = true
             } else {
                 cell.categorySwitch.on = false
             }
-            if categoryList[indexPath.row]["ID"] as! Int == 100 {
+            if categoryList[indexPath.item]["ID"] as! Int == 100 {
                 cell.categorySwitch.hidden = true
                 cell.categoryTextField.enabled = false
+            } else{
+                cell.categorySwitch.hidden = false
+                cell.categoryTextField.enabled = true
             }
+            print(cell.categoryTextField.enabled)
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("newCell", forIndexPath: indexPath)
@@ -87,7 +88,6 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
             appDelegate.myDefault.setInteger(appDelegate.nextCategoryID+1, forKey: "nextCategoryID")
             appDelegate.myDefault.synchronize()
             reloadData()
-            loadView()
         }
     }
     
@@ -118,7 +118,6 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
         appDelegate.myDefault.synchronize()
         appDelegate.categoryList = []
         reloadData()
-        loadView()
     }
     
     // 削除されたカテゴリに紐付いていた支払い情報のカテゴリを書き換える処理
@@ -146,8 +145,12 @@ class CategoryConfigViewController: UIViewController, UICollectionViewDataSource
         appDelegate.readCategoryList()
         self.categoryList = appDelegate.categoryList as [AnyObject]
         self.collectionView.reloadData()
-        collectionView.frame = self.frame!
+        self.collectionView.layoutIfNeeded()
+        viewDidLayoutSubviews()
+        NSCache().removeAllObjects()
     }
+    
+  
     
     
 }
