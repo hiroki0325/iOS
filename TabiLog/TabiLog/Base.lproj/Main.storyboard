@@ -981,14 +981,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNH-sx-UtB" customClass="GADBannerView">
-                                <rect key="frame" x="37" y="323" width="300" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="1qi-ez-MG1"/>
-                                    <constraint firstAttribute="height" constant="250" id="fFa-ms-9hB"/>
-                                </constraints>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="行き先：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37c-PQ-msX">
                                 <rect key="frame" x="21" y="114" width="70" height="30"/>
                                 <constraints>
@@ -1059,6 +1051,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNH-sx-UtB" customClass="GADBannerView">
+                                <rect key="frame" x="37" y="314" width="300" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1qi-ez-MG1"/>
+                                    <constraint firstAttribute="height" constant="100" id="fFa-ms-9hB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1074,6 +1074,7 @@
                             <constraint firstItem="ChZ-Cd-292" firstAttribute="leading" secondItem="37c-PQ-msX" secondAttribute="trailing" constant="8" symbolic="YES" id="KZv-U3-0il"/>
                             <constraint firstItem="WNH-sx-UtB" firstAttribute="centerX" secondItem="90w-zR-7UG" secondAttribute="centerX" id="QtU-Zv-57U"/>
                             <constraint firstItem="EkJ-jz-Yf6" firstAttribute="top" secondItem="s2a-QK-nlL" secondAttribute="top" id="SzO-IS-54i"/>
+                            <constraint firstItem="WNH-sx-UtB" firstAttribute="top" secondItem="6I6-LO-dCv" secondAttribute="bottom" constant="50" id="VHn-NU-Ml1"/>
                             <constraint firstItem="NuJ-gQ-QFf" firstAttribute="top" secondItem="WNH-sx-UtB" secondAttribute="bottom" constant="50" id="XcF-fv-g4d"/>
                             <constraint firstItem="hoi-VH-gZa" firstAttribute="centerY" secondItem="s2a-QK-nlL" secondAttribute="centerY" id="blg-ap-TUz"/>
                             <constraint firstItem="EkJ-jz-Yf6" firstAttribute="bottom" secondItem="6p6-U1-bSo" secondAttribute="bottom" id="jce-jP-RSK"/>
@@ -1084,6 +1085,11 @@
                             <constraint firstItem="6p6-U1-bSo" firstAttribute="top" secondItem="37c-PQ-msX" secondAttribute="bottom" constant="25" id="vO7-4w-aoO"/>
                             <constraint firstItem="37c-PQ-msX" firstAttribute="leading" secondItem="90w-zR-7UG" secondAttribute="leadingMargin" constant="5" id="ycS-Dn-KLp"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="XcF-fv-g4d"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
