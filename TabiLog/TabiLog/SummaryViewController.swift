@@ -190,6 +190,7 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         self.pieChartView.rotationEnabled = false
         
         self.pieChartView.noDataText = "表示するデータがありません"
+        self.pieChartView.holeColor = colorWithHexString("FFFFCC")
         
         self.pieChartView.usePercentValuesEnabled = true
         self.pieChartView.descriptionText = ""
@@ -221,6 +222,31 @@ class SummaryViewController: UIViewController, NADViewDelegate {
         print("delegate nadViewDidFinishLoad:")
         nadView.frame = CGRect(x: (self.view.frame.size.width - nadView.frame.size.width)/2, y: self.view.frame.size.height - nadView.frame.size.height - self.tabBarController!.tabBar.frame.size.height, width: nadView.frame.size.width, height: nadView.frame.size.height)
         self.view.addSubview(nadView)
+    }
+    
+    func colorWithHexString (hex:String) -> UIColor {
+        
+        let cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
+        
+        if ((cString as String).characters.count != 6) {
+            return UIColor.grayColor()
+        }
+        
+        let rString = (cString as NSString).substringWithRange(NSRange(location: 0, length: 2))
+        let gString = (cString as NSString).substringWithRange(NSRange(location: 2, length: 2))
+        let bString = (cString as NSString).substringWithRange(NSRange(location: 4, length: 2))
+        
+        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
+        NSScanner(string: rString).scanHexInt(&r)
+        NSScanner(string: gString).scanHexInt(&g)
+        NSScanner(string: bString).scanHexInt(&b)
+        
+        return UIColor(
+            red: CGFloat(Float(r) / 255.0),
+            green: CGFloat(Float(g) / 255.0),
+            blue: CGFloat(Float(b) / 255.0),
+            alpha: CGFloat(Float(1.0))
+        )
     }
     
 }

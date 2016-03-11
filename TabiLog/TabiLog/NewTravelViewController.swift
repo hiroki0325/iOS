@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleMobileAds
+import SVProgressHUD
 
 class NewTravelViewController: UIViewController {
 
@@ -38,31 +39,35 @@ class NewTravelViewController: UIViewController {
     }
     
     @IBAction func tapRegist(sender: UIButton) {
-        appDelegate.getnextTravelID()
+        SVProgressHUD.showWithStatus("データの作成中")
+        
+        self.appDelegate.getnextTravelID()
         // Entityの操作を制御するmanagedObjectContextをappDelegateから作成
-        let managedObjectContext = appDelegate.managedObjectContext
-                
+        let managedObjectContext = self.appDelegate.managedObjectContext
+        
         // 新しくデータを追加するためのEntityを作成します
         let managedObject: AnyObject = NSEntityDescription.insertNewObjectForEntityForName("Travel", inManagedObjectContext: managedObjectContext)
         
         // 初期通貨データの作成
-        setDefaultCurrencyList(appDelegate.nextTravelID)
+        self.setDefaultCurrencyList(self.appDelegate.nextTravelID)
         
         // travel EntityからObjectを生成し、Attributesに接続して値を代入
         let travel = managedObject as! Travel
-        travel.id = Int16(appDelegate.nextTravelID)
-        travel.destination = destination.text!
-        travel.from = fromDate!
-        travel.to = toDate!
+        travel.id = Int16(self.appDelegate.nextTravelID)
+        travel.destination = self.destination.text!
+        travel.from = self.fromDate!
+        travel.to = self.toDate!
         travel.budget = 0
         travel.budgetCurrencyID = 0
         travel.deleteFlg = 0
         
         // データの保存処理
-        appDelegate.saveContext()
+        self.appDelegate.saveContext()
         
         // 次のIDを更新
-        appDelegate.myDefault.setInteger((appDelegate.nextTravelID+1), forKey: "nextTravelID")
+        self.appDelegate.myDefault.setInteger((self.appDelegate.nextTravelID+1), forKey: "nextTravelID")
+        
+        SVProgressHUD.showSuccessWithStatus("完了")
     }
     
     @IBAction func editFrom(sender: UITextField) {
@@ -190,6 +195,5 @@ class NewTravelViewController: UIViewController {
             register.enabled = false
         }
     }
-
 
 }

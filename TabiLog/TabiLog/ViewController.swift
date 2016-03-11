@@ -16,6 +16,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         startBtn.layer.cornerRadius = 10
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        var tracker = GAI.sharedInstance().defaultTracker
+        var name = "top"
+        tracker.set(kGAIScreenName, value: name)
+        
+        var builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

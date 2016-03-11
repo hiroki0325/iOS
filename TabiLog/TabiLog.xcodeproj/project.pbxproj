@@ -38,6 +38,8 @@
 		F55FBD751C76FB4B00B57B24 /* PaymentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD741C76FB4B00B57B24 /* PaymentDetailViewController.swift */; };
 		F55FBD771C76FD2E00B57B24 /* CategoryConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */; };
 		F55FBD791C77099E00B57B24 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD781C77099E00B57B24 /* Payment.swift */; };
+		F5A401C21C92995E000956D8 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A401C11C92995E000956D8 /* SVProgressHUD.framework */; };
+		F5A401C41C92AC17000956D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5A401C31C92AC17000956D8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,9 @@
 		F55FBD741C76FB4B00B57B24 /* PaymentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentDetailViewController.swift; sourceTree = "<group>"; };
 		F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryConfigViewController.swift; sourceTree = "<group>"; };
 		F55FBD781C77099E00B57B24 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		F5A401BB1C92945C000956D8 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD.framework"; sourceTree = "<group>"; };
+		F5A401C11C92995E000956D8 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD.framework"; sourceTree = "<group>"; };
+		F5A401C31C92AC17000956D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A401C21C92995E000956D8 /* SVProgressHUD.framework in Frameworks */,
 				E885C34D5DB6A2AB0249655D /* Pods_TabiLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +109,8 @@
 		B9AB47AEC592579CEB1F8A00 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5A401C11C92995E000956D8 /* SVProgressHUD.framework */,
+				F5A401BB1C92945C000956D8 /* SVProgressHUD.framework */,
 				77105401462121CEB74DAE5E /* Pods_TabiLog.framework */,
 			);
 			name = Frameworks;
@@ -130,6 +138,7 @@
 		F55FBD481C72F55E00B57B24 /* TabiLog */ = {
 			isa = PBXGroup;
 			children = (
+				F5A401C31C92AC17000956D8 /* GoogleService-Info.plist */,
 				F52DCC6D1C8E9D15000A4C95 /* Cool-Text-170107287518200.png */,
 				F52DCC511C887C8F000A4C95 /* noImage.jpg */,
 				F52DCC5B1C88828F000A4C95 /* Doughnut Chart.png */,
@@ -227,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A401C41C92AC17000956D8 /* GoogleService-Info.plist in Resources */,
 				F52DCC5F1C88828F000A4C95 /* Doughnut Chart.png in Resources */,
 				F52DCC591C888154000A4C95 /* Settings.png in Resources */,
 				F52DCC601C88828F000A4C95 /* Doughnut Chart@2x.png in Resources */,
@@ -381,6 +391,8 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -420,6 +432,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "c0662e1e-86be-46a2-b659-4d894ce94902";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -430,6 +444,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = TabiLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geechsasia.TabiLog;
@@ -444,6 +462,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = TabiLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geechsasia.TabiLog;

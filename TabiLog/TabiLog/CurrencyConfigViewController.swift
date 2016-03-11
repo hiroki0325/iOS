@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SVProgressHUD
 
 class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
@@ -95,10 +96,12 @@ class CurrencyConfigViewController: UIViewController,UITableViewDataSource, UITa
     }
     
     @IBAction func tapBtn(sender: UIButton) {
+        SVProgressHUD.showWithStatus("更新中")
         appDelegate.updateCurrencyLate()
         for(var i=1; i<appDelegate.defaultCurrency.count; i++){
             updateCurrency(Double(appDelegate.defaultCurrency[i]["rate"] as! Double), key: "rate", tag: i, tagGap: 0)
         }
+        SVProgressHUD.showSuccessWithStatus("完了")
         loadView()
         viewDidLoad()
     }
