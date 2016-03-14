@@ -13,6 +13,5 @@
 #import "NADInterstitial.h"          // インタースティシャル広告用ヘッダー
 #import "NADNativeClient.h"          // ネイティブ広告用ヘッダー
 #import "NADNativeTableViewHelper.h" // ネイティブ広告用ヘッダー (UITableView用)
-#import "Google/Analytics.h"         // 分析用ヘッダー
 
 #endif /* Header_h */
