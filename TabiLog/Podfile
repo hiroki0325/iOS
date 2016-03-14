@@ -6,5 +6,4 @@ target 'TabiLog' do
  pod 'NendSDK_iOS'
  pod 'Google-Mobile-Ads-SDK'
  pod 'SVProgressHUD'
- pod 'Google/Analytics'
 end

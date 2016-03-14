@@ -39,7 +39,6 @@
 		F55FBD771C76FD2E00B57B24 /* CategoryConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD761C76FD2E00B57B24 /* CategoryConfigViewController.swift */; };
 		F55FBD791C77099E00B57B24 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBD781C77099E00B57B24 /* Payment.swift */; };
 		F5A401C21C92995E000956D8 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A401C11C92995E000956D8 /* SVProgressHUD.framework */; };
-		F5A401C41C92AC17000956D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5A401C31C92AC17000956D8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +80,6 @@
 		F55FBD781C77099E00B57B24 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		F5A401BB1C92945C000956D8 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD.framework"; sourceTree = "<group>"; };
 		F5A401C11C92995E000956D8 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/SVProgressHUD.framework"; sourceTree = "<group>"; };
-		F5A401C31C92AC17000956D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +136,6 @@
 		F55FBD481C72F55E00B57B24 /* TabiLog */ = {
 			isa = PBXGroup;
 			children = (
-				F5A401C31C92AC17000956D8 /* GoogleService-Info.plist */,
 				F52DCC6D1C8E9D15000A4C95 /* Cool-Text-170107287518200.png */,
 				F52DCC511C887C8F000A4C95 /* noImage.jpg */,
 				F52DCC5B1C88828F000A4C95 /* Doughnut Chart.png */,
@@ -236,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5A401C41C92AC17000956D8 /* GoogleService-Info.plist in Resources */,
 				F52DCC5F1C88828F000A4C95 /* Doughnut Chart.png in Resources */,
 				F52DCC591C888154000A4C95 /* Settings.png in Resources */,
 				F52DCC601C88828F000A4C95 /* Doughnut Chart@2x.png in Resources */,

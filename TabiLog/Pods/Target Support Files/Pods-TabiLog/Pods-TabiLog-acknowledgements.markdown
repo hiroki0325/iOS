@@ -211,30 +211,6 @@ Apache License
 
 Copyright 2011 Google Inc. All Rights Reserved.
 
-## Google
-
-Copyright 2015 Google Inc.
-
-## GoogleAnalytics
-
-Copyright 2015 Google Inc.
-
-## GoogleInterchangeUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleNetworkingUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleSymbolUtilities
-
-Copyright 2015 Google Inc.
-
-## GoogleUtilities
-
-Copyright 2015 Google Inc.
-
 ## NendSDK_iOS
 
 Copyright 2016 F@N Communications, Inc. All Rights Reserved.
