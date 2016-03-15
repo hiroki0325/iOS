@@ -7,68 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F55FBCCE1C6D8FA400B57B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBCCD1C6D8FA400B57B24 /* AppDelegate.swift */; };
-		F55FBCD01C6D8FA400B57B24 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F55FBCCF1C6D8FA400B57B24 /* GameScene.sks */; };
-		F55FBCD21C6D8FA400B57B24 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBCD11C6D8FA400B57B24 /* GameScene.swift */; };
-		F55FBCD41C6D8FA400B57B24 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBCD31C6D8FA400B57B24 /* GameViewController.swift */; };
-		F55FBCD71C6D8FA400B57B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBCD51C6D8FA400B57B24 /* Main.storyboard */; };
-		F55FBCD91C6D8FA400B57B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55FBCD81C6D8FA400B57B24 /* Assets.xcassets */; };
-		F55FBCDC1C6D8FA400B57B24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F55FBCDA1C6D8FA400B57B24 /* LaunchScreen.storyboard */; };
-		F55FBCE71C6D8FA400B57B24 /* sampleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBCE61C6D8FA400B57B24 /* sampleGameTests.swift */; };
-		F55FBCF21C6D8FA500B57B24 /* sampleGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55FBCF11C6D8FA500B57B24 /* sampleGameUITests.swift */; };
+		F5A401D61C969F94000956D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A401D51C969F94000956D8 /* AppDelegate.swift */; };
+		F5A401D81C969F94000956D8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F5A401D71C969F94000956D8 /* GameScene.sks */; };
+		F5A401DA1C969F94000956D8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A401D91C969F94000956D8 /* GameScene.swift */; };
+		F5A401DC1C969F94000956D8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A401DB1C969F94000956D8 /* GameViewController.swift */; };
+		F5A401DF1C969F94000956D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A401DD1C969F94000956D8 /* Main.storyboard */; };
+		F5A401E11C969F94000956D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5A401E01C969F94000956D8 /* Assets.xcassets */; };
+		F5A401E41C969F94000956D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A401E21C969F94000956D8 /* LaunchScreen.storyboard */; };
+		F5A401EE1C96A1F9000956D8 /* Char.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A401EB1C96A1F9000956D8 /* Char.png */; };
+		F5A401EF1C96A1F9000956D8 /* Enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A401EC1C96A1F9000956D8 /* Enemy.png */; };
+		F5A401F01C96A1F9000956D8 /* Field.png in Resources */ = {isa = PBXBuildFile; fileRef = F5A401ED1C96A1F9000956D8 /* Field.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F55FBCE31C6D8FA400B57B24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F55FBCC21C6D8FA400B57B24 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F55FBCC91C6D8FA400B57B24;
-			remoteInfo = sampleGame;
-		};
-		F55FBCEE1C6D8FA500B57B24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F55FBCC21C6D8FA400B57B24 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F55FBCC91C6D8FA400B57B24;
-			remoteInfo = sampleGame;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		F55FBCCA1C6D8FA400B57B24 /* sampleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F55FBCCD1C6D8FA400B57B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F55FBCCF1C6D8FA400B57B24 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		F55FBCD11C6D8FA400B57B24 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		F55FBCD31C6D8FA400B57B24 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		F55FBCD61C6D8FA400B57B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F55FBCD81C6D8FA400B57B24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F55FBCDB1C6D8FA400B57B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F55FBCDD1C6D8FA400B57B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F55FBCE21C6D8FA400B57B24 /* sampleGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F55FBCE61C6D8FA400B57B24 /* sampleGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleGameTests.swift; sourceTree = "<group>"; };
-		F55FBCE81C6D8FA500B57B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F55FBCED1C6D8FA500B57B24 /* sampleGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F55FBCF11C6D8FA500B57B24 /* sampleGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleGameUITests.swift; sourceTree = "<group>"; };
-		F55FBCF31C6D8FA500B57B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5A401D21C969F93000956D8 /* sampleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A401D51C969F94000956D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F5A401D71C969F94000956D8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		F5A401D91C969F94000956D8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		F5A401DB1C969F94000956D8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		F5A401DE1C969F94000956D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5A401E01C969F94000956D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5A401E31C969F94000956D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F5A401E51C969F94000956D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5A401EB1C96A1F9000956D8 /* Char.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Char.png; path = Assets.xcassets/Char.png; sourceTree = "<group>"; };
+		F5A401EC1C96A1F9000956D8 /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Enemy.png; path = Assets.xcassets/Enemy.png; sourceTree = "<group>"; };
+		F5A401ED1C96A1F9000956D8 /* Field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Field.png; path = Assets.xcassets/Field.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F55FBCC71C6D8FA400B57B24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FBCDF1C6D8FA400B57B24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FBCEA1C6D8FA500B57B24 /* Frameworks */ = {
+		F5A401CF1C969F93000956D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,69 +45,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F55FBCC11C6D8FA400B57B24 = {
+		F5A401C91C969F93000956D8 = {
 			isa = PBXGroup;
 			children = (
-				F55FBCCC1C6D8FA400B57B24 /* sampleGame */,
-				F55FBCE51C6D8FA400B57B24 /* sampleGameTests */,
-				F55FBCF01C6D8FA500B57B24 /* sampleGameUITests */,
-				F55FBCCB1C6D8FA400B57B24 /* Products */,
+				F5A401D41C969F93000956D8 /* sampleGame */,
+				F5A401D31C969F93000956D8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F55FBCCB1C6D8FA400B57B24 /* Products */ = {
+		F5A401D31C969F93000956D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F55FBCCA1C6D8FA400B57B24 /* sampleGame.app */,
-				F55FBCE21C6D8FA400B57B24 /* sampleGameTests.xctest */,
-				F55FBCED1C6D8FA500B57B24 /* sampleGameUITests.xctest */,
+				F5A401D21C969F93000956D8 /* sampleGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F55FBCCC1C6D8FA400B57B24 /* sampleGame */ = {
+		F5A401D41C969F93000956D8 /* sampleGame */ = {
 			isa = PBXGroup;
 			children = (
-				F55FBCCD1C6D8FA400B57B24 /* AppDelegate.swift */,
-				F55FBCCF1C6D8FA400B57B24 /* GameScene.sks */,
-				F55FBCD11C6D8FA400B57B24 /* GameScene.swift */,
-				F55FBCD31C6D8FA400B57B24 /* GameViewController.swift */,
-				F55FBCD51C6D8FA400B57B24 /* Main.storyboard */,
-				F55FBCD81C6D8FA400B57B24 /* Assets.xcassets */,
-				F55FBCDA1C6D8FA400B57B24 /* LaunchScreen.storyboard */,
-				F55FBCDD1C6D8FA400B57B24 /* Info.plist */,
+				F5A401D51C969F94000956D8 /* AppDelegate.swift */,
+				F5A401D71C969F94000956D8 /* GameScene.sks */,
+				F5A401D91C969F94000956D8 /* GameScene.swift */,
+				F5A401DB1C969F94000956D8 /* GameViewController.swift */,
+				F5A401DD1C969F94000956D8 /* Main.storyboard */,
+				F5A401E01C969F94000956D8 /* Assets.xcassets */,
+				F5A401EB1C96A1F9000956D8 /* Char.png */,
+				F5A401EC1C96A1F9000956D8 /* Enemy.png */,
+				F5A401ED1C96A1F9000956D8 /* Field.png */,
+				F5A401E21C969F94000956D8 /* LaunchScreen.storyboard */,
+				F5A401E51C969F94000956D8 /* Info.plist */,
 			);
 			path = sampleGame;
-			sourceTree = "<group>";
-		};
-		F55FBCE51C6D8FA400B57B24 /* sampleGameTests */ = {
-			isa = PBXGroup;
-			children = (
-				F55FBCE61C6D8FA400B57B24 /* sampleGameTests.swift */,
-				F55FBCE81C6D8FA500B57B24 /* Info.plist */,
-			);
-			path = sampleGameTests;
-			sourceTree = "<group>";
-		};
-		F55FBCF01C6D8FA500B57B24 /* sampleGameUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F55FBCF11C6D8FA500B57B24 /* sampleGameUITests.swift */,
-				F55FBCF31C6D8FA500B57B24 /* Info.plist */,
-			);
-			path = sampleGameUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F55FBCC91C6D8FA400B57B24 /* sampleGame */ = {
+		F5A401D11C969F93000956D8 /* sampleGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F55FBCF61C6D8FA500B57B24 /* Build configuration list for PBXNativeTarget "sampleGame" */;
+			buildConfigurationList = F5A401E81C969F94000956D8 /* Build configuration list for PBXNativeTarget "sampleGame" */;
 			buildPhases = (
-				F55FBCC61C6D8FA400B57B24 /* Sources */,
-				F55FBCC71C6D8FA400B57B24 /* Frameworks */,
-				F55FBCC81C6D8FA400B57B24 /* Resources */,
+				F5A401CE1C969F93000956D8 /* Sources */,
+				F5A401CF1C969F93000956D8 /* Frameworks */,
+				F5A401D01C969F93000956D8 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -148,72 +96,25 @@
 			);
 			name = sampleGame;
 			productName = sampleGame;
-			productReference = F55FBCCA1C6D8FA400B57B24 /* sampleGame.app */;
+			productReference = F5A401D21C969F93000956D8 /* sampleGame.app */;
 			productType = "com.apple.product-type.application";
-		};
-		F55FBCE11C6D8FA400B57B24 /* sampleGameTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F55FBCF91C6D8FA500B57B24 /* Build configuration list for PBXNativeTarget "sampleGameTests" */;
-			buildPhases = (
-				F55FBCDE1C6D8FA400B57B24 /* Sources */,
-				F55FBCDF1C6D8FA400B57B24 /* Frameworks */,
-				F55FBCE01C6D8FA400B57B24 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F55FBCE41C6D8FA400B57B24 /* PBXTargetDependency */,
-			);
-			name = sampleGameTests;
-			productName = sampleGameTests;
-			productReference = F55FBCE21C6D8FA400B57B24 /* sampleGameTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F55FBCEC1C6D8FA500B57B24 /* sampleGameUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F55FBCFC1C6D8FA500B57B24 /* Build configuration list for PBXNativeTarget "sampleGameUITests" */;
-			buildPhases = (
-				F55FBCE91C6D8FA500B57B24 /* Sources */,
-				F55FBCEA1C6D8FA500B57B24 /* Frameworks */,
-				F55FBCEB1C6D8FA500B57B24 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F55FBCEF1C6D8FA500B57B24 /* PBXTargetDependency */,
-			);
-			name = sampleGameUITests;
-			productName = sampleGameUITests;
-			productReference = F55FBCED1C6D8FA500B57B24 /* sampleGameUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F55FBCC21C6D8FA400B57B24 /* Project object */ = {
+		F5A401CA1C969F93000956D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Hiroki Shimada";
 				TargetAttributes = {
-					F55FBCC91C6D8FA400B57B24 = {
+					F5A401D11C969F93000956D8 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = B6486WMC5Z;
-					};
-					F55FBCE11C6D8FA400B57B24 = {
-						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = B6486WMC5Z;
-						TestTargetID = F55FBCC91C6D8FA400B57B24;
-					};
-					F55FBCEC1C6D8FA500B57B24 = {
-						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = B6486WMC5Z;
-						TestTargetID = F55FBCC91C6D8FA400B57B24;
 					};
 				};
 			};
-			buildConfigurationList = F55FBCC51C6D8FA400B57B24 /* Build configuration list for PBXProject "sampleGame" */;
+			buildConfigurationList = F5A401CD1C969F93000956D8 /* Build configuration list for PBXProject "sampleGame" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -221,101 +122,59 @@
 				en,
 				Base,
 			);
-			mainGroup = F55FBCC11C6D8FA400B57B24;
-			productRefGroup = F55FBCCB1C6D8FA400B57B24 /* Products */;
+			mainGroup = F5A401C91C969F93000956D8;
+			productRefGroup = F5A401D31C969F93000956D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F55FBCC91C6D8FA400B57B24 /* sampleGame */,
-				F55FBCE11C6D8FA400B57B24 /* sampleGameTests */,
-				F55FBCEC1C6D8FA500B57B24 /* sampleGameUITests */,
+				F5A401D11C969F93000956D8 /* sampleGame */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F55FBCC81C6D8FA400B57B24 /* Resources */ = {
+		F5A401D01C969F93000956D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55FBCD01C6D8FA400B57B24 /* GameScene.sks in Resources */,
-				F55FBCDC1C6D8FA400B57B24 /* LaunchScreen.storyboard in Resources */,
-				F55FBCD91C6D8FA400B57B24 /* Assets.xcassets in Resources */,
-				F55FBCD71C6D8FA400B57B24 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FBCE01C6D8FA400B57B24 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FBCEB1C6D8FA500B57B24 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F5A401EF1C96A1F9000956D8 /* Enemy.png in Resources */,
+				F5A401D81C969F94000956D8 /* GameScene.sks in Resources */,
+				F5A401F01C96A1F9000956D8 /* Field.png in Resources */,
+				F5A401E41C969F94000956D8 /* LaunchScreen.storyboard in Resources */,
+				F5A401EE1C96A1F9000956D8 /* Char.png in Resources */,
+				F5A401E11C969F94000956D8 /* Assets.xcassets in Resources */,
+				F5A401DF1C969F94000956D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F55FBCC61C6D8FA400B57B24 /* Sources */ = {
+		F5A401CE1C969F93000956D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55FBCD21C6D8FA400B57B24 /* GameScene.swift in Sources */,
-				F55FBCD41C6D8FA400B57B24 /* GameViewController.swift in Sources */,
-				F55FBCCE1C6D8FA400B57B24 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FBCDE1C6D8FA400B57B24 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F55FBCE71C6D8FA400B57B24 /* sampleGameTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FBCE91C6D8FA500B57B24 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F55FBCF21C6D8FA500B57B24 /* sampleGameUITests.swift in Sources */,
+				F5A401DA1C969F94000956D8 /* GameScene.swift in Sources */,
+				F5A401DC1C969F94000956D8 /* GameViewController.swift in Sources */,
+				F5A401D61C969F94000956D8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		F55FBCE41C6D8FA400B57B24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F55FBCC91C6D8FA400B57B24 /* sampleGame */;
-			targetProxy = F55FBCE31C6D8FA400B57B24 /* PBXContainerItemProxy */;
-		};
-		F55FBCEF1C6D8FA500B57B24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F55FBCC91C6D8FA400B57B24 /* sampleGame */;
-			targetProxy = F55FBCEE1C6D8FA500B57B24 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		F55FBCD51C6D8FA400B57B24 /* Main.storyboard */ = {
+		F5A401DD1C969F94000956D8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F55FBCD61C6D8FA400B57B24 /* Base */,
+				F5A401DE1C969F94000956D8 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		F55FBCDA1C6D8FA400B57B24 /* LaunchScreen.storyboard */ = {
+		F5A401E21C969F94000956D8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F55FBCDB1C6D8FA400B57B24 /* Base */,
+				F5A401E31C969F94000956D8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -323,7 +182,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F55FBCF41C6D8FA500B57B24 /* Debug */ = {
+		F5A401E61C969F94000956D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -367,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		F55FBCF51C6D8FA500B57B24 /* Release */ = {
+		F5A401E71C969F94000956D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -404,7 +263,7 @@
 			};
 			name = Release;
 		};
-		F55FBCF71C6D8FA500B57B24 /* Debug */ = {
+		F5A401E91C969F94000956D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -415,7 +274,7 @@
 			};
 			name = Debug;
 		};
-		F55FBCF81C6D8FA500B57B24 /* Release */ = {
+		F5A401EA1C969F94000956D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -423,96 +282,31 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.sampleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		F55FBCFA1C6D8FA500B57B24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = sampleGameTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.sampleGameTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sampleGame.app/sampleGame";
-			};
-			name = Debug;
-		};
-		F55FBCFB1C6D8FA500B57B24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = sampleGameTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.sampleGameTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sampleGame.app/sampleGame";
-			};
-			name = Release;
-		};
-		F55FBCFD1C6D8FA500B57B24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				INFOPLIST_FILE = sampleGameUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.sampleGameUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = sampleGame;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		F55FBCFE1C6D8FA500B57B24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = sampleGameUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hirokishimada.sampleGameUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = sampleGame;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F55FBCC51C6D8FA400B57B24 /* Build configuration list for PBXProject "sampleGame" */ = {
+		F5A401CD1C969F93000956D8 /* Build configuration list for PBXProject "sampleGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F55FBCF41C6D8FA500B57B24 /* Debug */,
-				F55FBCF51C6D8FA500B57B24 /* Release */,
+				F5A401E61C969F94000956D8 /* Debug */,
+				F5A401E71C969F94000956D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F55FBCF61C6D8FA500B57B24 /* Build configuration list for PBXNativeTarget "sampleGame" */ = {
+		F5A401E81C969F94000956D8 /* Build configuration list for PBXNativeTarget "sampleGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F55FBCF71C6D8FA500B57B24 /* Debug */,
-				F55FBCF81C6D8FA500B57B24 /* Release */,
+				F5A401E91C969F94000956D8 /* Debug */,
+				F5A401EA1C969F94000956D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		F55FBCF91C6D8FA500B57B24 /* Build configuration list for PBXNativeTarget "sampleGameTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F55FBCFA1C6D8FA500B57B24 /* Debug */,
-				F55FBCFB1C6D8FA500B57B24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		F55FBCFC1C6D8FA500B57B24 /* Build configuration list for PBXNativeTarget "sampleGameUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F55FBCFD1C6D8FA500B57B24 /* Debug */,
-				F55FBCFE1C6D8FA500B57B24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F55FBCC21C6D8FA400B57B24 /* Project object */;
+	rootObject = F5A401CA1C969F93000956D8 /* Project object */;
 }

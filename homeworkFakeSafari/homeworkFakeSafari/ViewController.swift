@@ -101,7 +101,6 @@ class ViewController: UIViewController, UIWebViewDelegate{
     func webViewDidStartLoad(webView: UIWebView) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         SVProgressHUD.showWithStatus("読み込み中")
-        
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {

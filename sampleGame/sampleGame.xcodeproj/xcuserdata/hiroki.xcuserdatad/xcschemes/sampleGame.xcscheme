@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F55FBCC91C6D8FA400B57B24"
+               BlueprintIdentifier = "F5A401D11C969F93000956D8"
                BuildableName = "sampleGame.app"
                BlueprintName = "sampleGame"
                ReferencedContainer = "container:sampleGame.xcodeproj">
@@ -28,31 +28,11 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F55FBCE11C6D8FA400B57B24"
-               BuildableName = "sampleGameTests.xctest"
-               BlueprintName = "sampleGameTests"
-               ReferencedContainer = "container:sampleGame.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F55FBCEC1C6D8FA500B57B24"
-               BuildableName = "sampleGameUITests.xctest"
-               BlueprintName = "sampleGameUITests"
-               ReferencedContainer = "container:sampleGame.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F55FBCC91C6D8FA400B57B24"
+            BlueprintIdentifier = "F5A401D11C969F93000956D8"
             BuildableName = "sampleGame.app"
             BlueprintName = "sampleGame"
             ReferencedContainer = "container:sampleGame.xcodeproj">
@@ -75,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F55FBCC91C6D8FA400B57B24"
+            BlueprintIdentifier = "F5A401D11C969F93000956D8"
             BuildableName = "sampleGame.app"
             BlueprintName = "sampleGame"
             ReferencedContainer = "container:sampleGame.xcodeproj">
@@ -94,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F55FBCC91C6D8FA400B57B24"
+            BlueprintIdentifier = "F5A401D11C969F93000956D8"
             BuildableName = "sampleGame.app"
             BlueprintName = "sampleGame"
             ReferencedContainer = "container:sampleGame.xcodeproj">

@@ -2,13 +2,12 @@
 //  GameViewController.swift
 //  sampleGame
 //
-//  Created by 島田洋輝 on 2016/02/12.
+//  Created by 島田洋輝 on 2016/03/14.
 //  Copyright (c) 2016年 Hiroki Shimada. All rights reserved.
 //
 
 import UIKit
 import SpriteKit
-import CoreMotion
 
 class GameViewController: UIViewController {
 
@@ -25,7 +24,7 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+            scene.scaleMode = .ResizeFill
             
             skView.presentScene(scene)
         }
@@ -33,20 +32,6 @@ class GameViewController: UIViewController {
 
     override func shouldAutorotate() -> Bool {
         return true
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        var manager = CMMotionManager()
-        //取得の間隔
-        manager.accelerometerUpdateInterval = 0.01;
-        let handler:CMAccelerometerHandler = (data:CMAccelerometerData!, error:NSError!); -> { Void in
-            println(data.acceleration.x)
-            println(data.acceleration.y)
-            println(data.acceleration.z)
-            }
-        
-        //取得開始
-        manager.startAccelerometerUpdatesToQueue(NSOperationQueue.currentQueue()!, withHandler:handler)
     }
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {

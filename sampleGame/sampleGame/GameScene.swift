@@ -2,44 +2,71 @@
 //  GameScene.swift
 //  sampleGame
 //
-//  Created by 島田洋輝 on 2016/02/12.
+//  Created by 島田洋輝 on 2016/03/14.
 //  Copyright (c) 2016年 Hiroki Shimada. All rights reserved.
 //
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    let enemy = SKSpriteNode(imageNamed: "enemy")
+     let char = SKSpriteNode(imageNamed: "Char")
+    
+    enum State {
+        case Playing
+        case GameClear
+        case GameOver
+    }
+    var state = State.Playing
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        let fieldImageLength: CGFloat = 32
+        for i in 0...Int(frame.size.width / fieldImageLength) + 1 {
+            for j in 0...Int(frame.size.height / fieldImageLength) + 1 {
+                let field = SKSpriteNode(imageNamed: "Field")
+                field.position = CGPoint(x: CGFloat(i) * fieldImageLength, y: CGFloat(j) * fieldImageLength)
+                field.zPosition = -1
+                addChild(field)
+            }
+        }
+        physicsWorld.gravity = CGVectorMake(0, 0)
+        physicsWorld.contactDelegate = self // 今回追加部分
         
-        self.addChild(myLabel)
+        char.position = CGPoint(x:250, y:300)
+        char.physicsBody = SKPhysicsBody(rectangleOfSize: char.size)
+        char.physicsBody?.contactTestBitMask = 0x1
+        addChild(char)
+        
+        enemy.position = CGPoint(x:50, y:300)
+        enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemy.size)
+        addChild(enemy)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
-        
-        for touch in touches {
-            let location = touch.locationInNode(self)
+    override func update(currentTime: NSTimeInterval) {
+        if state == .Playing {
+            enemy.position.x += 1
             
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
+            if frame.width < enemy.position.x {
+                state = .GameOver
+                
+                let myLabel = SKLabelNode(fontNamed: "HiraginoSans-W6")
+                myLabel.text = "ゲームオーバー"
+                myLabel.fontSize = 45
+                myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) - 20)
+                addChild(myLabel)
+            }
         }
     }
-   
-    override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        state = .GameClear
+        enemy.removeFromParent()
+        
+        let myLabel = SKLabelNode(fontNamed: "HiraginoSans-W6")
+        myLabel.text = "ゲームクリア"
+        myLabel.fontSize = 45
+        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) - 20)
+        addChild(myLabel)
     }
+    
 }

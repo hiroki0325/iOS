@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  sampleGame
 //
-//  Created by 島田洋輝 on 2016/02/12.
+//  Created by 島田洋輝 on 2016/03/14.
 //  Copyright © 2016年 Hiroki Shimada. All rights reserved.
 //
 
